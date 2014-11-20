@@ -1,23 +1,169 @@
----
-layout: default
----
-
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>CARL WIEDEMANN</title>
+    <script type="text/javascript" src="//use.typekit.net/fcr4rdb.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <style type="text/css" media="screen">
+      body {
+        background-size: cover;
+        font-family: "Courier New",monospace;
+        font-size: 1em;
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        background-color: #FFF;
+        font-family: "ambroise-francois-std";
+        font-size: 7em;
+        font-weight: 700;
+        letter-spacing: 1em;
+        line-height: 2em;
+        margin: 0;
+        opacity: .8;
+        text-align: center;
+        text-transform: uppercase;
+        word-wrap: break-word;
+      }
+      a:link,
+      a:visited {
+        color: #00F;
+        text-decoration: none;
+      }
+      a:hover {
+        background-color: #00F;
+        color: #FFF;
+      }
+      h1 span {
+        display: inline-block;
+        width: 1100px;
+      }
+      h1 span:after {
+        content: '+';
+      }
+      .text {
+        background-color: #FFF;
+        opacity: .9;
+      }
+      .wrapper {
+        margin: 0 auto;
+        margin-top: 3em;
+        width: 1100px;
+      }
+      #inner {
+        padding: 10em 0;
+      }
+      @media (max-width: 1200px) {
+        #inner {
+          padding-top: 6em;
+        }
+        h1 {
+          font-size: 5em;
+        }
+        .wrapper,
+        h1 span {
+          width: 790px;
+        }
+        .text {
+          margin-top: 2em;
+          font-size: .9em;
+        }
+      }
+      @media (max-width: 820px) {
+        #inner {
+          padding-top: 6em;
+        }
+        h1 {
+          font-size: 3em;
+        }
+        .wrapper,
+        h1 span {
+          width: 470px;
+        }
+        .text {
+          margin-top: 2em;
+          font-size: .9em;
+        }
+      }
+      @media (max-width: 500px) {
+        #inner {
+          padding-top: 4em;
+        }
+        h1 {
+          font-size: 2em;
+        }
+        .wrapper,
+        h1 span {
+          width: 320px;
+        }
+        .text {
+          font-size: .8em;
+        }
+      }
+      @media (max-width: 320px) {
+        #inner {
+          padding-top: 3em;
+        }
+        h1 {
+          font-size: 1.8em;
+        }
+        .wrapper,
+        h1 span {
+          width: 285px;
+        }
+        .text {
+          font-size: .8em;
+        }
+      }
+      .invisible {
+        display: none;
+      }
+      h3 {
+        font-size: 1em;
+        font-weight: normal;
+      }
+      h3:before {
+        content: '### ';
+      }
+      ul {
+        padding: 0;
+        list-style: none;
+      }
+      li:before {
+        content: '* ';
+      }
+    </style>
+  </head>
+  <body>
+    <div id="outer">
+      <div id="inner">
+        <h1><span>Carl<span class="invisible"> </span>Wiedemann</span></h1>
+        <div class="text wrapper">
+          <h3>Website development consultant</h3>
+          <p>Open Source evangelist + Drupal expert. Front-end + back-end expertise. Based in California.</p>
+        </div>
+        <div class="text wrapper">
+          <h3>Clients</h3>
+          <ul>
+            <li><a href="http://www.anythinklibraries.org">Anythink Libraries</a></li>
+            <li><a href="http://www.californiaclosets.com">California Closets</a></li>
+            <li><a href="http://card.com">Card.com</a></li>
+          </ul>
+        </div>
+        <div class="text wrapper">
+          <h3>Elsewhere</h3>
+          <ul>
+            <li><a href="http://drupal.org/user/235047">drupal.org/u/c4rl</a></li>
+            <li><a href="http://github.com/c4rl">github.com/c4rl</a></li>
+            <li><a href="http://instagram.com/c4rlw">instagram.com/c4rlw</a></li>
+            <li><a href="https://keybase.io/c4rl">keybase.io/c4rl</a></li>
+            <li><a href="https://www.linkedin.com/in/c4rlw">linkedin.com/in/c4rlw</a></li>
+            <li><a href="http://twitter.com/c4rl">twitter.com/c4rl</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
