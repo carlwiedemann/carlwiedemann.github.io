@@ -1,4 +1,4 @@
-c4rl.github.io
-==============
+carlwiedemann.github.io
+=======================
 
 My personal website hurrah
