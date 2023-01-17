@@ -209,37 +209,36 @@
 
 <p>2023-01-17</p>
 
-<p>Over the past week, I’ve been tinkering with building a static site generator. I’m calling it <a href="https://github.com/carlwiedemann/foresite">Foresite</a>.</p>
+<p>Over the past week, I’ve been tinkering with building a static site generator. I’m calling
+it <a href="https://github.com/carlwiedemann/foresite">Foresite</a>.</p>
 
-<pre><code>class Foo
-  
-  def what_does_this_do
-    "today"
-  end
-  
-end
-</code></pre>
+<p>Does the world need Yet Another Static Site Generator? I don’t know. What I do know is that when I’ve attempted to use a
+popular generator like Hugo or Jekyll I crave something simpler than what they offer.</p>
 
-<p>Does the world need Yet Another Static Site Generator? I don’t know. What I do know is that when I’ve attempted to use a popular generator like Hugo or Jekyll I crave something simpler than what they offer.</p>
-
-<p>I don’t presume my interest in simplicity makes me unique. If you search for advice on a “simple” or “minimal” static site generator you generally see one of two answers:</p>
+<p>I don’t presume my interest in simplicity makes me unique. If you search for advice on a “simple” or “minimal” static
+site generator you generally see one of two answers:</p>
 
 <ol>
   <li>“I use [Jekyll/Hugo/Next/Eleventy] and I think it is simple!”</li>
   <li>“Just use HTML &amp; CSS!” -__-</li>
 </ol>
 
-<p>So while it could be that “something simpler” motivated some if not all of the <a href="https://jamstack.org/generators/">347 generators listed on the Jamstack site</a> many of these have ended-up looking more alike than different.</p>
+<p>So while it could be that “something simpler” motivated some if not all of
+the <a href="https://jamstack.org/generators/">347 generators listed on the Jamstack site</a> many of these have ended-up looking
+more alike than different.</p>
 
-<p>Peruse the list and you’ll see a lot of features in common: themes, layouts, plugins, multiple templating languages, tagging, Sass, React/Vue/Svelte etc.</p>
+<p>Peruse the list and you’ll see a lot of features in common: themes, layouts, plugins, multiple templating languages,
+tagging, Sass, React/Vue/Svelte etc.</p>
 
-<p>But what about the users who don’t need nor <em>want</em> most of those features? What if the best “feature” is the fewest features possible? What if lacking features makes the site better?</p>
+<p>But what about the users who don’t need nor <em>want</em> most of those features? What if the best “feature” is the fewest
+features possible? What if lacking features makes the site better?</p>
 
 <h2 id="from-low-code-to-low-feature">From “Low-code” to “Low-feature”</h2>
 
 <p>The genesis Foresite came from my familiarity with <a href="http://paulgraham.com/index.html">Paul Graham’s website</a>.</p>
 
-<p>Graham’s list of <a href="http://paulgraham.com/articles.html">essays</a> are some of the best known writing about software and startups. Yet despite the dated styling and layout of Graham’s, consider his implementation.</p>
+<p>Graham’s list of <a href="http://paulgraham.com/articles.html">essays</a> are some of the best known writing about software and
+startups. Yet despite the dated styling and layout of Graham’s, consider his implementation.</p>
 
 <p><img src="./img/paulgraham.png" alt="Paul Graham's essays" /></p>
 
@@ -257,29 +256,34 @@ end
   <li>No tags or categories</li>
   <li>No “Read more” links or pagination</li>
   <li>No images (AFAIAA)</li>
-  <li><span><strike>No mobile-friendly layout</strike> (<em>Edit: If you view the site on mobile you do get an alternative version</em>)</span></li>
+  <li><span><strike>No mobile-friendly layout</strike> (<em>Edit: If you view the site on mobile you do get an alternative
+version</em>)</span></li>
   <li>No JS (<em>Desktop version</em>)</li>
   <li>No CSS(!) (<em>Desktop version</em>)</li>
   <li>No search (<em>Desktop version, though the mobile version doesn’t seem to work anyway</em>)</li>
   <li>No enter-your-email-to-subscribe</li>
 </ul>
 
-<p>Much of what Graham’s site lacks are oft-touted features of many static site generators (and table-stakes for dynamic content management systems like Wordpress/Drupal, and SAAS platforms like Medium/Substack).</p>
+<p>Much of what Graham’s site lacks are oft-touted features of many static site generators (and table-stakes for dynamic
+content management systems like Wordpress/Drupal, and SAAS platforms like Medium/Substack).</p>
 
 <p>Would adding these features make Graham’s site better?</p>
 
 <p>I say no.</p>
 
-<p>What Graham’s site lacks is fundamental to its long-standing value. It doesn’t look nor try to look like anything else. And it doesn’t care.</p>
+<p>What Graham’s site lacks is fundamental to its long-standing value. It doesn’t look nor try to look like anything else.
+And it doesn’t care.</p>
 
-<p>Moreover, in an age of walled gardens, Graham’s homespun pages recall a simpler and more individualized age where intrigue and craft were the ethos of the world wide web.</p>
+<p>Moreover, in an age of walled gardens, Graham’s homespun pages recall a simpler and more individualized age where
+intrigue and craft were the ethos of the world wide web.</p>
 
 <p>The good news is that none of this is behind us. It’s all still here.</p>
 
 <h2 id="creating-foresite">Creating Foresite</h2>
 
 <blockquote>
-  <p>“If there’s a book that you want to read, but it hasn’t been written yet, then you must write it.”<br />– Toni Morrison</p>
+  <p>“If there’s a book that you want to read, but it hasn’t been written yet, then you must write it.”<br />– Toni
+Morrison</p>
 </blockquote>
 
 <p>Here’s what I wanted to have:</p>
@@ -295,15 +299,18 @@ end
 
 <h3 id="language">Language</h3>
 
-<p>I decided to use Ruby. It is widely available, has a good standard library, and installing a gem is a one-liner that can provide global executables without fussing with <code>$PATH</code> etc.</p>
+<p>I decided to use Ruby. It is widely available, has a good standard library, and installing a gem is a one-liner that can
+provide global executables without fussing with <code>$PATH</code> etc.</p>
 
-<p>The templating uses Ruby’s build-in ERB. I didn’t see myself needing a lot of other features that other templating languages provide, and ERB is pretty easy to understand.</p>
+<p>The templating uses Ruby’s build-in ERB. I didn’t see myself needing a lot of other features that other templating
+languages provide, and ERB is pretty easy to understand.</p>
 
 <h3 id="content-structure">Content structure</h3>
 
 <p>Three subdirectories: <code>md</code>, <code>post</code>, and <code>erb</code>.</p>
 
-<p>Each piece of content is a markdown file in a <code>md</code> subdirectory. Each markdown file is named with a date prefix in ISO 8601 <code>YYYY-MM-DD</code> and title slugified (lowercase &amp; hyphenated).</p>
+<p>Each piece of content is a markdown file in a <code>md</code> subdirectory. Each markdown file is named with a date prefix in ISO
+8601 <code>YYYY-MM-DD</code> and title slugified (lowercase &amp; hyphenated).</p>
 
 <p>Generated HTML for every <code>md</code> file lives in a <code>post</code> directory. The HTML file names mirror the markdown file names.</p>
 
@@ -314,27 +321,39 @@ end
 <p>Three templates: <code>post.md.erb</code>, <code>wrapper.html.erb</code> and <code>_list.html.erb</code>.</p>
 
 <ul>
-  <li><code>post.md.erb</code> for the default markdown used when writing a new post</li>
-  <li><code>wrapper.html.erb</code> for the wrapper template that builds the page structure</li>
-  <li><code>_list.html.erb</code> as a partial to form a list of posts in reverse-chronological order on an <code>index.html</code> page, similar to <a href="http://paulgraham.com/articles.html">Graham’s essay page</a>.</li>
+  <li><code>post.md.erb</code> for the default markdown used when writing a new post. By default it the title formatted as H1 and
+single paragraph showing the date.</li>
+  <li><code>wrapper.html.erb</code> for the wrapper template that builds the page structure.</li>
+  <li><code>_list.html.erb</code> as a partial to form a list of posts in reverse-chronological order on an <code>index.html</code> page, similar
+to <a href="http://paulgraham.com/articles.html">Graham’s essay page</a>.</li>
 </ul>
 
 <h3 id="workflow">Workflow</h3>
 
+<p>More detailed steps are available in the Foresite <a href="https://github.com/carlwiedemann/foresite">README</a></p>
+
 <ol>
+  <li>Install foresite using <code>gem install foresite</code> (or use Bundler if you want).</li>
   <li>Start by creating a project directory for your site. For me, this is my GitHub pages repo directory.</li>
-  <li>Run <code>foresite init</code>, which will create the subdirectories and templates (in the <code>erb</code> subdirectory).</li>
-  <li>Create a new post by running <code>foresite touch "Hello World"</code>. A markdown file is created with today’s date, e.g. <code>md/2023-01-17-hello-world.md</code>. The content of the markdown file will be based on <code>post.md.erb</code>, by default it is just a single H1 tag with the title and a paragraph showing the date.</li>
-  <li>Edit the post to your satisfaction.</li>
-  <li>Change the <code>wrapper.html.erb</code> to get the style and layout to your tastes. Try being minimal, e.g. just use an inline <code>&lt;style&gt;</code> tag!</li>
-  <li>Generate HTML by running <code>foresite build</code>. An HTML file is built in the <code>post</code> subdirectory e.g. <code>post/2023-01-17-hello-world.html</code> that has the parsed markdown wrapped in the wrapper template. At the root-level directory, and <code>index.html</code> file is generated that shows a list of links with dates to the HTML files in <code>post</code>.</li>
+  <li>From within the project directory, run <code>foresite init</code>, which will create the subdirectories and templates in
+the <code>erb</code> subdirectory.</li>
+  <li>Create a new post by running <code>foresite touch "Hello World"</code>. A markdown file is generated with today’s date,
+e.g. <code>md/2023-01-17-hello-world.md</code>.</li>
+  <li>Edit the markdown post to your satisfaction.</li>
+  <li>Change the <code>wrapper.html.erb</code> to get the style and layout to your tastes. Try being minimal, e.g. just use an
+inline <code>&lt;style&gt;</code> tag!</li>
+  <li>Generate HTML by running <code>foresite build</code>. An HTML file is generated in the <code>post</code> subdirectory
+e.g. <code>post/2023-01-17-hello-world.html</code> that has the parsed markdown wrapped in the wrapper template. At the
+root-level directory, an <code>index.html</code> file is generated that shows a list of links with dates to the HTML files in
+the <code>post</code> subdirectory.</li>
 </ol>
 
-<p>That’s it. The post you are reading right now was built using Foresite.</p>
+<p>That’s it. The post you are reading right now was <a href="https://github.com/carlwiedemann/carlwiedemann.github.io">built</a> using Foresite.</p>
 
 <h2 id="the-future">The future</h2>
 
-<p>I’ve never been a blogger, and starting has always seemed to be an obstacle. But creating this tool has given me a new energy to start creating, free of obstacles (hopefully). I am eager to see if it will motivate me to write more.</p>
+<p>I’ve never been a blogger, and starting has always seemed to be an obstacle. But creating this tool has given me a new
+energy to start creating, free of obstacles (hopefully). I am eager to see if it will motivate me to write more.</p>
 
 <p>If anything I’ve written here resonates with you, I hope you will give Foresite a try.</p>
 
