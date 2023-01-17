@@ -23,6 +23,8 @@ The genesis Foresite came from my familiarity with [Paul Graham's website](http:
 
 Graham's list of [essays](http://paulgraham.com/articles.html) are some of the best known writing about software and startups. Yet despite the dated styling and layout of Graham's, consider his implementation. 
 
+![Paul Graham's essays](./img/paulgraham.png)
+
 What it has:
 
 * All posts are static HTML
@@ -32,15 +34,15 @@ What it does not have:
 
 * No comments
 * No tags or categories
-* No search
 * No "Read more" links or pagination
 * No images (AFAIAA)
-* No JS
-* No CSS(!)
-* No mobile-friendly layout
+* <span><strike>No mobile-friendly layout</strike> (_Edit: If you view the site on mobile you do get an alternative version_)</span>
+* No JS (_Desktop version_)
+* No CSS(!) (_Desktop version_)
+* No search (_Desktop version, though the mobile version doesn't seem to work anyway_)
 * No enter-your-email-to-subscribe
 
-Much of what Graham's site lacks are oft-touted features of many static site generators (and table-stakes for more dynamic content management systems like Wordpress and Drupal).
+Much of what Graham's site lacks are oft-touted features of many static site generators (and table-stakes for dynamic content management systems like Wordpress/Drupal, and SAAS platforms like Medium/Substack).
 
 Would adding these features make Graham's site better?
 
@@ -54,7 +56,7 @@ The good news is that none of this is behind us. It's all still here.
 
 ## Creating Foresite
 
-> "If there's a book that you want to read, but it hasn't been written yet, then you must write it." -- Toni Morrison
+> "If there's a book that you want to read, but it hasn't been written yet, then you must write it."<br/>-- Toni Morrison
 
 Here's what I wanted to have:
 
