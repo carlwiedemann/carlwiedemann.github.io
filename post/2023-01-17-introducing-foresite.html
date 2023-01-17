@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <title>CARL WIEDEMANN</title>
+  <script type="text/javascript" src="//use.typekit.net/fcr4rdb.js"></script>
+  <script type="text/javascript">try {
+    Typekit.load();
+  } catch (e) {
+  }</script>
+  <style>
+      html {
+          box-sizing: border-box;
+      }
+
+      *, *:before, *:after {
+          box-sizing: inherit;
+      }
+
+      body {
+          font-family: "Courier New", monospace;
+          margin: 0;
+          padding: 0;
+      }
+
+      h1.title {
+          font-family: "ambroise-francois-std";
+          font-weight: 700;
+          line-height: 2em;
+          margin: 0;
+          opacity: .8;
+          text-transform: uppercase;
+          word-wrap: break-word;
+          letter-spacing: .2em;
+      }
+
+      h1.title a {
+          color: inherit;
+      }
+
+      h1.title a:hover {
+          color: #FFF;
+      }
+
+      a:link,
+      a:visited {
+          color: #00F;
+          text-decoration: none;
+      }
+
+      a:hover {
+          background-color: #00F;
+          color: #FFF;
+      }
+
+      h1 span {
+          display: inline-block;
+          width: 1100px;
+      }
+
+      h1 span:after {
+          content: '+';
+      }
+
+      header,
+      main {
+          opacity: .9;
+          margin: 0 auto;
+          max-width: 1100px;
+          padding: 0 1em;
+      }
+
+      main {
+          line-height: 1.5em;
+          margin-top: 1em;
+          margin-bottom: 10em;
+      }
+
+      nav ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+      }
+
+      nav li {
+          display: inline;
+      }
+
+      /*@media (max-width: 1200px) {*/
+
+      /*    h1 {*/
+      /*        font-size: 5em;*/
+      /*    }*/
+
+      /*    .text,*/
+      /*    h1 span {*/
+      /*        width: 790px;*/
+      /*    }*/
+
+      /*    .text {*/
+      /*        margin-top: 2em;*/
+      /*    }*/
+
+      /*}*/
+
+      /*@media (max-width: 820px) {*/
+
+      /*    h1 {*/
+      /*        font-size: 3em;*/
+      /*    }*/
+
+      /*    .text,*/
+      /*    h1 span {*/
+      /*        width: 470px;*/
+      /*    }*/
+
+      /*    .text {*/
+      /*        margin-top: 2em;*/
+      /*    }*/
+
+      /*}*/
+
+      /*@media (max-width: 500px) {*/
+
+      /*    h1 {*/
+      /*        font-size: 2em;*/
+      /*    }*/
+
+      /*    .text,*/
+      /*    h1 span {*/
+      /*        width: 320px;*/
+      /*    }*/
+
+      /*}*/
+
+      /*@media (max-width: 320px) {*/
+
+      /*    h1 {*/
+      /*        font-size: 1.8em;*/
+      /*    }*/
+
+      /*    .text,*/
+      /*    h1 span {*/
+      /*        width: 285px;*/
+      /*    }*/
+
+      /*}*/
+
+      .invisible {
+          display: none;
+      }
+
+
+      h1, h2, h3, h4 {
+          line-height: 1.3em;
+      }
+
+      h1 {
+          font-size: 2em;
+          font-weight: normal;
+      }
+
+      .text h1:before {
+          content: '# ';
+      }
+
+      h2 {
+          font-size: 1.5em;
+          font-weight: normal;
+      }
+
+      .text h2:before {
+          content: '## ';
+      }
+
+      h3 {
+          font-size: 1em;
+          font-weight: normal;
+      }
+
+      .text h3:before {
+          content: '### ';
+      }
+
+      .text ul {
+          padding: 0 1em;
+          list-style: none;
+      }
+
+      .text ul li:before {
+          content: '* ';
+      }
+
+      .text code {
+          font-weight: bold;
+          white-space: nowrap;
+      }
+  </style>
+</head>
+<body>
+<header>
+  <h1 class="title"><a href="/">Carl Wiedemann</a></h1>
+  <nav>
+    <ul>
+      <li><a href="https://github.com/carlwiedemann">github</a></li>
+      <li><a href="https://www.linkedin.com/in/carlwwiedemann">linkedin</a></li>
+      <li><a href="https://twitter.com/carlwiedemann">twitter</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section class="text">
+    <h1 id="introducing-foresite-an-extremely-minimal-static-site-generator">Introducing Foresite: An extremely minimal static site generator</h1>
+
+<p>2023-01-17</p>
+
+<p>Over the past week, I’ve been tinkering with building a static site generator. I’m calling it <a href="https://github.com/carlwiedemann/foresite">Foresite</a>.</p>
+
+<p>Does the world need Yet Another Static Site Generator? I don’t know. What I do know is that when I’ve attempted to use a popular generator like Hugo or Jekyll I crave something simpler than what they offer.</p>
+
+<p>I don’t presume my interest in simplicity makes me unique. If you search for advice on a “simple” or “minimal” static site generator you generally see one of two answers:</p>
+
+<ol>
+  <li>“I use [Jekyll/Hugo/Next/Eleventy] and I think it is simple!”</li>
+  <li>“Just use HTML &amp; CSS!” -__-</li>
+</ol>
+
+<p>So while it could be that “something simpler” motivated some if not all of the <a href="https://jamstack.org/generators/">347 generators listed on the Jamstack site</a> many of these have ended-up looking more alike than different.</p>
+
+<p>Peruse the list and you’ll see a lot of features in common: themes, layouts, plugins, multiple templating languages, tagging, Sass, React/Vue/Svelte etc.</p>
+
+<p>But what about the users who don’t need nor <em>want</em> most of those features? What if the best “feature” is the fewest features possible? What if lacking features makes the site better?</p>
+
+<h2 id="from-low-code-to-low-feature">From “Low-code” to “Low-feature”</h2>
+
+<p>The genesis Foresite came from my familiarity with <a href="http://paulgraham.com/index.html">Paul Graham’s website</a>.</p>
+
+<p>Graham’s list of <a href="http://paulgraham.com/articles.html">essays</a> are some of the best known writing about software and startups. Yet despite the dated styling and layout of Graham’s, consider his implementation.</p>
+
+<p>What it has:</p>
+
+<ul>
+  <li>All posts are static HTML</li>
+  <li>A single list of posts is shown on the <code>articles.html</code> page</li>
+</ul>
+
+<p>What it does not have:</p>
+
+<ul>
+  <li>No comments</li>
+  <li>No tags or categories</li>
+  <li>No search</li>
+  <li>No “Read more” links or pagination</li>
+  <li>No images (AFAIAA)</li>
+  <li>No JS</li>
+  <li>No CSS(!)</li>
+  <li>No mobile-friendly layout</li>
+  <li>No enter-your-email-to-subscribe</li>
+</ul>
+
+<p>Much of what Graham’s site lacks are oft-touted features of many static site generators (and table-stakes for more dynamic content management systems like Wordpress and Drupal).</p>
+
+<p>Would adding these features make Graham’s site better?</p>
+
+<p>I say no.</p>
+
+<p>What Graham’s site lacks is fundamental to its long-standing value. It doesn’t look nor try to look like anything else. And it doesn’t care.</p>
+
+<p>Moreover, in an age of walled gardens, Graham’s homespun pages recall a simpler and more individualized age where intrigue and craft were the ethos of the world wide web.</p>
+
+<p>The good news is that none of this is behind us. It’s all still here.</p>
+
+<h2 id="creating-foresite">Creating Foresite</h2>
+
+<blockquote>
+  <p>“If there’s a book that you want to read, but it hasn’t been written yet, then you must write it.” – Toni Morrison</p>
+</blockquote>
+
+<p>Here’s what I wanted to have:</p>
+
+<ul>
+  <li>Posts written in markdown, saved to disk</li>
+  <li>A single wrapper template for consistency</li>
+  <li>CLI executable that converts markdown to HTML wrapped in the template</li>
+  <li>Lightweight, few dependencies</li>
+  <li>Simple to use &amp; understand (i.e. <a href="https://mcfunley.com/choose-boring-technology">boring technology</a>)</li>
+  <li>…and not much else</li>
+</ul>
+
+<h3 id="language">Language</h3>
+
+<p>I decided to use Ruby. It is widely available, has a good standard library, and installing a gem is a one-liner that can provide global executables without fussing with <code>$PATH</code> etc.</p>
+
+<p>The templating uses Ruby’s build-in ERB. I didn’t see myself needing a lot of other features that other templating languages provide, and ERB is pretty easy to understand.</p>
+
+<h3 id="content-structure">Content structure</h3>
+
+<p>Three subdirectories: <code>md</code>, <code>post</code>, and <code>erb</code>.</p>
+
+<p>Each piece of content is a markdown file in a <code>md</code> subdirectory. Each markdown file is named with a date prefix in ISO 8601 <code>YYYY-MM-DD</code> and title slugified (lowercase &amp; hyphenated).</p>
+
+<p>Generated HTML for every <code>md</code> file lives in a <code>post</code> directory. The HTML file names mirror the markdown file names.</p>
+
+<p>Templates live in an <code>erb</code> subdirectory.</p>
+
+<h3 id="templates">Templates</h3>
+
+<p>Three templates: <code>post.md.erb</code>, <code>wrapper.html.erb</code> and <code>_list.html.erb</code>.</p>
+
+<ul>
+  <li><code>post.md.erb</code> for the default markdown used when writing a new post</li>
+  <li><code>wrapper.html.erb</code> for the wrapper template that builds the page structure</li>
+  <li><code>_list.html.erb</code> as a partial to form a list of posts in reverse-chronological order on an <code>index.html</code> page, similar to <a href="http://paulgraham.com/articles.html">Graham’s essay page</a>.</li>
+</ul>
+
+<h3 id="workflow">Workflow</h3>
+
+<ol>
+  <li>Start by creating a project directory for your site. For me, this is my GitHub pages repo directory.</li>
+  <li>Run <code>foresite init</code>, which will create the subdirectories and templates (in the <code>erb</code> subdirectory).</li>
+  <li>Create a post running <code>foresite touch "Hello World"</code>. A markdown file is created with today’s date, e.g. <code>md/2023-01-17-hello-world.md</code>. The content of the markdown file will be based on <code>post.md.erb</code>, by default it is just a single H1 tag with the title and a paragraph showing the date.</li>
+  <li>Edit the <code>wrapper.html.erb</code> to your desires. Try being minimal, e.g. just use an inline <code>&lt;style&gt;</code> tag!</li>
+  <li>Generate HTML by running <code>foresite build</code>. An HTML file is built in the <code>post</code> subdirectory e.g. <code>post/2023-01-17-hello-world.html</code> that has the parsed markdown wrapped in the wrapper template. At the root-level directory, and <code>index.html</code> file is generated that shows a list of links with dates to the HTML files in <code>post</code>.</li>
+</ol>
+
+<p>That’s it. The post you are reading right now was built using Foresite.</p>
+
+<h2 id="the-future">The future</h2>
+
+<p>I’ve never been a blogger, and starting has always seemed to be an obstacle. But creating this tool has given me a new energy to start creating, free of obstacles (hopefully). I am eager to see if it will motivate me to write more.</p>
+
+<p>If anything I’ve written here resonates with you, I hope you will give Foresite a try.</p>
+
+<ul>
+  <li><a href="https://github.com/carlwiedemann/foresite">Foresite on GitHub</a></li>
+  <li><a href="https://rubygems.org/gems/foresite">Foresite on Rubygems</a></li>
+</ul>
+
+<p>Thanks.</p>
+
+  </section>
+</main>
+</body>
+</html>
