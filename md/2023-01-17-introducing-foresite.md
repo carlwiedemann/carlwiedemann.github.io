@@ -93,9 +93,10 @@ Three templates: `post.md.erb`, `wrapper.html.erb` and `_list.html.erb`.
 
 1. Start by creating a project directory for your site. For me, this is my GitHub pages repo directory.
 2. Run `foresite init`, which will create the subdirectories and templates (in the `erb` subdirectory).
-3. Create a post running `foresite touch "Hello World"`. A markdown file is created with today's date, e.g. `md/2023-01-17-hello-world.md`. The content of the markdown file will be based on `post.md.erb`, by default it is just a single H1 tag with the title and a paragraph showing the date.
-4. Edit the `wrapper.html.erb` to your desires. Try being minimal, e.g. just use an inline `<style>` tag!
-5. Generate HTML by running `foresite build`. An HTML file is built in the `post` subdirectory e.g. `post/2023-01-17-hello-world.html` that has the parsed markdown wrapped in the wrapper template. At the root-level directory, and `index.html` file is generated that shows a list of links with dates to the HTML files in `post`.
+3. Create a new post by running `foresite touch "Hello World"`. A markdown file is created with today's date, e.g. `md/2023-01-17-hello-world.md`. The content of the markdown file will be based on `post.md.erb`, by default it is just a single H1 tag with the title and a paragraph showing the date.
+4. Edit the post to your satisfaction.
+5. Change the `wrapper.html.erb` to get the style and layout to your tastes. Try being minimal, e.g. just use an inline `<style>` tag!
+6. Generate HTML by running `foresite build`. An HTML file is built in the `post` subdirectory e.g. `post/2023-01-17-hello-world.html` that has the parsed markdown wrapped in the wrapper template. At the root-level directory, and `index.html` file is generated that shows a list of links with dates to the HTML files in `post`.
 
 That's it. The post you are reading right now was built using Foresite.
 
