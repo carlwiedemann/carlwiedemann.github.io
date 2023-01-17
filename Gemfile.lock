@@ -1,0 +1,21 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    foresite (1.1.2)
+      kramdown (~> 2.4)
+      thor (~> 1.2)
+      zeitwerk (~> 2.6)
+    kramdown (2.4.0)
+      rexml
+    rexml (3.2.5)
+    thor (1.2.1)
+    zeitwerk (2.6.6)
+
+PLATFORMS
+  arm64-darwin-22
+
+DEPENDENCIES
+  foresite (~> 1.1)
+
+BUNDLED WITH
+   2.4.3
