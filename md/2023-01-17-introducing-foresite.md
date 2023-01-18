@@ -73,7 +73,7 @@ The good news is that none of this is behind us. It's all still here.
 
 Here's what I wanted to have:
 
-* Posts written in markdown, saved to disk
+* Posts written in markdown
 * A single wrapper template for consistency
 * CLI executable that converts markdown to HTML wrapped in the template
 * Lightweight, few dependencies
@@ -85,7 +85,7 @@ Here's what I wanted to have:
 I decided to use Ruby. It is widely available, has a good standard library, and installing a gem is a one-liner that can
 provide global executables without fussing with `$PATH` etc.
 
-The templating uses Ruby's build-in ERB. I didn't see myself needing a lot of other features that other templating
+The templating uses Ruby's built-in ERB. I didn't see myself needing a lot of other features that other templating
 languages provide, and ERB is pretty easy to understand.
 
 ### Content structure
