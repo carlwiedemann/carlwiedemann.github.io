@@ -26,7 +26,7 @@ features possible? What if lacking features makes the site better?
 
 ## From "Low-code" to "Low-feature"
 
-The genesis Foresite came from my familiarity with [Paul Graham's website](http://paulgraham.com/index.html).
+The genesis of Foresite came from my familiarity with [Paul Graham's website](http://paulgraham.com/index.html).
 
 Graham's list of [essays](http://paulgraham.com/articles.html) are some of the best known writing about software and
 startups. Yet despite the dated styling and layout of Graham's, consider his implementation.
