@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <meta name="google-site-verification" content="mvYev_JUFUYr2v1J05_vG1_3bI6z5loefhSu-h5OrLk" />
+  <title>Test Coverage: A Compass, not a Destination - Carl Wiedemann</title>
+  <link rel="stylesheet" href="https://use.typekit.net/lcc4etk.css" />
+  <style>
+
+      /* Site title */
+      /*Abril Fatface Regular*/
+      /*font-family: abril-fatface, serif;*/
+      /*font-weight: 400;*/
+      /*font-style: normal;*/
+
+      /*Abril Fatface Italic*/
+      /*font-family: abril-fatface, serif;*/
+      /*font-weight: 400;*/
+      /*font-style: italic;*/
+
+      /* Body text */
+      /*Lato Italic*/
+      /*font-family: lato, sans-serif;*/
+      /*font-weight: 400;*/
+      /*font-style: italic;*/
+
+      /*Lato Bold Italic*/
+      /*font-family: lato, sans-serif;*/
+      /*font-weight: 700;*/
+      /*font-style: italic;*/
+
+      /*Lato Bold*/
+      /*font-family: lato, sans-serif;*/
+      /*font-weight: 700;*/
+      /*font-style: normal;*/
+
+      /*Lato Regular*/
+      /*font-family: lato, sans-serif;*/
+      /*font-weight: 400;*/
+      /*font-style: normal;*/
+
+      /* Code blocks */
+      /*Fira Mono Regular*/
+      /*font-family: fira-mono, monospace;*/
+      /*font-weight: 400;*/
+      /*font-style: normal;*/
+
+      /*Fira Mono Bold*/
+      /*font-family: fira-mono, monospace;*/
+      /*font-weight: 700;*/
+      /*font-style: normal;*/
+
+      html {
+          box-sizing: border-box;
+      }
+
+      *, *:before, *:after {
+          box-sizing: inherit;
+      }
+
+      body {
+          font-family: lato, sans-serif;
+          font-weight: 400;
+          font-style: normal;
+          margin: 0;
+          padding: 0;
+      }
+
+      h1.title {
+          font-family: abril-fatface, serif;
+          font-weight: 400;
+          font-style: italic;
+          line-height: 2em;
+          margin: 0;
+          word-wrap: break-word;
+      }
+
+      h1.title a {
+          color: inherit;
+      }
+
+      h1.title a:hover {
+          color: #FFF;
+      }
+
+      a:link,
+      a:visited {
+          color: #00F;
+          text-decoration: none;
+      }
+
+      a:hover {
+          background-color: #00F;
+          color: #FFF;
+      }
+
+      h1 span {
+          display: inline-block;
+          width: 1100px;
+      }
+
+      h1 span:after {
+          content: '+';
+      }
+
+      header,
+      main,
+      footer {
+          margin: 0 auto;
+          max-width: 1100px;
+          padding: 0 1em;
+      }
+
+      main {
+          line-height: 1.6em;
+          margin-top: 1em;
+          margin-bottom: 5em;
+      }
+
+      nav ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+      }
+
+      nav li {
+          display: inline;
+      }
+
+      h1, h2, h3, h4 {
+          font-weight: 700;
+          font-style: normal;
+          opacity: 0.9;
+          line-height: 1.3em;
+      }
+
+      h1 {
+          font-size: 2em;
+      }
+
+      h2 {
+          font-size: 1.5em;
+      }
+
+      h3 {
+          font-size: 1.2em;
+      }
+
+      .text li {
+          margin: 1em 0;
+      }
+
+      .text code {
+          font-family: fira-mono, monospace;
+      }
+
+      .text p code,
+      .text li code {
+          background-color: #f3f3f3;
+          display: inline;
+          width: auto;
+          white-space: nowrap;
+      }
+
+      .text img {
+          max-width: 100%;
+      }
+
+      .text blockquote {
+          background-color: #EEE;
+          font-style: italic;
+          opacity: 0.8;
+          padding: 1em;
+      }
+
+      .text > p:last-child:after {
+          content: ' ∎';
+          font-weight: 700;
+      }
+
+      footer {
+          font-style: italic;
+          opacity: 0.5;
+          font-size: 0.8em;
+          margin: 2em auto;
+      }
+  </style>
+</head>
+<body>
+<header>
+  <h1 class="title"><a href="/">Carl Wiedemann</a></h1>
+  <nav>
+    <ul>
+      <li><a href="https://github.com/carlwiedemann">github</a></li>
+      <li><a href="https://www.linkedin.com/in/carlwwiedemann">linkedin</a></li>
+      <li><a href="https://twitter.com/carlwiedemann">twitter</a></li>
+      <li><a href="https://bsky.app/profile/carlwiedemann.bsky.social">bluesky</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section class="text">
+    <h1 id="test-coverage-a-compass-not-a-destination">Test Coverage: A Compass, not a Destination</h1>
+
+<p>2023-12-27</p>
+
+<p>When assessing software quality, well-tested software is presumed to be better than poorly-tested (or untested) software. Poorly-tested (or untested) software has little to no enforcement of its boundaries. Poorly-tested (or untested) software cannot be known to be correct when changes are made to that software.</p>
+
+<p>What determines if software is well-tested? For individual files, a common quantitative approach is to measure test “coverage,” defined as a file’s ratio of tested lines to total lines. What defines a “tested line” is whether the line is executed during a test execution. Files with greater coverage numbers are presumed to be higher quality, since greater coverage number implies the code in the file is well-tested.</p>
+
+<p>Many tools and proprietors exist that perform coverage calculations along with visualizations &amp; dashboards to make the metric visible, and track it over time. Subsequently, these numbers can be used for goals &amp; targets of software codebases, as a metric of the health of a software codebase.</p>
+
+<p>But does the coverage number tell the whole story about the software and its tests? What does coverage miss? And are there alternative ways of achieving well-tested software?</p>
+
+<h2 id="an-example">An example</h2>
+
+<p>Consider the following simple Ruby file and it’s corresponding test. (A constant in file is removed for the purposes of discussion).</p>
+
+<p>File: <code>thermometer.rb</code></p>
+
+<pre><code class="language-ruby">
+module Thermometer
+  # WATER_BOILING_POINT would be defined here...
+
+  def self.is_water_boiling?(temperature)
+    temperature &gt;= WATER_BOILING_POINT
+  end
+end
+</code></pre>
+
+<p>Test: <code>thermometer_spec.rb</code></p>
+
+<pre><code class="language-ruby">
+require './test_helper'
+
+require "./thermometer"
+
+describe Thermometer do
+  describe '#is_water_boiling?' do
+    it "returns true when temperature is above boiling point" do
+      assert(Thermometer.is_water_boiling?(500.0))
+    end
+  end
+end
+</code></pre>
+
+<p>Suppose that <code>Thermometer::WATER_BOILING_POINT</code> has a legitimate value, and we run this test using the Ruby <a href="https://github.com/simplecov-ruby/simplecov">SimpleCov</a> library (a popular tool).</p>
+
+<p>The <code>thermometer_spec.rb</code> test will pass and also have 100% test coverage.</p>
+
+<p>Console output from test running:</p>
+
+<pre><code>
+# Running:
+
+.
+
+Finished in 0.000394s, 2538.0709 runs/s, 2538.0709 assertions/s.
+
+1 runs, 1 assertions, 0 failures, 0 errors, 0 skips
+Coverage report generated for RSpec to /Users/carl.wiedemann/_scratch/simplecov_demo/coverage. 4 / 4 LOC (100.0%) covered.
+</code></pre>
+
+<p>Despite the simplicity of this example, I now ask the reader the following: <strong>Is
+this well-tested software?</strong></p>
+
+<p>Let’s describe what the test tells us:</p>
+
+<ul>
+  <li>✅ The test tells us that passing a float value of 500.0 to the <code>#is_water_boiling?</code> method returns true</li>
+</ul>
+
+<p>Let’s also describe what the test does <strong><em>not</em></strong> tell us:</p>
+
+<ul>
+  <li>❌ The test does not tell us under what conditions the <code>#is_water_boiling? </code>returns something other than true</li>
+  <li>❌ The test does not tell us what behavior we should expect if <code>#is_water_boiling? </code>is passed an argument of a different type</li>
+  <li>❌ Most importantly, the test does not actually describe the context of the usage of the file. What kind of thermometer is this? A Fahrenheit thermometer? Or a Celsius thermometer? At what temperature does water boil?</li>
+</ul>
+
+<p>We see that there’s quite a bit missing from this test.</p>
+
+<p>Normally, tests can tell us about how code is used, and all the possible outcomes. But this test does
+<strong>not</strong> do those things <strong>despite having 100% coverage</strong>.</p>
+
+<h2 id="improving-the-test-beyond-coverage">Improving the test beyond coverage</h2>
+
+<p>Let’s modify the test such that it answers the questions mentioned above:</p>
+
+<ul>
+  <li>❓The test should tell us about when water doesn’t boil, based on the (yet-to-be-revealed) <code>Thermometer::WATER_BOILING_POINT</code> value.</li>
+  <li>❓The test should describe what happens when we have logical exceptions, e.g. different types</li>
+  <li>❓The test should describe what <em>kind of thermometer we have actually built</em>.</li>
+</ul>
+
+<p>Making these changes, we see the following:</p>
+
+<pre><code class="language-ruby">
+require './test_helper'
+
+require "./thermometer"
+
+describe Thermometer do
+  describe '#is_water_boiling?' do
+    it "returns true when temperature is at boiling point" do
+      assert(Thermometer.is_water_boiling?(373.1339))
+    end
+
+    it "returns true when temperature is above boiling point" do
+      # Float::MAX exceeds Planck temperature, ~10**32
+      assert(Thermometer.is_water_boiling?(rand(373.1339..Float::MAX)))
+    end
+
+    it "returns false when temperature is below boiling point" do
+      # @todo Consider enforcing absolute min with a `raise`?
+      refute(Thermometer.is_water_boiling?(rand(-273.15...373.1339)))
+    end
+
+    it "handles integer arguments" do
+      assert(Thermometer.is_water_boiling?(400))
+      refute(Thermometer.is_water_boiling?(200))
+    end
+
+    it "raises when passed a different type" do
+      expect { Thermometer.is_water_boiling?("2") }.must_raise(ArgumentError)
+      expect { Thermometer.is_water_boiling?(Class) }.must_raise(TypeError)
+    end
+
+  end
+end
+</code></pre>
+
+<p>…and we now see what we had a <a href="https://en.wikipedia.org/wiki/Kelvin">Kelvin</a> thermometer all along…</p>
+
+<pre><code class="language-ruby">
+module Thermometer
+  WATER_BOILING_POINT = 373.1339
+
+  # ...
+end
+</code></pre>
+
+<p>…while also noting that coverage has stayed at 100%.</p>
+
+<pre><code>
+# Running:
+
+.....
+
+Finished in 0.000443s, 11286.6818 runs/s, 15801.3545 assertions/s.
+
+5 runs, 7 assertions, 0 failures, 0 errors, 0 skips
+Coverage report generated for RSpec to /Users/carl.wiedemann/_scratch/simplecov_demo/coverage. 4 / 4 LOC (100.0%) covered.
+</code></pre>
+
+<p>There are maybe some quibbles to be made about this second version. But one would be hard-pressed to affirm that the first version was superior. And yet coverage deems these tests as identical — moreover, with 100% as model citizens — whilst a competent human programmer would deem them as anything but.</p>
+
+<h2 id="summary-coverage--quality">Summary: Coverage != Quality</h2>
+
+<p>We began this example with a very nice coverage number, at 100%. But we had a pretty weak test. With our first test, we could have changed <code>Thermometer::WATER_BOILING_POINT</code> to be <a href="https://en.wikipedia.org/wiki/Fahrenheit">100</a> or <a href="https://en.wikipedia.org/wiki/Celsius">212</a> (or even <a href="https://en.wikipedia.org/wiki/R%C3%A9aumur_scale">80</a>) and the test would have still passed. To paraphrase Dijkstra: <em>Testing only shows the presence of bugs, never the absence of bugs.</em></p>
+
+<p>One could imagine other lines of code that would also come through SimpleCov as being “100% tested” despite not actually being so. Things like ternaries and set inclusion come to mind.</p>
+
+<h2 id="so-is-coverage-useless">So is coverage useless?</h2>
+
+<p>Perhaps not entirely. What <em>lesser</em> coverage can tell us is this: <em>Have we missed something?</em> Is there a leftover method we should have removed? Did we forget to call something that we somehow missed?</p>
+
+<p>Additionally, <em>lesser</em> coverage can have some benefit for addition in an existing codebase with a dubious contribution history. <em>Where are places we should start to look to backfill?</em> It can begin to point us in directions.</p>
+
+<p>But thereafter it is insufficient to tell us anything else. We must use our critical design facilities to improve those missed files, or those dubious codebases. Coverage alone is insufficient to determine anything about the quality of tests and subsequently insufficient to determine anything about the quality of software undergoing tests. It is an aside to the canon.</p>
+
+<p>When introducing coverage metrics to an existing codebase, we can only be <em>inductively</em> certain about the file that has, say, 95% coverage vs a file that has 55% coverage. For it is quite possible that the former has many more mistakes and change risk than the latter.</p>
+
+<p>Put bluntly, <strong>greater coverage cannot tell us anything</strong> aside from that “tested” lines are merely executed at least once during testing. For this is the unfortunate definition of “coverage” that we have come to accept.</p>
+
+<p>Lastly, let us recognize that these benefits are of pure <em>internal</em> utility — the benefits stated above are tooling for the engineers themselves who write the software within the codebase. To follow the convention we see in code repositories brandishing a “badge” declaring the code coverage number is an purely aesthetic and superficial act. A discerning eye knows better than to infer anything else.</p>
+
+<h2 id="what-instead">What instead?</h2>
+
+<p>It is my belief that following <a href="http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd">test-driven development (TDD)</a> is a much more reliable way to ensure higher quality of tests above whether if lines are simply executed. In TDD we must observe our boundaries reveal themselves to be mended through our work as a design method, rather than an ex-post formality. Testing is a necessary means, not an optional end.</p>
+
+<p>Let me also remark this: That aforementioned benefit of coverage — that it tells us what we missed — becomes entirely moot under TDD. By definition, untested functionality <em>cannot physically be written</em>.</p>
+
+<p>Will we still make mistakes with TDD? Yes. But the prerequisite nature of test boundaries ensures fewer of them should result from inadequate tests.</p>
+
+<h2 id="code-is-for-humans">Code is for humans</h2>
+
+<p>The Agile Manifesto states “we have come to value Individuals and interactions over processes and tools”. Code is ultimately written for our eyes, not the machine interpreter.</p>
+
+<p>Human judgement cannot overly rely on heuristic. If we are to decide where to place our trust, we must not overly lean on pure quantification &amp; metric. To over-quantify is to risk missing the bigger picture.</p>
+
+<p>Let coverage be an accessory — a compass — but not the destination in which we should aspire to thrive.</p>
+
+  </section>
+</main>
+<footer>
+  <p>Powered by <a href="https://github.com/carlwiedemann/foresite">Foresite</a></p>
+</footer>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/solarized-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</body>
+</html>

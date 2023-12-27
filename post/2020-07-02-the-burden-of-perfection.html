@@ -113,7 +113,7 @@
       }
 
       main {
-          line-height: 1.5em;
+          line-height: 1.6em;
           margin-top: 1em;
           margin-bottom: 5em;
       }
@@ -151,22 +151,16 @@
           margin: 1em 0;
       }
 
-
       .text code {
           font-family: fira-mono, monospace;
-          font-weight: 700;
-          font-style: normal;
-          background-color: aliceblue;
+      }
+
+      .text p code,
+      .text li code {
+          background-color: #f3f3f3;
           display: inline;
           width: auto;
           white-space: nowrap;
-      }
-
-      .text pre code {
-          display: block;
-          color: #222;
-          padding: 1em;
-          white-space: pre;
       }
 
       .text img {
@@ -201,6 +195,7 @@
       <li><a href="https://github.com/carlwiedemann">github</a></li>
       <li><a href="https://www.linkedin.com/in/carlwwiedemann">linkedin</a></li>
       <li><a href="https://twitter.com/carlwiedemann">twitter</a></li>
+      <li><a href="https://bsky.app/profile/carlwiedemann.bsky.social">bluesky</a></li>
     </ul>
   </nav>
 </header>
@@ -240,5 +235,10 @@
 <footer>
   <p>Powered by <a href="https://github.com/carlwiedemann/foresite">Foresite</a></p>
 </footer>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/solarized-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 </body>
 </html>
