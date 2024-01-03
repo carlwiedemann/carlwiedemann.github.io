@@ -262,27 +262,25 @@ Finished in 0.000394s, 2538.0709 runs/s, 2538.0709 assertions/s.
 Coverage report generated for RSpec to /Users/carl.wiedemann/_scratch/simplecov_demo/coverage. 4 / 4 LOC (100.0%) covered.
 </code></pre>
 
-<p>Despite the simplicity of this example, I now ask the reader the following: <strong>Is
-this well-tested software?</strong></p>
+<p>Despite the simplicity of this example, I now ask the reader the following: <strong>Is this well-tested software?</strong></p>
 
 <p>Let’s describe what the test tells us:</p>
 
 <ul>
-  <li>✅ The test tells us that passing a float value of 500.0 to the <code>#is_water_boiling?</code> method returns true</li>
+  <li>✅ The test tells us that passing a float value of 500.0 to the <code>#is_water_boiling?</code> method returns <code>true</code>.</li>
 </ul>
 
 <p>Let’s also describe what the test does <strong><em>not</em></strong> tell us:</p>
 
 <ul>
-  <li>❌ The test does not tell us under what conditions the <code>#is_water_boiling? </code>returns something other than true</li>
-  <li>❌ The test does not tell us what behavior we should expect if <code>#is_water_boiling? </code>is passed an argument of a different type</li>
+  <li>❌ The test does not tell us under what conditions the <code>#is_water_boiling?</code> returns something other than <code>true</code>.</li>
+  <li>❌ The test does not tell us what behavior we should expect if <code>#is_water_boiling?</code> is passed an argument of a different type.</li>
   <li>❌ Most importantly, the test does not actually describe the context of the usage of the file. What kind of thermometer is this? A Fahrenheit thermometer? Or a Celsius thermometer? At what temperature does water boil?</li>
 </ul>
 
 <p>We see that there’s quite a bit missing from this test.</p>
 
-<p>Normally, tests can tell us about how code is used, and all the possible outcomes. But this test does
-<strong>not</strong> do those things <strong>despite having 100% coverage</strong>.</p>
+<p>Normally, tests can tell us about how code is used, and all the possible outcomes. But this test does <strong>not</strong> do those things <strong>despite having 100% coverage</strong>.</p>
 
 <h2 id="improving-the-test-beyond-coverage">Improving the test beyond coverage</h2>
 
@@ -374,7 +372,7 @@ Coverage report generated for RSpec to /Users/carl.wiedemann/_scratch/simplecov_
 
 <p>Put bluntly, <strong>greater coverage cannot tell us anything</strong> aside from that “tested” lines are merely executed at least once during testing. For this is the unfortunate definition of “coverage” that we have come to accept.</p>
 
-<p>Lastly, let us recognize that these benefits are of pure <em>internal</em> utility — the benefits stated above are tooling for the engineers themselves who write the software within the codebase. To follow the convention we see in code repositories brandishing a “badge” declaring the code coverage number is an purely aesthetic and superficial act. A discerning eye knows better than to infer anything else.</p>
+<p>Lastly, let us recognize that these benefits are of pure <em>internal</em> utility — the benefits stated above are tooling for the engineers themselves who write the software within the codebase. To follow the convention we see in code repositories brandishing a “badge” declaring the code coverage number is a purely aesthetic and superficial act. A discerning eye knows better than to infer anything else.</p>
 
 <h2 id="what-instead">What instead?</h2>
 

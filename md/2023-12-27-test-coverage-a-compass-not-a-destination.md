@@ -60,23 +60,21 @@ Finished in 0.000394s, 2538.0709 runs/s, 2538.0709 assertions/s.
 Coverage report generated for RSpec to /Users/carl.wiedemann/_scratch/simplecov_demo/coverage. 4 / 4 LOC (100.0%) covered.
 </code></pre>
 
-Despite the simplicity of this example, I now ask the reader the following: **Is
-this well-tested software?**
+Despite the simplicity of this example, I now ask the reader the following: **Is this well-tested software?**
 
 Let's describe what the test tells us:
 
-* ✅ The test tells us that passing a float value of 500.0 to the `#is_water_boiling?` method returns true
+* ✅ The test tells us that passing a float value of 500.0 to the `#is_water_boiling?` method returns `true`.
 
 Let's also describe what the test does **_not_** tell us:
 
-* ❌ The test does not tell us under what conditions the `#is_water_boiling? `returns something other than true
-* ❌ The test does not tell us what behavior we should expect if `#is_water_boiling? `is passed an argument of a different type
+* ❌ The test does not tell us under what conditions the `#is_water_boiling?` returns something other than `true`.
+* ❌ The test does not tell us what behavior we should expect if `#is_water_boiling?` is passed an argument of a different type.
 * ❌ Most importantly, the test does not actually describe the context of the usage of the file. What kind of thermometer is this? A Fahrenheit thermometer? Or a Celsius thermometer? At what temperature does water boil?
 
 We see that there's quite a bit missing from this test.
 
-Normally, tests can tell us about how code is used, and all the possible outcomes. But this test does
-**not** do those things **despite having 100% coverage**.
+Normally, tests can tell us about how code is used, and all the possible outcomes. But this test does **not** do those things **despite having 100% coverage**.
 
 ## Improving the test beyond coverage
 
@@ -167,7 +165,7 @@ When introducing coverage metrics to an existing codebase, we can only be _induc
 
 Put bluntly, **greater coverage cannot tell us anything** aside from that "tested" lines are merely executed at least once during testing. For this is the unfortunate definition of "coverage" that we have come to accept.
 
-Lastly, let us recognize that these benefits are of pure _internal_ utility &mdash; the benefits stated above are tooling for the engineers themselves who write the software within the codebase. To follow the convention we see in code repositories brandishing a "badge" declaring the code coverage number is an purely aesthetic and superficial act. A discerning eye knows better than to infer anything else.
+Lastly, let us recognize that these benefits are of pure _internal_ utility &mdash; the benefits stated above are tooling for the engineers themselves who write the software within the codebase. To follow the convention we see in code repositories brandishing a "badge" declaring the code coverage number is a purely aesthetic and superficial act. A discerning eye knows better than to infer anything else.
 
 ## What instead?
 
