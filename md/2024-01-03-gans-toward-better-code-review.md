@@ -28,7 +28,7 @@ Yet one thing remains true: **A conversation that could have happened, did not h
 
 ## Missed connections
 
-Does Alice & Bob's day sound familiar to you? Have you been in this situation before? I certainly have.
+So was [change X] the best change to make? Moreover: does Alice & Bob's day sound familiar to you? Have you been in this situation before? I certainly have.
 
 And if you have, I'd guess that you likely identify with Alice's position rather than Bob's. What Bob perceives is a typical day &mdash; and it may be completely _unremarkable_ to him. But what Alice recognizes is _conflict_ between what she intended and what Bob perceives. So if you relate more to Alice, I believe it is because we tend to recognize and recall what is in _conflict_ more than what is _unremarkable_.
 
