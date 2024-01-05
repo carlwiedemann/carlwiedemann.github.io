@@ -82,6 +82,6 @@ The next time we are in Alice's seat, and we are writing that PR comment, may I 
 
 Think of it as the inverse of _tl;dr_ &mdash; as readers we signal simply we're looking for **more** context &mdash; to give our transactional pragmatics a respite, and possibly discover something we'd otherwise pass over.
 
-If this appeals to you, link <a href="">ga;ns</a> to this post. Maybe it will catch on as a new entry in our etiquette.
+If this appeals to you, when you leave your PR comments, link <a href="">ga;ns</a> to this post. Maybe it will catch on as a new entry in our etiquette.
 
 If it does, perhaps we begin finding conversations gone missing. And hopefully a found conversation makes for better code review, and better code.
