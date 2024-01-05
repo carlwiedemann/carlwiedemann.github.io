@@ -147,6 +147,23 @@
           font-size: 1.2em;
       }
 
+      .highlight {
+          background-color: #FFFF00;
+      }
+
+      figure {
+          margin-block-start: 0;
+          margin-block-end: 0;
+          margin-inline-start: 0;
+          margin-inline-end: 0;
+      }
+
+      figcaption, footer {
+          font-style: italic;
+          opacity: 0.5;
+          font-size: 0.8em;
+      }
+
       .text li {
           margin: 1em 0;
       }
@@ -169,20 +186,16 @@
 
       .text blockquote {
           background-color: #EEE;
-          font-style: italic;
           opacity: 0.8;
           padding: 1em;
       }
 
-      .text > p:last-child:after {
+      .text > p:last-of-type:after {
           content: ' ∎';
           font-weight: 700;
       }
 
       footer {
-          font-style: italic;
-          opacity: 0.5;
-          font-size: 0.8em;
           margin: 2em auto;
       }
   </style>

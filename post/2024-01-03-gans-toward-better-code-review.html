@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <meta name="google-site-verification" content="mvYev_JUFUYr2v1J05_vG1_3bI6z5loefhSu-h5OrLk" />
+  <title>ga;ns: Toward better code review - Carl Wiedemann</title>
+  <link rel="stylesheet" href="https://use.typekit.net/lcc4etk.css" />
+  <style>
+
+      /* Site title */
+      /*Abril Fatface Regular*/
+      /*font-family: abril-fatface, serif;*/
+      /*font-weight: 400;*/
+      /*font-style: normal;*/
+
+      /*Abril Fatface Italic*/
+      /*font-family: abril-fatface, serif;*/
+      /*font-weight: 400;*/
+      /*font-style: italic;*/
+
+      /* Body text */
+      /*Lato Italic*/
+      /*font-family: lato, sans-serif;*/
+      /*font-weight: 400;*/
+      /*font-style: italic;*/
+
+      /*Lato Bold Italic*/
+      /*font-family: lato, sans-serif;*/
+      /*font-weight: 700;*/
+      /*font-style: italic;*/
+
+      /*Lato Bold*/
+      /*font-family: lato, sans-serif;*/
+      /*font-weight: 700;*/
+      /*font-style: normal;*/
+
+      /*Lato Regular*/
+      /*font-family: lato, sans-serif;*/
+      /*font-weight: 400;*/
+      /*font-style: normal;*/
+
+      /* Code blocks */
+      /*Fira Mono Regular*/
+      /*font-family: fira-mono, monospace;*/
+      /*font-weight: 400;*/
+      /*font-style: normal;*/
+
+      /*Fira Mono Bold*/
+      /*font-family: fira-mono, monospace;*/
+      /*font-weight: 700;*/
+      /*font-style: normal;*/
+
+      html {
+          box-sizing: border-box;
+      }
+
+      *, *:before, *:after {
+          box-sizing: inherit;
+      }
+
+      body {
+          font-family: lato, sans-serif;
+          font-weight: 400;
+          font-style: normal;
+          margin: 0;
+          padding: 0;
+      }
+
+      h1.title {
+          font-family: abril-fatface, serif;
+          font-weight: 400;
+          font-style: italic;
+          line-height: 2em;
+          margin: 0;
+          word-wrap: break-word;
+      }
+
+      h1.title a {
+          color: inherit;
+      }
+
+      h1.title a:hover {
+          color: #FFF;
+      }
+
+      a:link,
+      a:visited {
+          color: #00F;
+          text-decoration: none;
+      }
+
+      a:hover {
+          background-color: #00F;
+          color: #FFF;
+      }
+
+      h1 span {
+          display: inline-block;
+          width: 1100px;
+      }
+
+      h1 span:after {
+          content: '+';
+      }
+
+      header,
+      main,
+      footer {
+          margin: 0 auto;
+          max-width: 1100px;
+          padding: 0 1em;
+      }
+
+      main {
+          line-height: 1.6em;
+          margin-top: 1em;
+          margin-bottom: 5em;
+      }
+
+      nav ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+      }
+
+      nav li {
+          display: inline;
+      }
+
+      h1, h2, h3, h4 {
+          font-weight: 700;
+          font-style: normal;
+          opacity: 0.9;
+          line-height: 1.3em;
+      }
+
+      h1 {
+          font-size: 2em;
+      }
+
+      h2 {
+          font-size: 1.5em;
+      }
+
+      h3 {
+          font-size: 1.2em;
+      }
+
+      .highlight {
+          background-color: #FFFF00;
+      }
+
+      figure {
+          margin-block-start: 0;
+          margin-block-end: 0;
+          margin-inline-start: 0;
+          margin-inline-end: 0;
+      }
+
+      figcaption, footer {
+          font-style: italic;
+          opacity: 0.5;
+          font-size: 0.8em;
+      }
+
+      .text li {
+          margin: 1em 0;
+      }
+
+      .text code {
+          font-family: fira-mono, monospace;
+      }
+
+      .text p code,
+      .text li code {
+          background-color: #f3f3f3;
+          display: inline;
+          width: auto;
+          white-space: nowrap;
+      }
+
+      .text img {
+          max-width: 100%;
+      }
+
+      .text blockquote {
+          background-color: #EEE;
+          opacity: 0.8;
+          padding: 1em;
+      }
+
+      .text > p:last-of-type:after {
+          content: ' ∎';
+          font-weight: 700;
+      }
+
+      footer {
+          margin: 2em auto;
+      }
+  </style>
+</head>
+<body>
+<header>
+  <h1 class="title"><a href="/">Carl Wiedemann</a></h1>
+  <nav>
+    <ul>
+      <li><a href="https://github.com/carlwiedemann">github</a></li>
+      <li><a href="https://www.linkedin.com/in/carlwwiedemann">linkedin</a></li>
+      <li><a href="https://twitter.com/carlwiedemann">twitter</a></li>
+      <li><a href="https://bsky.app/profile/carlwiedemann.bsky.social">bluesky</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section class="text">
+    <h1 id="gans-toward-better-code-review">ga;ns: Toward better code review</h1>
+
+<p>2024-01-03</p>
+
+<p>Alice (senior engineer) and Bob (junior engineer) work together building software. Today, Bob is interested in getting code review from Alice.</p>
+
+<p>Here’s what happens:</p>
+
+<blockquote>
+  <p><strong>BOB</strong> (PR AUTHOR)<br />
+<em>Writes code, commits, pushes, &amp; opens PR.</em></p>
+
+  <p><strong>ALICE</strong> (PR REVIEWER)<br />
+<em>Sees PR was opened, starts reviewing.</em> <em>After reviewing some of the changes, she’s wondering about an alternative approach. She leaves a comment:</em> “What would you think about [making change X]?”</p>
+
+  <p><strong>BOB</strong><br />
+<em>Sees Alice’s comment. But he doesn’t reply, instead he goes ahead and [makes change X], commits, pushes.</em></p>
+
+  <p><strong>ALICE</strong><br />
+<em>Sees that Bob went ahead and just [made change X] instead of replying.</em> <em>But in actuality, when she asked “What would you think?” she was <strong>genuinely asking a question</strong>, and <strong>genuinely curious</strong> about what Bob thought…</em></p>
+
+  <p>“Hmm, I wasn’t really expecting that,” <em>she thinks.</em></p>
+
+  <p><em>After a moment, she says to herself:</em> “Ok, since Bob committed [change X], he must believe it was the right change. All good.”</p>
+</blockquote>
+
+<p>Review continues like this, with Alice commenting &amp; Bob committing. In fact, most of Bob’s PR reviews go like today’s. So it’s a pretty usual day for Bob. Alice usually has great suggestions, and Bob usually enjoys hearing them. Eventually, after a few more comments &amp; commits, the pipeline is green, the PR is approved, and so Bob merges it. All’s well, then.</p>
+
+<p>Yet one thing remains true: <strong>A conversation that could have happened, did not happen.</strong></p>
+
+<h2 id="missed-connections">Missed connections</h2>
+
+<p>Does Alice &amp; Bob’s day sound familiar to you? Have you been in this situation before? I certainly have.</p>
+
+<p>And if you have, I’d guess that you likely identify with Alice’s position rather than Bob’s. What Bob perceives is a typical day — and it may be completely <em>unremarkable</em> to him. But what Alice recognizes is <em>conflict</em> between what she intended and what Bob perceives. So if you relate more to Alice, I believe it is because we tend to recognize and recall what is in <em>conflict</em> more than what is <em>unremarkable</em>.</p>
+
+<p>After all, isn’t that what we are doing in code review anyway? As reviewers, we are primed to scan patterns for the flaws in the code. And as authors, we are primed to understand the flaws and fix the code.</p>
+
+<p>But despite our diligence in fixing the code, we might be missing another thing that needs fixing: The hidden conflicts in how we communicate <em>about</em> the code.</p>
+
+<h2 id="etiquette-as-feature--as-a-bug">Etiquette as feature &amp; as a bug</h2>
+
+<p>When we talk about “culture fit” we are really looking to minimize the delta between the behaviors and expectations in the network, to become <a href="https://en.wikipedia.org/wiki/Metcalfe%27s_law">efficient</a>. Etiquette develops.</p>
+
+<p>As a reviewer, we <a href="https://stackoverflow.blog/2019/09/30/how-to-make-good-code-reviews-better/">learn</a> to <em>ask questions</em> instead of <em>make demands</em>. And we are advised that the questions we ask should be open-ended. For example, the following questions share intent, but vary in their open-endedness:</p>
+
+<blockquote>
+  <p>“Could we name this <code>foo</code> instead of <code>bar</code>?”</p>
+</blockquote>
+
+<blockquote>
+  <p>“Are there other names we can use than <code>bar</code>?”</p>
+</blockquote>
+
+<blockquote>
+  <p>“The name <code>bar</code> may cause issues because [SOME LENGTHY EXPLANATION]. I was thinking <code>foo</code> might be better, but I’m not sure. I’d love to hear more about why you believe <code>bar</code> is the best name, and what your thoughts are about [THE LENGTHY EXPLANATION]. Can you share them?”</p>
+</blockquote>
+
+<p>So we can certainly assert that Alice’s question <em>wasn’t</em> very open-ended. Fair. We can argue that Alice can do better.</p>
+
+<p>Unfortunately, my experience has been questions like Alice’s are <em>typical</em> in review, especially if Alice is developing as a reviewer, or even Alice is simply constrained for time.</p>
+
+<p>And as mentioned, the <em>very task</em> of code review itself primes both author and reviewer for to “find-flaws-and-fix.” So alongside our varying skills and efforts, a <em>typical</em> question asked in review is often <strong>not perceived as a question at all, but instead as a <span class="highlight">polite suggestion</span></strong>.</p>
+
+<p><strong>I have found this is <span class="highlight">especially prevalent in when a less experienced engineer is receiving review from a more experienced engineer.</span></strong> After all, part of Bob’s job is to grow by learning from people like Alice, right?</p>
+
+<blockquote>
+  <p><strong>BOB</strong><br />
+“Alice wants me to [make change X], and she is being polite instead of demanding. I’ll go ahead and make it,” <em>he thinks.</em></p>
+</blockquote>
+
+<p>Can we fault him? I don’t think we can.</p>
+
+<center>
+<figure>
+<img alt="How it be" src="./img/pragmatics.jpeg" style="max-width: 30rem; width:100%;" />
+<figcaption>The show must go on.</figcaption>
+</figure>
+</center>
+
+<p>Bob and Alice have much in common. They share skills, culture, and etiquette. Their wants are compatible: <em>Alice wants to ask, not suggest; Alice wants to be understood; Bob wants to understand</em>. But despite all this, they experience <a href="https://www.ted.com/talks/kathleen_ross_communication_mismatch">communication mismatch</a>.</p>
+
+<p>We can surmise any number of ideas to improve today’s review — <strong>to have the conversation that was not had</strong>.</p>
+
+<p><em>Alice could have asked a more open-ended question. Bob could have interrogated further whether Alice was making a suggestion. And Alice could have reached-out to Bob after he [made change X] and clarified her intent.</em></p>
+
+<p>I’m compelled to ask: Is there a shortcut? I think there could be.</p>
+
+<h2 id="gans--genuinely-asking-not-suggesting">ga;ns == “Genuinely Asking; Not Suggesting”</h2>
+
+<p>The next time we are in Alice’s seat, and we are writing that PR comment, may I propose the following: Explicitly state that we are <strong>genuinely asking</strong> about something to gain context and we are <strong>not suggesting</strong> to make something proceed without further context. We can use <strong>ga;ns</strong> for short.</p>
+
+<p>Think of it as the inverse of <em>tl;dr</em> — as readers we signal simply we’re looking for <strong>more</strong> context — to give our transactional pragmatics a respite, and possibly discover something we’d otherwise pass over.</p>
+
+<p>If this appeals to you, link <a href="">ga;ns</a> to this post. Maybe it will catch on as a new entry in our etiquette.</p>
+
+<p>If it does, perhaps we begin finding conversations gone missing. And hopefully a found conversation makes for better code review, and better code.</p>
+
+  </section>
+</main>
+<footer>
+  <p>Powered by <a href="https://github.com/carlwiedemann/foresite">Foresite</a></p>
+</footer>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/solarized-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</body>
+</html>

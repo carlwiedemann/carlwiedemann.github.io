@@ -147,6 +147,23 @@
           font-size: 1.2em;
       }
 
+      .highlight {
+          background-color: #FFFF00;
+      }
+
+      figure {
+          margin-block-start: 0;
+          margin-block-end: 0;
+          margin-inline-start: 0;
+          margin-inline-end: 0;
+      }
+
+      figcaption, footer {
+          font-style: italic;
+          opacity: 0.5;
+          font-size: 0.8em;
+      }
+
       .text li {
           margin: 1em 0;
       }
@@ -169,20 +186,16 @@
 
       .text blockquote {
           background-color: #EEE;
-          font-style: italic;
           opacity: 0.8;
           padding: 1em;
       }
 
-      .text > p:last-child:after {
+      .text > p:last-of-type:after {
           content: ' ∎';
           font-weight: 700;
       }
 
       footer {
-          font-style: italic;
-          opacity: 0.5;
-          font-size: 0.8em;
           margin: 2em auto;
       }
   </style>
@@ -202,6 +215,7 @@
 <main>
   <section class="text">
     <ul>
+  <li>2024-01-03 <a href="post/2024-01-03-gans-toward-better-code-review.html">ga;ns: Toward better code review</a></li>
   <li>2023-12-27 <a href="post/2023-12-27-test-coverage-a-compass-not-a-destination.html">Test Coverage: A Compass, not a Destination</a></li>
   <li>2023-01-17 <a href="post/2023-01-17-introducing-foresite.html">Introducing Foresite: An extremely minimal static site generator</a></li>
   <li>2020-07-02 <a href="post/2020-07-02-the-burden-of-perfection.html">The Burden of Perfection</a></li>
