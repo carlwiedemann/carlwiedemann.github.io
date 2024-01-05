@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-  <meta name="google-site-verification" content="mvYev_JUFUYr2v1J05_vG1_3bI6z5loefhSu-h5OrLk" />
-  <title>ga;ns: Toward better code review - Carl Wiedemann</title>
-  <link rel="stylesheet" href="https://use.typekit.net/lcc4etk.css" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+  <meta name="google-site-verification" content="mvYev_JUFUYr2v1J05_vG1_3bI6z5loefhSu-h5OrLk"/>
+  <title>ga;ns: Toward Better Code Review - Carl Wiedemann</title>
+  <link rel="stylesheet" href="https://use.typekit.net/lcc4etk.css"/>
   <style>
 
       /* Site title */
@@ -147,18 +147,16 @@
           font-size: 1.2em;
       }
 
-      .highlight {
-          background-color: #FFFF00;
-      }
-
       figure {
           margin-block-start: 0;
           margin-block-end: 0;
           margin-inline-start: 0;
           margin-inline-end: 0;
+          text-align: center;
       }
 
-      figcaption, footer {
+      figcaption,
+      footer {
           font-style: italic;
           opacity: 0.5;
           font-size: 0.8em;
@@ -195,6 +193,10 @@
           font-weight: 700;
       }
 
+      .highlight {
+          background-color: #FFFF00;
+      }
+
       footer {
           margin: 2em auto;
       }
@@ -208,15 +210,17 @@
       <li><a href="https://github.com/carlwiedemann">github</a></li>
       <li><a href="https://www.linkedin.com/in/carlwwiedemann">linkedin</a></li>
       <li><a href="https://twitter.com/carlwiedemann">twitter</a></li>
-      <li><a href="https://bsky.app/profile/carlwiedemann.bsky.social">bluesky</a></li>
+      <li>
+        <a href="https://bsky.app/profile/carlwiedemann.bsky.social">bluesky</a>
+      </li>
     </ul>
   </nav>
 </header>
 <main>
   <section class="text">
-    <h1 id="gans-toward-better-code-review">ga;ns: Toward better code review</h1>
+    <h1 id="gans-toward-better-code-review">ga;ns: Toward Better Code Review</h1>
 
-<p>2024-01-03</p>
+<p>2024-01-05</p>
 
 <p>Alice (senior engineer) and Bob (junior engineer) work together building software. Today, Bob is interested in getting code review from Alice.</p>
 
@@ -242,11 +246,13 @@
 
 <p>Review continues like this, with Alice commenting &amp; Bob committing. In fact, most of Bob’s PR reviews go like today’s. So it’s a pretty usual day for Bob. Alice usually has great suggestions, and Bob usually enjoys hearing them. Eventually, after a few more comments &amp; commits, the pipeline is green, the PR is approved, and so Bob merges it. All’s well, then.</p>
 
-<p>Yet one thing remains true: <strong>A conversation that could have happened, did not happen.</strong></p>
+<p>Yet something remains unresolved: <strong>A conversation that could have happened, did not happen.</strong></p>
 
 <h2 id="missed-connections">Missed connections</h2>
 
-<p>So was [change X] the best change to make? Moreover: does Alice &amp; Bob’s day sound familiar to you? Have you been in this situation before? I certainly have.</p>
+<p>So was [change X] the best change to make? Who could know?</p>
+
+<p>Moreover: Does Alice &amp; Bob’s day sound familiar to you? Have you been in a situation like this before? I certainly have.</p>
 
 <p>And if you have, I’d guess that you likely identify with Alice’s position rather than Bob’s. What Bob perceives is a typical day — and it may be completely <em>unremarkable</em> to him. But what Alice recognizes is <em>conflict</em> between what she intended and what Bob perceives. So if you relate more to Alice, I believe it is because we tend to recognize and recall what is in <em>conflict</em> more than what is <em>unremarkable</em>.</p>
 
@@ -256,7 +262,7 @@
 
 <h2 id="etiquette-as-a-feature--etiquette-as-a-bug">Etiquette as a feature &amp; etiquette as a bug</h2>
 
-<p>When we talk about “culture fit” we are really looking to minimize the delta between the behaviors and expectations in the network, to become <a href="https://en.wikipedia.org/wiki/Metcalfe%27s_law">efficient</a>. Etiquette develops.</p>
+<p>When we talk about “culture fit” we are really looking to minimize the delta between the behaviors and expectations in the network in order to become <a href="https://en.wikipedia.org/wiki/Metcalfe%27s_law">efficient</a>. Etiquette develops.</p>
 
 <p>As a reviewer, we <a href="https://stackoverflow.blog/2019/09/30/how-to-make-good-code-reviews-better/">learn</a> to <em>ask questions</em> instead of <em>make demands</em>. And we are advised that the questions we ask should be open-ended. For example, the following questions share intent, but vary in their open-endedness:</p>
 
@@ -274,11 +280,11 @@
 
 <p>So we can certainly assert that Alice’s question <em>wasn’t</em> very open-ended. Fair. We can argue that Alice can do better.</p>
 
-<p>Unfortunately, my experience has been questions like Alice’s are <em>typical</em> in review, especially if Alice is developing as a reviewer, or even Alice is simply constrained for time.</p>
+<p>Unfortunately, my experience has been questions like Alice’s are <em>typical</em> in review, especially if Alice is learning to develop her skills as a reviewer, or even Alice is simply constrained for time.</p>
 
 <p>And as mentioned, the <em>very task</em> of code review itself primes both author and reviewer for to “find-flaws-and-fix.” So alongside our varying skills and efforts, a <em>typical</em> question asked in review is often <strong>not perceived as a question at all, but instead as a <span class="highlight">polite suggestion</span></strong>.</p>
 
-<p><strong>I have found this is <span class="highlight">especially prevalent in when a less experienced engineer is receiving review from a more experienced engineer.</span></strong> After all, part of Bob’s job is to grow by learning from people like Alice, right?</p>
+<p><strong>I have found this is <span class="highlight">especially prevalent in when a less experienced engineer is receiving review from a more experienced engineer.</span></strong> After all, part of Junior Engineer Bob’s job is to grow by learning from people like Senior Engineer Alice, right?</p>
 
 <blockquote>
   <p><strong>BOB</strong><br />
@@ -287,16 +293,14 @@
 
 <p>Can we fault him? I don’t think we can.</p>
 
-<center>
 <figure>
 <img alt="How it be" src="./img/pragmatics.jpeg" style="max-width: 30rem; width:100%;" />
 <figcaption>The show must go on.</figcaption>
 </figure>
-</center>
 
 <p>Bob and Alice have much in common. They share skills, culture, and etiquette. Their wants are compatible: <em>Alice wants to ask, not suggest; Alice wants to be understood; Bob wants to understand</em>. But despite all this, they experience <a href="https://www.ted.com/talks/kathleen_ross_communication_mismatch">communication mismatch</a>.</p>
 
-<p>We can surmise any number of ideas to improve today’s review — <strong>to have the conversation that was not had</strong>.</p>
+<p>We can posit any number of ideas to improve today’s review — <strong>to have the conversation that was not had</strong>.</p>
 
 <p><em>Alice could have asked a more open-ended question. Bob could have interrogated further whether Alice was making a suggestion. And Alice could have reached-out to Bob after he [made change X] and clarified her intent.</em></p>
 
@@ -304,9 +308,9 @@
 
 <h2 id="gans--genuinely-asking-not-suggesting">ga;ns == “Genuinely Asking; Not Suggesting”</h2>
 
-<p>The next time we are in Alice’s seat, and we are writing that PR comment, may I propose the following: Explicitly state that we are <strong>genuinely asking</strong> about something to gain context and we are <strong>not suggesting</strong> to make something proceed without further context. We can use <strong>ga;ns</strong> for short.</p>
+<p>The next time we are in Alice’s seat, and we are writing that PR comment, may I propose the following: Let us explicitly state that we are <strong>genuinely asking</strong> about something to gain context and we are <strong>not suggesting</strong> to make something proceed without further context. We can use <strong>ga;ns</strong> for short.</p>
 
-<p>Think of it as the inverse of <em>tl;dr</em> — as readers we signal simply we’re looking for <strong>more</strong> context — to give our transactional pragmatics a respite, and possibly discover something we’d otherwise pass over.</p>
+<p>Think of it as the inverse of <em>tl;dr</em> — as readers, we signal simply we’re looking for <strong>more</strong> context — to give our transactional pragmatics a respite, and possibly discover something we’d otherwise pass over.</p>
 
 <p>If this appeals to you, when you leave your PR comments, link <a href="">ga;ns</a> to this post. Maybe it will catch on as a new entry in our etiquette.</p>
 
@@ -315,7 +319,8 @@
   </section>
 </main>
 <footer>
-  <p>Powered by <a href="https://github.com/carlwiedemann/foresite">Foresite</a></p>
+  <p>Powered by <a href="https://github.com/carlwiedemann/foresite">Foresite</a>
+  </p>
 </footer>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
