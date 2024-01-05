@@ -36,7 +36,7 @@ After all, isn't that what we are doing in code review anyway? As reviewers, we 
 
 But despite our diligence in fixing the code, we might be missing another thing that needs fixing: The hidden conflicts in how we communicate _about_ the code.
 
-## Etiquette as feature & as a bug
+## Etiquette as feature & etiquette as a bug
 
 When we talk about "culture fit" we are really looking to minimize the delta between the behaviors and expectations in the network, to become [efficient](https://en.wikipedia.org/wiki/Metcalfe%27s_law). Etiquette develops.
 
