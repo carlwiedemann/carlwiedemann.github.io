@@ -54,7 +54,7 @@ So we can certainly assert that Alice's question _wasn't_ very open-ended. Fair.
 
 Unfortunately, my experience has been questions like Alice's are _typical_ in review, especially if Alice is learning to develop her skills as a reviewer, or even if Alice is simply constrained for time.
 
-And as mentioned, the _very task_ of code review itself primes both author and reviewer for to "find-flaws-and-fix." So alongside our varying skills and efforts, a _typical_ question asked in review is often **not perceived as a question at all, but instead as a <span class="highlight">polite suggestion</span>**.
+And as mentioned, the _very task_ of code review itself primes both author and reviewer to "find-flaws-and-fix." So alongside our varying skills and efforts, a _typical_ question asked in review is often **not perceived as a question at all, but instead as a <span class="highlight">polite suggestion</span>**.
 
 **I have found this is <span class="highlight">especially prevalent in when a less experienced engineer is receiving review from a more experienced engineer.</span>** After all, part of Junior Engineer Bob's job is to grow by learning from people like Senior Engineer Alice, right?
 
