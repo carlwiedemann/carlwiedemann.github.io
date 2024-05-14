@@ -147,8 +147,8 @@ Can be passed blocks that will happen before and after all other steps in the sc
 <pre><code class="language-ruby"># begin_end.rb
 puts "Today is #{Time.now.strftime('%F')}"
 
-BEGIN { puts "hi"}
-END { puts "bai"}
+BEGIN { puts "hi" }
+END { puts "bai" }
 </code></pre>
 
 Running:
@@ -175,7 +175,7 @@ puts "Today is #{now_str}"
 
 The variables are only available in the scope of the existing file, they are not available in other files that would be `require`'d etc.
 
-Is this useful? Maybe for debugging or doing some sort of setup & teardown.
+Is this useful? Maybe for debugging or doing some sort of setup & teardown. (I have learned these have been [influenced by Perl](https://perldoc.perl.org/perlmod#BEGIN%2C-UNITCHECK%2C-CHECK%2C-INIT-and-END))
 
 ## Always be <strike>closing</strike> learning
 

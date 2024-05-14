@@ -378,8 +378,8 @@ Line: zulu
 <pre><code class="language-ruby"># begin_end.rb
 puts "Today is #{Time.now.strftime('%F')}"
 
-BEGIN { puts "hi"}
-END { puts "bai"}
+BEGIN { puts "hi" }
+END { puts "bai" }
 </code></pre>
 
 <p>Running:</p>
@@ -406,7 +406,7 @@ puts "Today is #{now_str}"
 
 <p>The variables are only available in the scope of the existing file, they are not available in other files that would be <code>require</code>‘d etc.</p>
 
-<p>Is this useful? Maybe for debugging or doing some sort of setup &amp; teardown.</p>
+<p>Is this useful? Maybe for debugging or doing some sort of setup &amp; teardown. (I have learned these have been <a href="https://perldoc.perl.org/perlmod#BEGIN%2C-UNITCHECK%2C-CHECK%2C-INIT-and-END">influenced by Perl</a>)</p>
 
 <h2 id="always-be-strikeclosingstrike-learning">Always be <strike>closing</strike> learning</h2>
 
