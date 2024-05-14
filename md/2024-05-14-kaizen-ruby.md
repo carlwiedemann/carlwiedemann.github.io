@@ -20,7 +20,7 @@ Denote a single character string by prefixing a character with `?`:
 
 Should you use this? Hard to say. I suppose it saves some keystrokes, but can be a little tricky, especially if you see something like `foo.split(?|)`
 
-## Splat `*`
+## Splat `*` dereference
 
 Can be used in dereferencing to match multiple values to an array:
 
@@ -88,7 +88,7 @@ What's better? I think I prefer the explicitness of `call`, otherwise the `.` on
 If the line `__END__` appears in a Ruby file, all subsequent lines will be available earlier in the script as `DATA`:
 
 <pre><code class="language-ruby"># data.rb
-DATA.each_with_index do |line|
+DATA.each do |line|
   puts "Line: #{line.chomp}"
 end
 __END__
