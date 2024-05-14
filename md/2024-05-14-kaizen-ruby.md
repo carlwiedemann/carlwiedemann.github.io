@@ -20,7 +20,7 @@ Denote a single character string by prefixing a character with `?`:
 
 Should you use this? Hard to say. I suppose it saves some keystrokes, but can be a little tricky, especially if you see something like `foo.split(?|)`
 
-## Splat `*` dereference
+### Splat `*` dereference
 
 Can be used in dereferencing to match multiple values to an array:
 
@@ -33,12 +33,11 @@ c == [5, 6, 7]
 d == 8
 </code></pre>
 
-### `Array#push`
+### Splat `*` on `Range`
 
-Can accept splatted ranges:
+Splatting a range will convert to an array:
 
-<pre><code class="language-ruby">a = [1, 2, 3, 4, 5]
-a.push(*6..10)
+<pre><code class="language-ruby">a = *1..10
 
 a == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 </code></pre>

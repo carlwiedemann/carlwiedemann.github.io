@@ -247,7 +247,7 @@
 
 <p>Should you use this? Hard to say. I suppose it saves some keystrokes, but can be a little tricky, especially if you see something like <code>foo.split(?|)</code></p>
 
-<h2 id="splat--dereference">Splat <code>*</code> dereference</h2>
+<h3 id="splat--dereference">Splat <code>*</code> dereference</h3>
 
 <p>Can be used in dereferencing to match multiple values to an array:</p>
 
@@ -260,12 +260,11 @@ c == [5, 6, 7]
 d == 8
 </code></pre>
 
-<h3 id="arraypush"><code>Array#push</code></h3>
+<h3 id="splat--on-range">Splat <code>*</code> on <code>Range</code></h3>
 
-<p>Can accept splatted ranges:</p>
+<p>Splatting a range will convert to an array:</p>
 
-<pre><code class="language-ruby">a = [1, 2, 3, 4, 5]
-a.push(*6..10)
+<pre><code class="language-ruby">a = *1..10
 
 a == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 </code></pre>
