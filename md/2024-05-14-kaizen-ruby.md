@@ -10,9 +10,36 @@ After learning some of the basics, the language continues to surprise me in thin
 
 *This post will be continuously updated.*
 
-## Update 2024-05-14
+### `#itself` ([docs](https://devdocs.io/ruby~3.3/object#method-i-itself))
 
-### Single character strings
+Calling on any object simply returns...itself 🥁.
+
+<pre><code class="language-ruby">a = 123
+a == a.itself
+</code></pre>
+
+Why on earth is this useful? Sometimes there are instances where blocks should simply the element passed to the block:
+
+<pre><code class="language-ruby">a = [1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3]
+
+# Convert to a hash, keyed by unique array values:
+g = a.group_by { |v| v }
+g == { 1 => [1, 1, 1], 2 => [2, 2, 2, 2], 3 => [3, 3, 3, 3, 3] }
+
+# Alternative, using numbered parameter shorthand:
+g = a.group_by { _1 }
+g == { 1 => [1, 1, 1], 2 => [2, 2, 2, 2], 3 => [3, 3, 3, 3, 3] }
+</code></pre>
+
+Using the `#to_proc` shorthand (`&`) with `#itself` is perhaps more explicit:
+
+<pre><code class="language-ruby">g = a.group_by(&:itself)
+g == { 1 => [1, 1, 1], 2 => [2, 2, 2, 2], 3 => [3, 3, 3, 3, 3] }
+</code></pre>
+
+(Sidenote: For this particular example, you'd might be more interested in [`Enumerable#tally`](https://devdocs.io/ruby~3.3/enumerable#method-i-tally))
+
+### Single character strings ([docs](https://devdocs.io/ruby~3.3/syntax/literals_rdoc#label-String+Literals))
 
 Denote a single character string by prefixing a character with `?`:
 
@@ -20,9 +47,9 @@ Denote a single character string by prefixing a character with `?`:
 
 Should you use this? Hard to say. I suppose it saves some keystrokes, but can be a little tricky, especially if you see something like `foo.split(?|)`
 
-### Splat `*` dereference
+### Splat `*` destructuring assignment ([docs](https://devdocs.io/ruby~3.3/syntax/assignment_rdoc))
 
-Can be used in dereferencing to match multiple values to an array:
+Can be used in assignment to match multiple values to an array:
 
 <pre><code class="language-ruby">a, *b = [1, 2, 3, 4]
 a == 1
@@ -33,16 +60,18 @@ c == [5, 6, 7]
 d == 8
 </code></pre>
 
-### Splat `*` on `Range`
+### Splat `*` on `Range` ([stackoverflow](https://stackoverflow.com/a/55888963))
 
-Splatting a range will convert to an array:
+Splatting a range will convert to an array, it is basically a shorthand for `#to_a`:
 
 <pre><code class="language-ruby">a = *1..10
 
 a == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 </code></pre>
 
-### Passing `Range` to `Array#[]`
+Saves a few keystrokes from `(1..10).to_a`.
+
+### Passing `Range` to `Array#[]` ([docs](https://devdocs.io/ruby~3.3/array#method-i-5B-5D))
 
 Can accept a range ending with `-1` to match to the end:
 
@@ -54,8 +83,9 @@ Interestingly enough, using a non-inclusive range will exclude the last element 
 
 <pre><code class="language-ruby">a[5...-1] == [6, 7, 8, 9]</code></pre>
 
+See doc link above for more interesing examples using `Enumerator::ArithmeticSequence`.
 
-### Passing `Regexp` to `String#[]`
+### Passing `Regexp` to `String#[]` ([docs](https://devdocs.io/ruby~3.3/string#method-i-5B-5D))
 
 Can accept a `Regexp` which will return the first match as a string, `nil` if no match:
 
@@ -63,26 +93,30 @@ Can accept a `Regexp` which will return the first match as a string, `nil` if no
 "asdf12345"[/foo/] == nil
 </code></pre>
 
-### Different ways to call lambdas
+### Different ways to call lambdas/procs ([docs](https://devdocs.io/ruby~3.3/proc#method-i-call))
 
-Lambdas can be called either by using `#call`, or by just using `#()`:
+Lambdas/Procs can be called using `#call`, `#()`, `#[]`, `#yield`:
 
 <pre><code class="language-ruby"># With arguments...
 f = ->(name) { "Hi #{name}" }
 
-f.call("John") == "Hi John"
-f.("John") == "Hi John"
+f.call("John")  == "Hi John"
+f.("John")      == "Hi John"
+f["John"]       == "Hi John"
+f.yield("John") == "Hi John"
 
 # Without arguments...
 g = -> { "Goodbye" }
 
-g.call == "Goodbye"
-g.() == "Goodbye"
+g.call  == "Goodbye"
+g.()    == "Goodbye"
+g[]     == "Goodbye"
+g.yield == "Goodbye"
 </code></pre>
 
-What's better? I think I prefer the explicitness of `call`, otherwise the `.` on its own can be hard to see.
+What's best? I think I prefer the explicitness of `call`, all the other syntax seem really unnatural to me (especially `#[]`). Also, `#yield` is something that I prefer to reserve for methods that receive blocks.
 
-### The `DATA` global variable
+### The `DATA` global variable ([docs](https://devdocs.io/ruby~3.3/globals_rdoc#label-Embedded+Data))
 
 If the line `__END__` appears in a Ruby file, all subsequent lines will be available earlier in the script as `DATA`:
 
@@ -106,7 +140,7 @@ Line: zulu
 
 What could this be used for? Perhaps coding exercises where that must parse some input and now you don't have to save it in a separate file to use `File.readlines`.
 
-### The `BEGIN` and `END` global variables
+### The `BEGIN` and `END` global variables ([docs](https://devdocs.io/ruby~3.3/syntax/miscellaneous_rdoc#label-BEGIN+and+END))
 
 Can be passed blocks that will happen before and after all other steps in the script. The block syntax must use `{...}` instead of `do...end`.
 

@@ -102,6 +102,10 @@
           color: #FFF;
       }
 
+      .text p a:hover code {
+          background-color: #00F;
+      }
+
       h1 span {
           display: inline-block;
           width: 1100px;
@@ -237,9 +241,36 @@
 
 <p><em>This post will be continuously updated.</em></p>
 
-<h2 id="update-2024-05-14">Update 2024-05-14</h2>
+<h3 id="itself-docshttpsdevdocsioruby33objectmethod-i-itself"><code>#itself</code> (<a href="https://devdocs.io/ruby~3.3/object#method-i-itself">docs</a>)</h3>
 
-<h3 id="single-character-strings">Single character strings</h3>
+<p>Calling on any object simply returns…itself 🥁.</p>
+
+<pre><code class="language-ruby">a = 123
+a == a.itself
+</code></pre>
+
+<p>Why on earth is this useful? Sometimes there are instances where blocks should simply the element passed to the block:</p>
+
+<pre><code class="language-ruby">a = [1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3]
+
+# Convert to a hash, keyed by unique array values:
+g = a.group_by { |v| v }
+g == { 1 =&gt; [1, 1, 1], 2 =&gt; [2, 2, 2, 2], 3 =&gt; [3, 3, 3, 3, 3] }
+
+# Alternative, using numbered parameter shorthand:
+g = a.group_by { _1 }
+g == { 1 =&gt; [1, 1, 1], 2 =&gt; [2, 2, 2, 2], 3 =&gt; [3, 3, 3, 3, 3] }
+</code></pre>
+
+<p>Using the <code>#to_proc</code> shorthand (<code>&amp;</code>) with <code>#itself</code> is perhaps more explicit:</p>
+
+<pre><code class="language-ruby">g = a.group_by(&amp;:itself)
+g == { 1 =&gt; [1, 1, 1], 2 =&gt; [2, 2, 2, 2], 3 =&gt; [3, 3, 3, 3, 3] }
+</code></pre>
+
+<p>(Sidenote: For this particular example, you’d might be more interested in <a href="https://devdocs.io/ruby~3.3/enumerable#method-i-tally"><code>Enumerable#tally</code></a>)</p>
+
+<h3 id="single-character-strings-docshttpsdevdocsioruby33syntaxliteralsrdoclabel-stringliterals">Single character strings (<a href="https://devdocs.io/ruby~3.3/syntax/literals_rdoc#label-String+Literals">docs</a>)</h3>
 
 <p>Denote a single character string by prefixing a character with <code>?</code>:</p>
 
@@ -247,9 +278,9 @@
 
 <p>Should you use this? Hard to say. I suppose it saves some keystrokes, but can be a little tricky, especially if you see something like <code>foo.split(?|)</code></p>
 
-<h3 id="splat--dereference">Splat <code>*</code> dereference</h3>
+<h3 id="splat--destructuring-assignment-docshttpsdevdocsioruby33syntaxassignmentrdoc">Splat <code>*</code> destructuring assignment (<a href="https://devdocs.io/ruby~3.3/syntax/assignment_rdoc">docs</a>)</h3>
 
-<p>Can be used in dereferencing to match multiple values to an array:</p>
+<p>Can be used in assignment to match multiple values to an array:</p>
 
 <pre><code class="language-ruby">a, *b = [1, 2, 3, 4]
 a == 1
@@ -260,16 +291,18 @@ c == [5, 6, 7]
 d == 8
 </code></pre>
 
-<h3 id="splat--on-range">Splat <code>*</code> on <code>Range</code></h3>
+<h3 id="splat--on-range-stackoverflowhttpsstackoverflowcoma55888963">Splat <code>*</code> on <code>Range</code> (<a href="https://stackoverflow.com/a/55888963">stackoverflow</a>)</h3>
 
-<p>Splatting a range will convert to an array:</p>
+<p>Splatting a range will convert to an array, it is basically a shorthand for <code>#to_a</code>:</p>
 
 <pre><code class="language-ruby">a = *1..10
 
 a == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 </code></pre>
 
-<h3 id="passing-range-to-array">Passing <code>Range</code> to <code>Array#[]</code></h3>
+<p>Saves a few keystrokes from <code>(1..10).to_a</code>.</p>
+
+<h3 id="passing-range-to-array-docshttpsdevdocsioruby33arraymethod-i-5b-5d">Passing <code>Range</code> to <code>Array#[]</code> (<a href="https://devdocs.io/ruby~3.3/array#method-i-5B-5D">docs</a>)</h3>
 
 <p>Can accept a range ending with <code>-1</code> to match to the end:</p>
 
@@ -281,7 +314,9 @@ a[5..-1] == [6, 7, 8, 9, 10]</code></pre>
 
 <pre><code class="language-ruby">a[5...-1] == [6, 7, 8, 9]</code></pre>
 
-<h3 id="passing-regexp-to-string">Passing <code>Regexp</code> to <code>String#[]</code></h3>
+<p>See doc link above for more interesing examples using <code>Enumerator::ArithmeticSequence</code>.</p>
+
+<h3 id="passing-regexp-to-string-docshttpsdevdocsioruby33stringmethod-i-5b-5d">Passing <code>Regexp</code> to <code>String#[]</code> (<a href="https://devdocs.io/ruby~3.3/string#method-i-5B-5D">docs</a>)</h3>
 
 <p>Can accept a <code>Regexp</code> which will return the first match as a string, <code>nil</code> if no match:</p>
 
@@ -289,26 +324,30 @@ a[5..-1] == [6, 7, 8, 9, 10]</code></pre>
 "asdf12345"[/foo/] == nil
 </code></pre>
 
-<h3 id="different-ways-to-call-lambdas">Different ways to call lambdas</h3>
+<h3 id="different-ways-to-call-lambdasprocs-docshttpsdevdocsioruby33procmethod-i-call">Different ways to call lambdas/procs (<a href="https://devdocs.io/ruby~3.3/proc#method-i-call">docs</a>)</h3>
 
-<p>Lambdas can be called either by using <code>#call</code>, or by just using <code>#()</code>:</p>
+<p>Lambdas/Procs can be called using <code>#call</code>, <code>#()</code>, <code>#[]</code>, <code>#yield</code>:</p>
 
 <pre><code class="language-ruby"># With arguments...
 f = -&gt;(name) { "Hi #{name}" }
 
-f.call("John") == "Hi John"
-f.("John") == "Hi John"
+f.call("John")  == "Hi John"
+f.("John")      == "Hi John"
+f["John"]       == "Hi John"
+f.yield("John") == "Hi John"
 
 # Without arguments...
 g = -&gt; { "Goodbye" }
 
-g.call == "Goodbye"
-g.() == "Goodbye"
+g.call  == "Goodbye"
+g.()    == "Goodbye"
+g[]     == "Goodbye"
+g.yield == "Goodbye"
 </code></pre>
 
-<p>What’s better? I think I prefer the explicitness of <code>call</code>, otherwise the <code>.</code> on its own can be hard to see.</p>
+<p>What’s best? I think I prefer the explicitness of <code>call</code>, all the other syntax seem really unnatural to me (especially <code>#[]</code>). Also, <code>#yield</code> is something that I prefer to reserve for methods that receive blocks.</p>
 
-<h3 id="the-data-global-variable">The <code>DATA</code> global variable</h3>
+<h3 id="the-data-global-variable-docshttpsdevdocsioruby33globalsrdoclabel-embeddeddata">The <code>DATA</code> global variable (<a href="https://devdocs.io/ruby~3.3/globals_rdoc#label-Embedded+Data">docs</a>)</h3>
 
 <p>If the line <code>__END__</code> appears in a Ruby file, all subsequent lines will be available earlier in the script as <code>DATA</code>:</p>
 
@@ -332,7 +371,7 @@ Line: zulu
 
 <p>What could this be used for? Perhaps coding exercises where that must parse some input and now you don’t have to save it in a separate file to use <code>File.readlines</code>.</p>
 
-<h3 id="the-begin-and-end-global-variables">The <code>BEGIN</code> and <code>END</code> global variables</h3>
+<h3 id="the-begin-and-end-global-variables-docshttpsdevdocsioruby33syntaxmiscellaneousrdoclabel-beginandend">The <code>BEGIN</code> and <code>END</code> global variables (<a href="https://devdocs.io/ruby~3.3/syntax/miscellaneous_rdoc#label-BEGIN+and+END">docs</a>)</h3>
 
 <p>Can be passed blocks that will happen before and after all other steps in the script. The block syntax must use <code>{...}</code> instead of <code>do...end</code>.</p>
 
