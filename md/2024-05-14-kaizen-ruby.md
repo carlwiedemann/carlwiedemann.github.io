@@ -42,7 +42,7 @@ Splatting a range will convert to an array:
 a == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 </code></pre>
 
-### `Array#[]`
+### Passing `Range` to `Array#[]`
 
 Can accept a range ending with `-1` to match to the end:
 
@@ -55,15 +55,15 @@ Interestingly enough, using a non-inclusive range will exclude the last element 
 <pre><code class="language-ruby">a[5...-1] == [6, 7, 8, 9]</code></pre>
 
 
-### `String#[]`
+### Passing `Regexp` to `String#[]`
 
-Can accept a regex which will return the first match as a string, `nil` if no match:
+Can accept a `Regexp` which will return the first match as a string, `nil` if no match:
 
 <pre><code class="language-ruby">"asdf12345"[/\d/] == "1"
 "asdf12345"[/foo/] == nil
 </code></pre>
 
-### Calling lambdas
+### Different ways to call lambdas
 
 Lambdas can be called either by using `#call`, or by just using `#()`:
 

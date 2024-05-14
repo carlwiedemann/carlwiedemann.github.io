@@ -269,7 +269,7 @@ d == 8
 a == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 </code></pre>
 
-<h3 id="array"><code>Array#[]</code></h3>
+<h3 id="passing-range-to-array">Passing <code>Range</code> to <code>Array#[]</code></h3>
 
 <p>Can accept a range ending with <code>-1</code> to match to the end:</p>
 
@@ -281,15 +281,15 @@ a[5..-1] == [6, 7, 8, 9, 10]</code></pre>
 
 <pre><code class="language-ruby">a[5...-1] == [6, 7, 8, 9]</code></pre>
 
-<h3 id="string"><code>String#[]</code></h3>
+<h3 id="passing-regexp-to-string">Passing <code>Regexp</code> to <code>String#[]</code></h3>
 
-<p>Can accept a regex which will return the first match as a string, <code>nil</code> if no match:</p>
+<p>Can accept a <code>Regexp</code> which will return the first match as a string, <code>nil</code> if no match:</p>
 
 <pre><code class="language-ruby">"asdf12345"[/\d/] == "1"
 "asdf12345"[/foo/] == nil
 </code></pre>
 
-<h3 id="calling-lambdas">Calling lambdas</h3>
+<h3 id="different-ways-to-call-lambdas">Different ways to call lambdas</h3>
 
 <p>Lambdas can be called either by using <code>#call</code>, or by just using <code>#()</code>:</p>
 
