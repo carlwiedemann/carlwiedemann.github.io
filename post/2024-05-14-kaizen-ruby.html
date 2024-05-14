@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
   <meta name="google-site-verification" content="mvYev_JUFUYr2v1J05_vG1_3bI6z5loefhSu-h5OrLk"/>
-  <title>Carl Wiedemann</title>
+  <title>Kaizen: Ruby - Carl Wiedemann</title>
   <link rel="stylesheet" href="https://use.typekit.net/lcc4etk.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -225,13 +225,154 @@
 </header>
 <main>
   <section class="text">
-    <ul>
-  <li>2024-05-14 <a href="post/2024-05-14-kaizen-ruby.html">Kaizen: Ruby</a></li>
-  <li>2024-01-05 <a href="post/2024-01-05-gans-toward-better-code-review.html">ga;ns: Toward Better Code Review</a></li>
-  <li>2023-12-27 <a href="post/2023-12-27-test-coverage-a-compass-not-a-destination.html">Test Coverage: A Compass, not a Destination</a></li>
-  <li>2023-01-17 <a href="post/2023-01-17-introducing-foresite.html">Introducing Foresite: An extremely minimal static site generator</a></li>
-  <li>2020-07-02 <a href="post/2020-07-02-the-burden-of-perfection.html">The Burden of Perfection</a></li>
-</ul>
+    <h1 id="kaizen-ruby">Kaizen: Ruby</h1>
+
+<p>2024-05-14</p>
+
+<p>Over the past 3 years, I’ve been using Ruby full time at my day job. At first I wasn’t fond of it. But I’ve come to appreciate it more.</p>
+
+<p>For <em>certain</em> use cases (i.e. scripting), I find it superb. For other use cases (i.e. <a href="https://railsatscale.com/">large-scale</a> applications), I find it less than superb.</p>
+
+<p>After learning some of the basics, the language continues to surprise me in things I didn’t know. I’m documenting some of those here, both as a reminder for myself but also for others who are learning the language.</p>
+
+<p><em>This post will be continuously updated.</em></p>
+
+<h2 id="update-2024-05-14">Update 2024-05-14</h2>
+
+<h3 id="single-character-strings">Single character strings</h3>
+
+<p>Denote a single character string by prefixing a character with <code>?</code>:</p>
+
+<pre><code class="language-ruby">?a == 'a'</code></pre>
+
+<p>Should you use this? Hard to say. I suppose it saves some keystrokes, but can be a little tricky, especially if you see something like <code>foo.split(?|)</code></p>
+
+<h2 id="splat-">Splat <code>*</code></h2>
+
+<p>Can be used in dereferencing to match multiple values to an array:</p>
+
+<pre><code class="language-ruby">a, *b = [1, 2, 3, 4]
+a == 1
+b == [2, 3, 4]
+
+*c, d = [5, 6, 7, 8]
+c == [5, 6, 7]
+d == 8
+</code></pre>
+
+<h3 id="arraypush"><code>Array#push</code></h3>
+
+<p>Can accept splatted ranges:</p>
+
+<pre><code class="language-ruby">a = [1, 2, 3, 4, 5]
+a.push(*6..10)
+
+a == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+</code></pre>
+
+<h3 id="array"><code>Array#[]</code></h3>
+
+<p>Can accept a range ending with <code>-1</code> to match to the end:</p>
+
+<pre><code class="language-ruby">a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+a[5..-1] == [6, 7, 8, 9, 10]</code></pre>
+
+<p>Interestingly enough, using a non-inclusive range will exclude the last element (probably not useful):</p>
+
+<pre><code class="language-ruby">a[5...-1] == [6, 7, 8, 9]</code></pre>
+
+<h3 id="string"><code>String#[]</code></h3>
+
+<p>Can accept a regex which will return the first match as a string, <code>nil</code> if no match:</p>
+
+<pre><code class="language-ruby">"asdf12345"[/\d/] == "1"
+"asdf12345"[/foo/] == nil
+</code></pre>
+
+<h3 id="calling-lambdas">Calling lambdas</h3>
+
+<p>Lambdas can be called either by using <code>#call</code>, or by just using <code>#()</code>:</p>
+
+<pre><code class="language-ruby"># With arguments...
+f = -&gt;(name) { "Hi #{name}" }
+
+f.call("John") == "Hi John"
+f.("John") == "Hi John"
+
+# Without arguments...
+g = -&gt; { "Goodbye" }
+
+g.call == "Goodbye"
+g.() == "Goodbye"
+</code></pre>
+
+<p>What’s better? I think I prefer the explicitness of <code>call</code>, otherwise the <code>.</code> on its own can be hard to see.</p>
+
+<h3 id="the-data-global-variable">The <code>DATA</code> global variable</h3>
+
+<p>If the line <code>__END__</code> appears in a Ruby file, all subsequent lines will be available earlier in the script as <code>DATA</code>:</p>
+
+<pre><code class="language-ruby"># data.rb
+DATA.each_with_index do |line|
+  puts "Line: #{line.chomp}"
+end
+__END__
+xray
+yankee
+zulu
+</code></pre>
+
+<p>Running:</p>
+
+<pre><code class="language-bash">❯ ruby data.rb
+Line: xray
+Line: yankee
+Line: zulu
+</code></pre>
+
+<p>What could this be used for? Perhaps coding exercises where that must parse some input and now you don’t have to save it in a separate file to use <code>File.readlines</code>.</p>
+
+<h3 id="the-begin-and-end-global-variables">The <code>BEGIN</code> and <code>END</code> global variables</h3>
+
+<p>Can be passed blocks that will happen before and after all other steps in the script. The block syntax must use <code>{...}</code> instead of <code>do...end</code>.</p>
+
+<pre><code class="language-ruby"># begin_end.rb
+puts "Today is #{Time.now.strftime('%F')}"
+
+BEGIN { puts "hi"}
+END { puts "bai"}
+</code></pre>
+
+<p>Running:</p>
+
+<pre><code class="language-bash">❯ ruby begin_end.rb
+hi
+Today is 2024-05-14
+bai
+</code></pre>
+
+<p>Instantiated variables are global scope, but the <code>BEGIN</code> block must appear before they are used. Here is the same script using a variable to store the date string:</p>
+
+<pre><code class="language-ruby"># begin_end.rb
+BEGIN {
+  now_str = Time.now.strftime('%F')
+  puts "hi"
+}
+
+END { puts "bai" }
+
+# In order to use the variable, the `BEGIN` block must exist on an earlier line.
+puts "Today is #{now_str}"
+</code></pre>
+
+<p>The variables are only available in the scope of the existing file, they are not available in other files that would be <code>require</code>‘d etc.</p>
+
+<p>Is this useful? Maybe for debugging or doing some sort of setup &amp; teardown.</p>
+
+<h2 id="always-be-strikeclosingstrike-learning">Always be <strike>closing</strike> learning</h2>
+
+<p>Hopefully you have learned some things as well. Check back on this post for future updates.</p>
 
   </section>
 </main>
