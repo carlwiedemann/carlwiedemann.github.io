@@ -18,7 +18,7 @@ Calling on any object simply returns...itself 🥁.
 a == a.itself
 </code></pre>
 
-Why on earth is this useful? Sometimes there are instances where blocks should simply the element passed to the block:
+Why on earth is this useful? Sometimes there are instances where blocks should simply return the sole argument passed to the block:
 
 <pre><code class="language-ruby">a = [1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3]
 
@@ -147,14 +147,14 @@ Can be passed blocks that will happen before and after all other steps in the sc
 <pre><code class="language-ruby"># begin_end.rb
 puts "Today is #{Time.now.strftime('%F')}"
 
-BEGIN { puts "hi" }
+BEGIN { puts "hai" }
 END { puts "bai" }
 </code></pre>
 
 Running:
 
 <pre><code class="language-bash">❯ ruby begin_end.rb
-hi
+hai
 Today is 2024-05-14
 bai
 </code></pre> 
@@ -164,7 +164,7 @@ Instantiated variables are global scope, but the `BEGIN` block must appear befor
 <pre><code class="language-ruby"># begin_end.rb
 BEGIN {
   now_str = Time.now.strftime('%F')
-  puts "hi"
+  puts "hai"
 }
 
 END { puts "bai" }

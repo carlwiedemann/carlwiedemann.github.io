@@ -249,7 +249,7 @@
 a == a.itself
 </code></pre>
 
-<p>Why on earth is this useful? Sometimes there are instances where blocks should simply the element passed to the block:</p>
+<p>Why on earth is this useful? Sometimes there are instances where blocks should simply return the sole argument passed to the block:</p>
 
 <pre><code class="language-ruby">a = [1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3]
 
@@ -378,14 +378,14 @@ Line: zulu
 <pre><code class="language-ruby"># begin_end.rb
 puts "Today is #{Time.now.strftime('%F')}"
 
-BEGIN { puts "hi" }
+BEGIN { puts "hai" }
 END { puts "bai" }
 </code></pre>
 
 <p>Running:</p>
 
 <pre><code class="language-bash">❯ ruby begin_end.rb
-hi
+hai
 Today is 2024-05-14
 bai
 </code></pre>
@@ -395,7 +395,7 @@ bai
 <pre><code class="language-ruby"># begin_end.rb
 BEGIN {
   now_str = Time.now.strftime('%F')
-  puts "hi"
+  puts "hai"
 }
 
 END { puts "bai" }
