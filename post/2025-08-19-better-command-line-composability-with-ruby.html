@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+  <meta name="google-site-verification" content="mvYev_JUFUYr2v1J05_vG1_3bI6z5loefhSu-h5OrLk"/>
+  <title>Better command line composability with Ruby - Carl Wiedemann</title>
+  <link rel="stylesheet" href="https://use.typekit.net/lcc4etk.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"/>
+  <style>
+
+      /* ########## */
+      /* SITE TITLE */
+      /* ########## */
+
+      /*Abril Fatface Italic*/
+      /*font-family: abril-fatface, serif;*/
+      /*font-weight: 400;*/
+      /*font-style: italic;*/
+
+      /* ######### */
+      /* BODY TEXT */
+      /* ######### */
+
+      /*Atkinson Hyperlgible regular*/
+      /*font-family: "Atkinson Hyperlegible", sans-serif;*/
+      /*font-weight: 400;*/
+      /*font-style: normal;*/
+
+      /*Atkinson Hyperlgible bold*/
+      /*font-family: "Atkinson Hyperlegible", sans-serif;*/
+      /*font-weight: 700;*/
+      /*font-style: normal;*/
+
+      /*Atkinson Hyperlgible italic*/
+      /*font-family: "Atkinson Hyperlegible", sans-serif;*/
+      /*font-weight: 400;*/
+      /*font-style: italic;*/
+
+      /*Atkinson Hyperlgible bold italic*/
+      /*font-family: "Atkinson Hyperlegible", sans-serif;*/
+      /*font-weight: 700;*/
+      /*font-style: italic;*/
+
+      /* ########### */
+      /* CODE BLOCKS */
+      /* ########### */
+
+      /*Fira Mono Regular*/
+      /*font-family: fira-mono, monospace;*/
+      /*font-weight: 400;*/
+      /*font-style: normal;*/
+
+      /*Fira Mono Bold*/
+      /*font-family: fira-mono, monospace;*/
+      /*font-weight: 700;*/
+      /*font-style: normal;*/
+
+      html {
+          box-sizing: border-box;
+      }
+
+      *, *:before, *:after {
+          box-sizing: inherit;
+      }
+
+      body {
+          font-family: "Atkinson Hyperlegible", sans-serif;
+          font-weight: 400;
+          font-style: normal;
+          margin: 0;
+          padding: 0;
+      }
+
+      h1.title {
+          font-family: abril-fatface, serif;
+          font-weight: 400;
+          font-style: italic;
+          line-height: 2em;
+          margin: 0;
+          word-wrap: break-word;
+      }
+
+      h1.title a {
+          color: inherit;
+      }
+
+      h1.title a:hover {
+          color: #FFF;
+      }
+
+      a:link,
+      a:visited {
+          color: #00F;
+          text-decoration: none;
+      }
+
+      a:hover {
+          background-color: #00F;
+          color: #FFF;
+      }
+
+      .text p a:hover code {
+          background-color: #00F;
+      }
+
+      h1 span {
+          display: inline-block;
+          width: 1100px;
+      }
+
+      h1 span:after {
+          content: '+';
+      }
+
+      header,
+      main,
+      footer {
+          margin: 0 auto;
+          max-width: 1100px;
+          padding: 0 1em;
+      }
+
+      main {
+          line-height: 1.6em;
+          margin-top: 1em;
+          margin-bottom: 5em;
+      }
+
+      nav ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+      }
+
+      nav li {
+          display: inline;
+      }
+
+      h1, h2, h3, h4 {
+          font-weight: 700;
+          font-style: normal;
+          opacity: 0.9;
+          line-height: 1.3em;
+      }
+
+      h1 {
+          font-size: 2em;
+      }
+
+      h2 {
+          font-size: 1.5em;
+      }
+
+      h3 {
+          font-size: 1.2em;
+      }
+
+      figure {
+          margin-block-start: 0;
+          margin-block-end: 0;
+          margin-inline-start: 0;
+          margin-inline-end: 0;
+          text-align: center;
+      }
+
+      figcaption,
+      footer {
+          font-style: italic;
+          opacity: 0.5;
+          font-size: 0.8em;
+      }
+
+      .text li {
+          margin: 1em 0;
+      }
+
+      .text code {
+          font-family: fira-mono, monospace;
+      }
+
+      .text p code,
+      .text li code,
+      .text h2 code,
+      .text h3 code {
+          background-color: #f3f3f3;
+          display: inline;
+          width: auto;
+          white-space: nowrap;
+      }
+
+      .text img {
+          max-width: 100%;
+      }
+
+      .text blockquote {
+          background-color: #EEE;
+          opacity: 0.8;
+          padding: 1em;
+      }
+
+      .text > p:last-of-type:after {
+          content: ' ∎';
+          font-weight: 700;
+      }
+
+      .highlight {
+          background-color: #FFFF00;
+      }
+
+      footer {
+          margin: 2em auto;
+      }
+  </style>
+</head>
+<body>
+<header>
+  <h1 class="title"><a href="/">Carl Wiedemann</a></h1>
+  <nav>
+    <ul>
+      <li><a href="https://github.com/carlwiedemann">github</a></li>
+      <li><a href="https://www.linkedin.com/in/carlwwiedemann">linkedin</a></li>
+      <li><a href="https://twitter.com/carlwiedemann">twitter</a></li>
+      <li><a href="https://bsky.app/profile/carlwiedemann.bsky.social">bluesky</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section class="text">
+    <h1 id="better-command-line-composability-with-ruby">Better command line composability with Ruby</h1>
+
+<p>2025-08-19</p>
+
+<p>I like the command line. I don’t spend all my time there, but I spend quite a bit of it there before turning to other tools.</p>
+
+<p>What are the nature of command line tools? We come to understand the Unix Philosophy as unavoidable practice. And we can get a lot of mileage out of small portable utilities all piped together. It’s quite a nice vehicle, an elegant flow to treat the next bespoke requirement as just another piped command.</p>
+
+<p>But if you’ve done this enough you know what its like when that vehicle’s mileage runs short.</p>
+
+<h2 id="just-one-more-pipe">Just one more pipe</h2>
+
+<p>Usually it happens as we are piping things together quite handily.</p>
+
+<p><strong>“I have a space delimited text file…“</strong></p>
+
+<blockquote>
+  <p><em>Okay.</em></p>
+</blockquote>
+
+<pre><code class="language-bash">
+❯ cat FOO.txt
+foo bar
+foo buzz
+bar bar
+bar buzz
+alpha bravo
+charlie delta
+</code></pre>
+
+<p><strong>“…where I want to know first word on each line…“</strong></p>
+
+<blockquote>
+  <p><em>Great, that’s easy, I’ll just pipe <code>cat</code> to <code>cut</code>.</em></p>
+</blockquote>
+
+<pre><code class="language-bash">
+❯ cat FOO.txt | cut -d ' ' -f 1
+foo
+foo
+bar
+bar
+alpha
+charlie
+</code></pre>
+
+<p><strong>“…and the word’s total count in the file…“</strong></p>
+
+<blockquote>
+  <p><em>Yep I’ll pipe <code>cut</code> to <code>uniq</code>.</em></p>
+</blockquote>
+
+<pre><code class="language-bash">
+❯ cat FOO.txt | cut -d ' ' -f 1 | uniq -c
+   2 foo
+   2 bar
+   1 alpha
+   1 charlie
+</code></pre>
+
+<p><strong>“…and it should be JSON formatted has a hash map where keys are the counts and values area a array of words with that count, the arrays are sorted in order from greatest word length to least.”</strong></p>
+
+<blockquote>
+  <p><em>Ah, um…ok, well…now I have to write a custom script from scratch.</em></p>
+</blockquote>
+
+<h2 id="out-of-gas">Out of gas</h2>
+
+<p>This is when “just one more pipe” falls short. We’ve all been there, devotedly fussing around with <code>awk</code>, <code>sed</code>, <code>grep</code>, <code>tr</code>, skirting the narrow boundary between clever and clandestine. But ultimately we arrive at a place where these tools just aren’t enough, and we’re puzzling through remembering all the different options and syntax for each. We then turn to writing a script from scratch all on its own. This, of course, is a fine (and perhaps common) way to live. But I think we can do better.</p>
+
+<h2 id="ruby-off-rails">Ruby off Rails</h2>
+
+<p>Before it’s claim to fame driving argubably the most influential webapp framework of the past 20 years, Ruby was (and still is) a great scripting language has with consistent syntax and a great standard library.</p>
+
+<p>As a scripting language, it can run standalone <code>ruby foo.rb</code> but also with literal syntax via the <code>-e</code> option.</p>
+
+<pre><code class="language-bash">
+❯ echo "foo" | ruby -e 'puts "hello #{STDIN.gets}"'
+</code></pre>
+
+<p>There are other options like <code>-n</code> which allows executing Ruby code for each line.</p>
+
+<p>But we can really improve things by realizing the following:</p>
+
+<ul>
+  <li>We are usually interested in thinking about <code>STDIN</code> as an array we’ll be mapping</li>
+  <li>We are almost universally calling <code>puts</code> or <code>print</code></li>
+  <li>The env var <code>RUBYLIB</code> provides a global directory under which arbitary code is loadable</li>
+</ul>
+
+<p>By coordinating these ideas, I’ve come up with the following pattern that is quite nice.</p>
+
+<p>I set <code>RUBYLIB</code> to <code>~/_lib/ruby</code>, where I’ve added some custom code, namely a file <code>main.rb</code> that loads things from stdlib and <code>require</code>s anything else in <code>~/_lib/ruby</code></p>
+
+<pre><code class="language-ruby">
+# main.rb
+require 'json'
+Dir.glob(File.dirname(__FILE__) + '/*.rb').each { it == __FILE__ || (require it) }
+</code></pre>
+
+<p>Because I am usually interested in STDIN, I have a sibling file <code>misc.rb</code> that defines two constants, <code>I</code>, and <code>II</code> as a single line and array of strings from STDIN.</p>
+
+<pre><code class="language-ruby">
+# misc.rb
+II = STDIN.readlines.map(&amp;:chomp)
+I = II.first
+</code></pre>
+
+<p>Finally, in <code>.zshrc</code> I alias the inclusion of <code>main.rb</code> as a loaded library for <code>ruby -e</code> under the alias <code>rep</code>, meaning “ruby exec &amp; puts”</p>
+
+<pre><code class="language-bash">
+# .zshrc
+alias re="ruby -r main.rb -e"
+function rep {
+  re "puts $1"
+}
+</code></pre>
+
+<h2 id="going-farther">Going farther</h2>
+
+<p>What does this all mean?</p>
+
+<ul>
+  <li>I can pipe commands to <code>rep</code>, then use Ruby as my language instead of various utilites</li>
+  <li>I can use <code>I</code> and <code>II</code> in my Ruby syntax to get STDIN as I want</li>
+  <li>I can even add other utilities alongside <code>main.rb</code> to do other nice tricks (e.g. I monkeypatch <code>Array</code> to define <code>#jn</code> that runs <code>self.join("\n")</code>)</li>
+</ul>
+
+<p>So let’s revisit that requirement.</p>
+
+<p><strong>“I have a space delimited text file where I want to know first word on each line and the word’s total count in the file and it should be JSON formatted has a hash map where keys are the counts and values area a array of words with that count, the arrays are sorted in order from greatest word length to least.”</strong></p>
+
+<blockquote>
+  <p>Got it.</p>
+</blockquote>
+
+<pre><code class="language-bash">
+❯ cat FOO.txt | rep 'II.reduce(Hash.new { 0 }) { |m, v| m[v.split(" ")[1]] += 1; m}.group_by { it[1] }.transform_values { it.map(&amp;:first).sort_by { -it.length } }.to_json'
+{"2":["foo","bar"],"1":["charlie","alpha"]}
+</code></pre>
+
+<p>What I love most about this solution is that I don’t have to step <em>outside</em> of thinking in Ruby – I don’t have to juggle <code>sed</code> and <code>awk</code> and recall the nuances between various linux &amp; macos flavors. I just stay within Ruby, and think in Ruby.</p>
+
+<p>Also, we stay within the confines of the Unix Philosphy – text based streams with small tools. But this takes us beyond where we could go before.</p>
+
+<p>I hope it inspires your own vehicles of command line exploration.</p>
+
+  </section>
+</main>
+<footer>
+  <p>Powered by <a href="https://github.com/carlwiedemann/foresite">Foresite</a></p>
+</footer>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/solarized-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</body>
+</html>

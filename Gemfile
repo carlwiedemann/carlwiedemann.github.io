@@ -4,4 +4,4 @@ source "https://rubygems.org"
 
 # gem "rails"
 
-gem "foresite", "~> 1.1"
+gem "foresite", "~> 1.3"

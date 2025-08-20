@@ -1,21 +1,26 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    foresite (1.1.3)
+    filewatcher (2.1.0)
+      module_methods (~> 0.1.0)
+    foresite (1.3.0)
+      filewatcher (~> 2.1)
       kramdown (~> 2.4)
       thor (~> 1.2)
       zeitwerk (~> 2.6)
     kramdown (2.4.0)
       rexml
+    module_methods (0.1.0)
     rexml (3.2.5)
     thor (1.2.1)
     zeitwerk (2.6.6)
 
 PLATFORMS
   arm64-darwin-22
+  arm64-darwin-24
 
 DEPENDENCIES
-  foresite (~> 1.1)
+  foresite (~> 1.3)
 
 BUNDLED WITH
-   2.4.3
+   2.7.1
