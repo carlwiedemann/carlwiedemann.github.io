@@ -159,7 +159,7 @@ BAR
 BAZ
 </code></pre>
 
-### Example: A custom JSON form
+### Example: A custom JSON format
 
 So let's revisit that requirement.
 
