@@ -174,6 +174,6 @@ So let's revisit that requirement.
 
 Again, what I love most about this solution is that we don't have to step *outside* of Ruby -- we don't have to juggle `sed` and `awk` and recall the nuances between various linux & macos flavors. We just stay within Ruby, and think in Ruby.
 
-Also, I stay within the confines of the Unix Philosphy -- text based streams with small tools. But this takes us beyond where we could go before.
+Also, we stay within the confines of the Unix Philosphy -- text based streams with small tools. But this takes us beyond where we could go before.
 
 I hope it inspires your own vehicles of command line exploration.
