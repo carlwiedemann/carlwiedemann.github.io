@@ -163,7 +163,7 @@ BAZ
 
 So let's revisit that requirement.
 
-**"I have a space delimited text file where I want to know first word on each line and the word's total count in the file and it should be JSON formatted hash map, keyed by count mapped to arrays of words having that count, the arrays are sorted in order from greatest word length to least.**
+**"I have a space delimited text file where I want to know first word on each line and the word's total count in the file and it should be JSON formatted hash map, keyed by count mapped to arrays of words having that count, the arrays are sorted in order from greatest word length to least."**
 
 (I won't even try to make a "before" version because I don't think it is easily done. Maybe you are better at this than me. 😎)
 
