@@ -325,27 +325,27 @@ hello bar
 <p>I set <code>RUBYLIB</code> to <code>~/_lib/ruby</code>, where I’ve added some custom code, namely a file <code>main.rb</code> that loads things from stdlib and <code>require</code>s anything else in <code>~/_lib/ruby</code>.</p>
 
 <pre><code class="language-ruby">
-# main.rb
+# ~/_lib/ruby/main.rb
 require 'json'
 Dir.glob(File.dirname(__FILE__) + '/*.rb').each { it == __FILE__ || (require it) }
 </code></pre>
 
 <h3 id="pattern-simplify-access-to-stdin">Pattern: Simplify access to <code>STDIN</code></h3>
 
-<p>Because I am usually interested in <code>STDIN</code>, a sibling file <code>misc.rb</code> defines two constants, <code>II</code> array of strings from <code>STDIN</code> and <code>I</code> as the first item of the array (for single-line inputs).</p>
+<p>Because I am usually interested in <code>STDIN</code>, a sibling file <code>misc.rb</code> defines two constants, <code>II</code> as an array of strings from <code>STDIN</code> and <code>I</code> as the first item of the array (for single-line inputs).</p>
 
 <pre><code class="language-ruby">
-# misc.rb
+# ~/_lib/ruby/misc.rb
 II = STDIN.readlines.map(&amp;:chomp)
 I = II.first
 </code></pre>
 
 <h3 id="pattern-always-assume-puts-will-occur">Pattern: Always assume <code>puts</code> will occur</h3>
 
-<p>Embracing the Unix Philosophy our tool is aimed at meaningful output. In my <code>.zshrc</code> I alias the inclusion of <code>main.rb</code> as a loaded library for <code>ruby -e</code> under the alias <code>rep</code>, meaning “ruby exec &amp; puts”</p>
+<p>Embracing the Unix Philosophy our tool is aimed at meaningful output. In my <code>~/.zshrc</code> I alias the inclusion of <code>main.rb</code> as a loaded library for <code>ruby -e</code> under the alias <code>rep</code>, meaning “ruby exec &amp; puts”</p>
 
 <pre><code class="language-bash">
-# .zshrc
+# ~/.zshrc
 alias re="ruby -r main.rb -e"
 function rep {
   re "puts $1"

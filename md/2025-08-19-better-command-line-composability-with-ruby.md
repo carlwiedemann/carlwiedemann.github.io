@@ -84,27 +84,27 @@ By embracing these constraints, I've come up with the following patterns:
 I set `RUBYLIB` to `~/_lib/ruby`, where I've added some custom code, namely a file `main.rb` that loads things from stdlib and `require`s anything else in `~/_lib/ruby`.
 
 <pre><code class="language-ruby">
-# main.rb
+# ~/_lib/ruby/main.rb
 require 'json'
 Dir.glob(File.dirname(__FILE__) + '/*.rb').each { it == __FILE__ || (require it) }
 </code></pre>
 
 ### Pattern: Simplify access to `STDIN`
 
-Because I am usually interested in `STDIN`, a sibling file `misc.rb` defines two constants, `II` array of strings from `STDIN` and `I` as the first item of the array (for single-line inputs).
+Because I am usually interested in `STDIN`, a sibling file `misc.rb` defines two constants, `II` as an array of strings from `STDIN` and `I` as the first item of the array (for single-line inputs).
 
 <pre><code class="language-ruby">
-# misc.rb
+# ~/_lib/ruby/misc.rb
 II = STDIN.readlines.map(&:chomp)
 I = II.first
 </code></pre>
 
 ### Pattern: Always assume `puts` will occur
 
-Embracing the Unix Philosophy our tool is aimed at meaningful output. In my `.zshrc` I alias the inclusion of `main.rb` as a loaded library for `ruby -e` under the alias `rep`, meaning "ruby exec & puts"
+Embracing the Unix Philosophy our tool is aimed at meaningful output. In my `~/.zshrc` I alias the inclusion of `main.rb` as a loaded library for `ruby -e` under the alias `rep`, meaning "ruby exec & puts"
 
 <pre><code class="language-bash">
-# .zshrc
+# ~/.zshrc
 alias re="ruby -r main.rb -e"
 function rep {
   re "puts $1"
