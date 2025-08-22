@@ -233,7 +233,7 @@
 
 <p>2025-08-19</p>
 
-<p>The Unix Philosophy of small, composable, text-based utilities gives us a lot of mileage. It’s quite an elegant vehicle, to receive our next bespoke requirement as yet another piped command. But if you’ve done this enough you know what its like when that vehicle’s mileage runs short.</p>
+<p>The Unix Philosophy of small, composable, text-based utilities gives us a lot of mileage. It’s quite an elegant vehicle, to receive our next bespoke requirement as yet another piped command. But if you’ve done this enough you know what it’s like when that vehicle’s mileage runs short.</p>
 
 <p>Usually it happens after we are piping things together quite handily.</p>
 
@@ -293,7 +293,7 @@ charlie
 
 <p>This is when “just one more pipe” falls short. We’ve all been there, devotedly fussing around with <code>awk</code>, <code>sed</code>, <code>grep</code>, <code>tr</code>, skirting the narrow boundary between clever and clandestine. But ultimately we arrive at a place where these tools just aren’t enough, and we’re puzzling through remembering all the different options and syntax for each. We then turn to writing a script from scratch all on its own. This, of course, is a fine (and perhaps common) way to live. But I think we can do better.</p>
 
-<p>Before it’s claim to fame driving argubably the most influential web app framework of the past 20 years, Ruby was (and still is) a great scripting language with consistent syntax and a great standard library.</p>
+<p>Before its claim to fame driving arguably the most influential web app framework of the past 20 years, Ruby was (and still is) a great scripting language with consistent syntax and a great standard library.</p>
 
 <p>We begin to open up its composable power by using its executable with literal inlined syntax via the <code>-e</code> option.</p>
 
@@ -355,7 +355,7 @@ function rep {
 <h2 id="in-practice">In practice</h2>
 
 <ul>
-  <li>I can pipe commands to <code>rep</code>, then use Ruby as my language instead of various utilites</li>
+  <li>I can pipe commands to <code>rep</code>, then use Ruby as my language instead of various utilities</li>
   <li>I can use <code>I</code> and <code>II</code> in my Ruby syntax to get <code>STDIN</code> as I want</li>
   <li>I can even add other utilities alongside <code>main.rb</code> to do other nice tricks (e.g. I monkeypatch <code>Array</code> to define <code>#jn</code> that runs <code>self.join("\n")</code>)</li>
 </ul>
@@ -415,9 +415,9 @@ BAZ
 {"2":["foo","bar"],"1":["charlie","alpha"]}
 </code></pre>
 
-<p>Again, what I love most about this solution is that we don’t have to step <em>outside</em> of Ruby – we don’t have to juggle <code>sed</code> and <code>awk</code> and recall the nuances between various linux &amp; macos flavors. We just stay within Ruby, and think in Ruby.</p>
+<p>Again, what I love most about this solution is that we don’t have to step <em>outside</em> of Ruby – we don’t have to juggle <code>sed</code> and <code>awk</code> and recall the nuances between various Linux &amp; macOS flavors. We just stay within Ruby, and think in Ruby.</p>
 
-<p>Also, we stay within the confines of the Unix Philosphy – text based streams with small tools. But this takes us beyond where we could go before.</p>
+<p>Also, we stay within the confines of the Unix Philosophy – text based streams with small tools. But this takes us beyond where we could go before.</p>
 
 <p>I hope it inspires your own vehicles of command line exploration.</p>
 

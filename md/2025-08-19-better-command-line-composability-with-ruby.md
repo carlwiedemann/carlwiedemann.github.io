@@ -2,7 +2,7 @@
 
 2025-08-19
 
-The Unix Philosophy of small, composable, text-based utilities gives us a lot of mileage. It's quite an elegant vehicle, to receive our next bespoke requirement as yet another piped command. But if you've done this enough you know what its like when that vehicle's mileage runs short.
+The Unix Philosophy of small, composable, text-based utilities gives us a lot of mileage. It's quite an elegant vehicle, to receive our next bespoke requirement as yet another piped command. But if you've done this enough you know what it's like when that vehicle's mileage runs short.
 
 Usually it happens after we are piping things together quite handily.
 
@@ -54,7 +54,7 @@ charlie
 
 This is when "just one more pipe" falls short. We've all been there, devotedly fussing around with `awk`, `sed`, `grep`, `tr`, skirting the narrow boundary between clever and clandestine. But ultimately we arrive at a place where these tools just aren't enough, and we're puzzling through remembering all the different options and syntax for each. We then turn to writing a script from scratch all on its own. This, of course, is a fine (and perhaps common) way to live. But I think we can do better.
 
-Before it's claim to fame driving argubably the most influential web app framework of the past 20 years, Ruby was (and still is) a great scripting language with consistent syntax and a great standard library.
+Before its claim to fame driving arguably the most influential web app framework of the past 20 years, Ruby was (and still is) a great scripting language with consistent syntax and a great standard library.
 
 We begin to open up its composable power by using its executable with literal inlined syntax via the `-e` option.
 
@@ -113,7 +113,7 @@ function rep {
 
 ## In practice
 
-* I can pipe commands to `rep`, then use Ruby as my language instead of various utilites
+* I can pipe commands to `rep`, then use Ruby as my language instead of various utilities
 * I can use `I` and `II` in my Ruby syntax to get `STDIN` as I want
 * I can even add other utilities alongside `main.rb` to do other nice tricks (e.g. I monkeypatch `Array` to define `#jn` that runs `self.join("\n")`)
 
@@ -172,8 +172,8 @@ So let's revisit that requirement.
 {"2":["foo","bar"],"1":["charlie","alpha"]}
 </code></pre>
 
-Again, what I love most about this solution is that we don't have to step *outside* of Ruby -- we don't have to juggle `sed` and `awk` and recall the nuances between various linux & macos flavors. We just stay within Ruby, and think in Ruby.
+Again, what I love most about this solution is that we don't have to step *outside* of Ruby -- we don't have to juggle `sed` and `awk` and recall the nuances between various Linux & macOS flavors. We just stay within Ruby, and think in Ruby.
 
-Also, we stay within the confines of the Unix Philosphy -- text based streams with small tools. But this takes us beyond where we could go before.
+Also, we stay within the confines of the Unix Philosophy -- text based streams with small tools. But this takes us beyond where we could go before.
 
 I hope it inspires your own vehicles of command line exploration.
