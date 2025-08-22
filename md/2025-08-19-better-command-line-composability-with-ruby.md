@@ -168,7 +168,7 @@ So let's revisit that requirement.
 (I won't even try to make a "before" version because I don't think it is easily done. Maybe you are better at this than me. 😎)
 
 <pre><code class="language-bash">
-❯ cat FOO.txt | rep 'II.reduce(Hash.new { 0 }) { |m, v| m[v.split(" ")[1]] += 1; m}.group_by { it[1] }.transform_values { it.map(&:first).sort_by { -it.length } }.to_json'
+❯ cat FOO.txt | rep 'II.reduce(Hash.new { 0 }) { |m, v| m[v.split(" ")[0]] += 1; m}.group_by { it[1] }.transform_values { it.map(&:first).sort_by { -it.length } }.to_json'
 {"2":["foo","bar"],"1":["charlie","alpha"]}
 </code></pre>
 
