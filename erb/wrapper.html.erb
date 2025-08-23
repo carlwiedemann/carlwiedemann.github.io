@@ -216,6 +216,55 @@
       footer {
           margin: 2em auto;
       }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #181818;
+          color: #DDD;
+        }
+
+        img {
+          opacity: .75;
+          transition: opacity .5s ease-in-out;
+        }
+
+        img:hover {
+          opacity: 1;
+        }
+
+        .text blockquote {
+            background-color: #000;
+            opacity: 0.8;
+        }
+
+        a:link,
+        a:visited {
+            color: #9696FF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            background-color: #00F;
+            color: #FFF;
+        }
+
+        .text p code,
+        .text li code,
+        .text h2 code,
+        .text h3 code {
+            background-color: #383838;
+        }
+
+        .highlight {
+            background-color: #494900;
+            color: #EEE;
+        }
+
+        figcaption,
+        footer {
+            opacity: 0.8;
+        }
+      }
   </style>
 </head>
 <body>
