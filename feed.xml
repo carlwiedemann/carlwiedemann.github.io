@@ -1,0 +1,48 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Carl Wiedemann</title>
+    <link>https://carlwiedemann.github.io/feed.xml</link>
+    <language>en-us</language>
+    <pubDate>Tue, 19 Aug 2025 00:00:00 +0000</pubDate>
+    <lastBuildDate>Tue, 19 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <generator>Foresite</generator>
+    <atom:link href="https://carlwiedemann.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+  <title>Better command line composability with Ruby</title>
+  <link>https://carlwiedemann.github.io/post/2025-08-19-better-command-line-composability-with-ruby.html</link>
+  <guid>https://carlwiedemann.github.io/post/2025-08-19-better-command-line-composability-with-ruby.html</guid>
+  <pubDate>Tue, 19 Aug 2025 00:00:00 +0000</pubDate>
+</item>
+<item>
+  <title>Kaizen: Ruby</title>
+  <link>https://carlwiedemann.github.io/post/2024-05-14-kaizen-ruby.html</link>
+  <guid>https://carlwiedemann.github.io/post/2024-05-14-kaizen-ruby.html</guid>
+  <pubDate>Tue, 14 May 2024 00:00:00 +0000</pubDate>
+</item>
+<item>
+  <title>ga;ns: Toward Better Code Review</title>
+  <link>https://carlwiedemann.github.io/post/2024-01-05-gans-toward-better-code-review.html</link>
+  <guid>https://carlwiedemann.github.io/post/2024-01-05-gans-toward-better-code-review.html</guid>
+  <pubDate>Fri, 05 Jan 2024 00:00:00 +0000</pubDate>
+</item>
+<item>
+  <title>Test Coverage: A Compass, not a Destination</title>
+  <link>https://carlwiedemann.github.io/post/2023-12-27-test-coverage-a-compass-not-a-destination.html</link>
+  <guid>https://carlwiedemann.github.io/post/2023-12-27-test-coverage-a-compass-not-a-destination.html</guid>
+  <pubDate>Wed, 27 Dec 2023 00:00:00 +0000</pubDate>
+</item>
+<item>
+  <title>Introducing Foresite: An extremely minimal static site generator</title>
+  <link>https://carlwiedemann.github.io/post/2023-01-17-introducing-foresite.html</link>
+  <guid>https://carlwiedemann.github.io/post/2023-01-17-introducing-foresite.html</guid>
+  <pubDate>Tue, 17 Jan 2023 00:00:00 +0000</pubDate>
+</item>
+<item>
+  <title>The Burden of Perfection</title>
+  <link>https://carlwiedemann.github.io/post/2020-07-02-the-burden-of-perfection.html</link>
+  <guid>https://carlwiedemann.github.io/post/2020-07-02-the-burden-of-perfection.html</guid>
+  <pubDate>Thu, 02 Jul 2020 00:00:00 +0000</pubDate>
+</item>
+
+  </channel>
+</rss>
