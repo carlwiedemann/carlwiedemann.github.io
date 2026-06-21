@@ -4,15 +4,15 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
-  <meta name="google-site-verification" content="mvYev_JUFUYr2v1J05_vG1_3bI6z5loefhSu-h5OrLk"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="mvYev_JUFUYr2v1J05_vG1_3bI6z5loefhSu-h5OrLk">
   <title><%= @title ? "#{@title} - #{index_title}" : index_title %></title>
   <link rel="alternate" type="application/rss+xml" title="<%= index_title %>" href="/feed.xml">
-  <link rel="stylesheet" href="https://use.typekit.net/lcc4etk.css"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://use.typekit.net/lcc4etk.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <style>
 
       /* ########## */
@@ -106,7 +106,7 @@
           color: #FFF;
       }
 
-      .text p a:hover code {
+      main p a:hover code {
           background-color: #00F;
       }
 
@@ -173,39 +173,38 @@
       figcaption,
       footer {
           font-style: italic;
-          opacity: 0.5;
           font-size: 0.8em;
       }
 
-      .text li {
+      main li {
           margin: 1em 0;
       }
 
-      .text code {
+      main code {
           font-family: fira-mono, monospace;
       }
 
-      .text p code,
-      .text li code,
-      .text h2 code,
-      .text h3 code {
+      main p code,
+      main li code,
+      main h2 code,
+      main h3 code {
           background-color: #f3f3f3;
           display: inline;
           width: auto;
           white-space: nowrap;
       }
 
-      .text img {
+      main img {
           max-width: 100%;
       }
 
-      .text blockquote {
+      main blockquote {
           background-color: #EEE;
           opacity: 0.8;
           padding: 1em;
       }
 
-      .text > p:last-of-type:after {
+      main > p:last-of-type:after {
           content: ' ∎';
           font-weight: 700;
       }
@@ -233,7 +232,7 @@
           opacity: 1;
         }
 
-        .text blockquote {
+        main blockquote {
             background-color: #000;
             opacity: 0.8;
         }
@@ -249,21 +248,16 @@
             color: #FFF;
         }
 
-        .text p code,
-        .text li code,
-        .text h2 code,
-        .text h3 code {
+        main p code,
+        main li code,
+        main h2 code,
+        main h3 code {
             background-color: #383838;
         }
 
         .highlight {
             background-color: #494900;
             color: #EEE;
-        }
-
-        figcaption,
-        footer {
-            opacity: 0.8;
         }
       }
   </style>
@@ -281,9 +275,7 @@
   </nav>
 </header>
 <main>
-  <section class="text">
-    <%= @content %>
-  </section>
+  <%= @content %>
 </main>
 <footer>
   <p>Powered by <a href="https://github.com/carlwiedemann/foresite">Foresite</a></p>
