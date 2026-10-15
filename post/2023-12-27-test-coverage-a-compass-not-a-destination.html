@@ -59,6 +59,11 @@
       /*font-weight: 700;*/
       /*font-style: normal;*/
 
+      :root {
+          --rhythm: 0.75rem;                 /* base grid unit: 12px */
+          --line: calc(var(--rhythm) * 2);   /* one line of body text: 24px */
+      }
+
       html {
           box-sizing: border-box;
       }
@@ -71,6 +76,8 @@
           font-family: "Atkinson Hyperlegible", sans-serif;
           font-weight: 400;
           font-style: normal;
+          font-size: 1rem;
+          line-height: var(--line);
           margin: 0;
           padding: 0;
       }
@@ -79,7 +86,7 @@
           font-family: abril-fatface, serif;
           font-weight: 400;
           font-style: italic;
-          line-height: 2em;
+          line-height: calc(var(--rhythm) * 4);   /* 48px */
           margin: 0;
           word-wrap: break-word;
       }
@@ -125,9 +132,8 @@
       }
 
       main {
-          line-height: 1.6em;
-          margin-top: 1em;
-          margin-bottom: 5em;
+          margin-top: var(--line);
+          margin-bottom: calc(var(--line) * 4);
       }
 
       nav ul {
@@ -140,30 +146,43 @@
           display: inline;
       }
 
+      /* Headings: line-heights are whole multiples of --rhythm,
+         margins are whole multiples of --line */
       h1, h2, h3, h4 {
           font-weight: 700;
           font-style: normal;
           opacity: 0.9;
-          line-height: 1.3em;
+          margin: calc(var(--line) * 2) 0 var(--line);
       }
 
       h1 {
-          font-size: 2em;
+          font-size: 2rem;
+          line-height: calc(var(--rhythm) * 4);   /* 48px */
       }
 
       h2 {
-          font-size: 1.5em;
+          font-size: 1.5rem;
+          line-height: calc(var(--rhythm) * 3);   /* 36px */
       }
 
       h3 {
-          font-size: 1.2em;
+          font-size: 1.2rem;
+          line-height: calc(var(--rhythm) * 2);   /* 24px */
+      }
+
+      h4 {
+          font-size: 1rem;
+          line-height: calc(var(--rhythm) * 2);   /* 24px */
+      }
+
+      p,
+      ul,
+      ol {
+          margin: 0 0 var(--line);
       }
 
       figure {
-          margin-block-start: 0;
-          margin-block-end: 0;
-          margin-inline-start: 0;
-          margin-inline-end: 0;
+          margin: 0 0 var(--line);
           text-align: center;
       }
 
@@ -171,14 +190,16 @@
       footer {
           font-style: italic;
           font-size: 0.9em;
+          /* line-height is inherited as a fixed length, so rhythm is preserved */
       }
 
       main li {
-          margin: 1em 0;
+          margin: var(--line) 0;
       }
 
       main code {
           font-family: fira-mono, monospace;
+          line-height: 1;   /* stops the monospace font from stretching line boxes */
       }
 
       main p code,
@@ -198,7 +219,8 @@
       main blockquote {
           background-color: #EEE;
           opacity: 0.8;
-          padding: 1em;
+          margin: 0 0 var(--line);
+          padding: var(--line);
       }
 
       main > p:last-of-type:after {
@@ -211,51 +233,62 @@
       }
 
       footer {
-          margin: 2em auto;
+          margin: calc(var(--line) * 2) auto;
       }
 
       @media (prefers-color-scheme: dark) {
-        body {
-          background-color: #181818;
-          color: #DDD;
-        }
+          body {
+              background-color: #181818;
+              color: #DDD;
+          }
 
-        img {
-          opacity: .75;
-          transition: opacity .5s ease-in-out;
-        }
+          img {
+              opacity: .75;
+              transition: opacity .5s ease-in-out;
+          }
 
-        img:hover {
-          opacity: 1;
-        }
+          img:hover {
+              opacity: 1;
+          }
 
-        main blockquote {
-            background-color: #000;
-            opacity: 0.8;
-        }
+          main blockquote {
+              background-color: #000;
+              opacity: 0.8;
+          }
 
-        a:link,
-        a:visited {
-            color: #9696FF;
-            text-decoration: none;
-        }
+          a:link,
+          a:visited {
+              color: #9696FF;
+              text-decoration: none;
+          }
 
-        a:hover {
-            background-color: #00F;
-            color: #FFF;
-        }
+          a:hover {
+              background-color: #00F;
+              color: #FFF;
+          }
 
-        main p code,
-        main li code,
-        main h2 code,
-        main h3 code {
-            background-color: #383838;
-        }
+          main p code,
+          main li code,
+          main h2 code,
+          main h3 code {
+              background-color: #383838;
+          }
 
-        .highlight {
-            background-color: #494900;
-            color: #EEE;
-        }
+          .highlight {
+              background-color: #494900;
+              color: #EEE;
+          }
+      }
+
+      /* ---------- Rhythm debugging overlay ----------
+         Usage: <body class="rhythm"> */
+      .rhythm {
+          background-image:
+              /* stronger line every full text line (2 units) */
+                  linear-gradient(to bottom, transparent calc(100% - 1px), rgba(255, 0, 0, 0.35) 100%),
+                      /* faint line every half-line unit */
+                  linear-gradient(to bottom, transparent calc(100% - 1px), rgba(0, 150, 255, 0.25) 100%);
+          background-size: 100% var(--line), 100% var(--rhythm); background-position: 0 0;
       }
   </style>
 </head>
