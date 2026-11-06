@@ -12,10 +12,10 @@ I don't presume my interest in simplicity makes me unique. If you search for adv
 site generator you generally see one of two answers:
 
 1. "I use [Jekyll/Hugo/Next/Eleventy] and I think it is simple!"
-2. "Just use HTML & CSS!" -__-
+2. "Just use HTML & CSS!" 😑
 
 So while it could be that "something simpler" motivated some if not all of
-the [347 generators listed on the Jamstack site](https://jamstack.org/generators/) many of these have ended-up looking
+the [350+ generators listed on the Jamstack site](https://jamstack.org/generators/) many of these have ended-up looking
 more alike than different.
 
 Peruse the list and you'll see a lot of features in common: themes, layouts, plugins, multiple templating languages,
@@ -68,8 +68,8 @@ The good news is that none of this is behind us. It's all still here.
 
 ## Creating Foresite
 
-> "If there's a book that you want to read, but it hasn't been written yet, then you must write it."<br/>-- Toni
-> Morrison
+> *"If there's a book that you want to read, but it hasn't been written yet, then you must write it."<br/>-- Toni
+> Morrison*
 
 Here's what I wanted to have:
 

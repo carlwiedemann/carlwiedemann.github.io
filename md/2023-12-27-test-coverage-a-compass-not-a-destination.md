@@ -16,8 +16,8 @@ Consider the following simple Ruby file and it's corresponding test. (A constant
 
 File: `thermometer.rb`
 
-<pre><code class="language-ruby">
-module Thermometer
+<pre><code class="language-ruby">module Thermometer
+
   # WATER_BOILING_POINT would be defined here...
 
   def self.is_water_boiling?(temperature)
@@ -29,8 +29,7 @@ end
 Test: `thermometer_spec.rb`
 
 
-<pre><code class="language-ruby">
-require './test_helper'
+<pre><code class="language-ruby">require './test_helper'
 
 require "./thermometer"
 
@@ -49,8 +48,7 @@ The `thermometer_spec.rb` test will pass and also have 100% test coverage.
 
 Console output from test running:
 
-<pre><code>
-# Running:
+<pre><code># Running:
 
 .
 
@@ -86,8 +84,7 @@ Let's modify the test such that it answers the questions mentioned above:
 
 Making these changes, we see the following:
 
-<pre><code class="language-ruby">
-require './test_helper'
+<pre><code class="language-ruby">require './test_helper'
 
 require "./thermometer"
 
@@ -124,8 +121,7 @@ end
 ...and we now see what we had a [Kelvin](https://en.wikipedia.org/wiki/Kelvin) thermometer all along...
 
 
-<pre><code class="language-ruby">
-module Thermometer
+<pre><code class="language-ruby">module Thermometer
   WATER_BOILING_POINT = 373.1339
 
   # ...
@@ -134,8 +130,7 @@ end
 
 ...while also noting that coverage has stayed at 100%.
 
-<pre><code>
-# Running:
+<pre><code># Running:
 
 .....
 

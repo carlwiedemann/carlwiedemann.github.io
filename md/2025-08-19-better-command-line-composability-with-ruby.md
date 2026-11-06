@@ -10,8 +10,7 @@ Usually it happens after we are piping things together quite handily.
 
 > *Okay.*
 
-<pre><code class="language-bash">
-❯ cat FOO.txt
+<pre><code class="language-bash">❯ cat FOO.txt
 foo bar
 foo buzz
 bar bar
@@ -24,8 +23,7 @@ charlie delta
 
 > *Great, that's easy, I'll just pipe `cat` to `cut`.*
 
-<pre><code class="language-bash">
-❯ cat FOO.txt | cut -d ' ' -f 1
+<pre><code class="language-bash">❯ cat FOO.txt | cut -d ' ' -f 1
 foo
 foo
 bar
@@ -38,8 +36,7 @@ charlie
 
 > *Yep I'll pipe `cut` to `uniq`.*
 
-<pre><code class="language-bash">
-❯ cat FOO.txt | cut -d ' ' -f 1 | uniq -c
+<pre><code class="language-bash">❯ cat FOO.txt | cut -d ' ' -f 1 | uniq -c
    2 foo
    2 bar
    1 alpha
@@ -58,15 +55,13 @@ Before its claim to fame driving arguably the most influential web app framework
 
 We begin to open up its composable power by using its executable with literal inlined syntax via the `-e` option.
 
-<pre><code class="language-bash">
-❯ echo "foo" | ruby -e 'puts "hello #{STDIN.gets}"'
+<pre><code class="language-bash">❯ echo "foo" | ruby -e 'puts "hello #{STDIN.gets}"'
 hello foo
 </code></pre>
 
 We soon learn the `-n` option allows executing Ruby code for each line.
 
-<pre><code class="language-bash">
-❯ echo "foo\nbar" | ruby -n -e 'puts "hello #{$_}"'
+<pre><code class="language-bash">❯ echo "foo\nbar" | ruby -n -e 'puts "hello #{$_}"'
 hello foo
 hello bar
 </code></pre>
@@ -83,8 +78,7 @@ By embracing these constraints, I've come up with the following patterns:
 
 I set `RUBYLIB` to `~/_lib/ruby`, where I've added some custom code, namely a file `main.rb` that loads things from stdlib and `require`s anything else in `~/_lib/ruby`.
 
-<pre><code class="language-ruby">
-# ~/_lib/ruby/main.rb
+<pre><code class="language-ruby"># ~/_lib/ruby/main.rb
 require 'json'
 Dir.glob(File.dirname(__FILE__) + '/*.rb').each { it == __FILE__ || (require it) }
 </code></pre>
@@ -93,8 +87,7 @@ Dir.glob(File.dirname(__FILE__) + '/*.rb').each { it == __FILE__ || (require it)
 
 Because I am usually interested in `STDIN`, a sibling file `misc.rb` defines two constants, `II` as an array of strings from `STDIN` and `I` as the first item of the array (for single-line inputs).
 
-<pre><code class="language-ruby">
-# ~/_lib/ruby/misc.rb
+<pre><code class="language-ruby"># ~/_lib/ruby/misc.rb
 II = STDIN.readlines.map(&:chomp)
 I = II.first
 </code></pre>
@@ -103,8 +96,7 @@ I = II.first
 
 Embracing the Unix Philosophy our tool is aimed at meaningful output. In my `~/.zshrc` I alias the inclusion of `main.rb` as a loaded library for `ruby -e` under the alias `rep`, meaning "ruby exec & puts"
 
-<pre><code class="language-bash">
-# ~/.zshrc
+<pre><code class="language-bash"># ~/.zshrc
 alias re="ruby -r main.rb -e"
 function rep {
   re "puts $1"
@@ -123,8 +115,7 @@ Let's have a look at a few before/after comparative examples.
 
 Using awk
 
-<pre><code class="language-bash">
-❯ echo "foo\nbar\nbaz" | awk '{lines[NR]=$0} END {for(i=NR;i>=1;i--) print lines[i]}'
+<pre><code class="language-bash">❯ echo "foo\nbar\nbaz" | awk '{lines[NR]=$0} END {for(i=NR;i>=1;i--) print lines[i]}'
 baz
 bar
 foo
@@ -132,8 +123,7 @@ foo
 
 Using rep: A very simple idea now has a very simple implementation.
 
-<pre><code class="language-bash">
-❯ echo "foo\nbar\nbaz" | rep 'II.reverse.jn'
+<pre><code class="language-bash">❯ echo "foo\nbar\nbaz" | rep 'II.reverse.jn'
 baz
 bar
 foo
@@ -143,8 +133,7 @@ foo
 
 Using tr
 
-<pre><code class="language-bash">
-❯ echo "foo\nbar\nbaz" | tr a-z A-Z
+<pre><code class="language-bash">❯ echo "foo\nbar\nbaz" | tr a-z A-Z
 FOO
 BAR
 BAZ
@@ -152,8 +141,7 @@ BAZ
 
 Using rep: A more literal and descriptive command
 
-<pre><code class="language-bash">
-❯ echo "foo\nbar\nbaz" | rep 'II.map(&:upcase)'
+<pre><code class="language-bash">❯ echo "foo\nbar\nbaz" | rep 'II.map(&:upcase)'
 FOO
 BAR
 BAZ
@@ -167,12 +155,11 @@ So let's revisit that requirement.
 
 (I won't even try to make a "before" version because I don't think it is easily done. Maybe you are better at this than me. 😎)
 
-<pre><code class="language-bash">
-❯ cat FOO.txt | rep 'II.reduce(Hash.new { 0 }) { |m, v| m[v.split(" ")[0]] += 1; m}.group_by { it[1] }.transform_values { it.map(&:first).sort_by { -it.length } }.to_json'
+<pre><code class="language-bash">❯ cat FOO.txt | rep 'II.reduce(Hash.new { 0 }) { |m, v| m[v.split(" ")[0]] += 1; m}.group_by { it[1] }.transform_values { it.map(&:first).sort_by { -it.length } }.to_json'
 {"2":["foo","bar"],"1":["charlie","alpha"]}
 </code></pre>
 
-Again, what I love most about this solution is that we don't have to step *outside* of Ruby -- we don't have to juggle `sed` and `awk` and recall the nuances between various Linux & macOS flavors. We just stay within Ruby, and think in Ruby.
+Again, what I enjoy most about this solution is that we don't have to step *outside* of Ruby -- we don't have to juggle `sed` and `awk` and recall the nuances between various Linux & macOS flavors. We just stay within Ruby, and think in Ruby.
 
 Also, we stay within the confines of the Unix Philosophy -- text based streams with small tools. But this takes us beyond where we could go before.
 

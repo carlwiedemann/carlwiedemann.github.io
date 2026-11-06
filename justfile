@@ -1,0 +1,2 @@
+run:
+    foresite build

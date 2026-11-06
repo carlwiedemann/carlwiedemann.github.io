@@ -202,7 +202,14 @@
 
       main code {
           font-family: fira-mono, monospace;
-          line-height: 1;   /* stops the monospace font from stretching line boxes */
+      }
+
+      main pre {
+          margin-block: var(--line);
+      }
+
+      main pre code.hljs {
+          padding: var(--line);
       }
 
       main p code,
@@ -211,6 +218,7 @@
       main h3 code {
           background-color: #f3f3f3;
           display: inline;
+          line-height: 1;
           width: auto;
           white-space: nowrap;
       }
@@ -286,12 +294,9 @@
       /* ---------- Rhythm debugging overlay ----------
          Usage: <body class="rhythm"> */
       .rhythm {
-          background-image:
-              /* stronger line every full text line (2 units) */
-                  linear-gradient(to bottom, transparent calc(100% - 1px), rgba(255, 0, 0, 0.35) 100%),
-                      /* faint line every half-line unit */
-                  linear-gradient(to bottom, transparent calc(100% - 1px), rgba(0, 150, 255, 0.25) 100%);
-          background-size: 100% var(--line), 100% var(--rhythm); background-position: 0 0;
+          background-image: linear-gradient(to bottom, transparent calc(100% - 1px), rgba(255, 0, 0, 0.35) 100%);
+          background-size: 100% var(--rhythm);
+          background-position: 0 0;
       }
   </style>
 </head>
@@ -323,11 +328,11 @@ site generator you generally see one of two answers:</p>
 
 <ol>
   <li>“I use [Jekyll/Hugo/Next/Eleventy] and I think it is simple!”</li>
-  <li>“Just use HTML &amp; CSS!” -__-</li>
+  <li>“Just use HTML &amp; CSS!” 😑</li>
 </ol>
 
 <p>So while it could be that “something simpler” motivated some if not all of
-the <a href="https://jamstack.org/generators/">347 generators listed on the Jamstack site</a> many of these have ended-up looking
+the <a href="https://jamstack.org/generators/">350+ generators listed on the Jamstack site</a> many of these have ended-up looking
 more alike than different.</p>
 
 <p>Peruse the list and you’ll see a lot of features in common: themes, layouts, plugins, multiple templating languages,
@@ -385,8 +390,8 @@ intrigue and craft were the ethos of the world wide web.</p>
 <h2 id="creating-foresite">Creating Foresite</h2>
 
 <blockquote>
-  <p>“If there’s a book that you want to read, but it hasn’t been written yet, then you must write it.”<br />– Toni
-Morrison</p>
+  <p><em>“If there’s a book that you want to read, but it hasn’t been written yet, then you must write it.”<br />– Toni
+Morrison</em></p>
 </blockquote>
 
 <p>Here’s what I wanted to have:</p>

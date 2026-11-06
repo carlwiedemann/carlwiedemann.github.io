@@ -202,7 +202,14 @@
 
       main code {
           font-family: fira-mono, monospace;
-          line-height: 1;   /* stops the monospace font from stretching line boxes */
+      }
+
+      main pre {
+          margin-block: var(--line);
+      }
+
+      main pre code.hljs {
+          padding: var(--line);
       }
 
       main p code,
@@ -211,6 +218,7 @@
       main h3 code {
           background-color: #f3f3f3;
           display: inline;
+          line-height: 1;
           width: auto;
           white-space: nowrap;
       }
@@ -286,12 +294,9 @@
       /* ---------- Rhythm debugging overlay ----------
          Usage: <body class="rhythm"> */
       .rhythm {
-          background-image:
-              /* stronger line every full text line (2 units) */
-                  linear-gradient(to bottom, transparent calc(100% - 1px), rgba(255, 0, 0, 0.35) 100%),
-                      /* faint line every half-line unit */
-                  linear-gradient(to bottom, transparent calc(100% - 1px), rgba(0, 150, 255, 0.25) 100%);
-          background-size: 100% var(--line), 100% var(--rhythm); background-position: 0 0;
+          background-image: linear-gradient(to bottom, transparent calc(100% - 1px), rgba(255, 0, 0, 0.35) 100%);
+          background-size: 100% var(--rhythm);
+          background-position: 0 0;
       }
   </style>
 </head>
@@ -326,8 +331,8 @@
 
 <p>File: <code>thermometer.rb</code></p>
 
-<pre><code class="language-ruby">
-module Thermometer
+<pre><code class="language-ruby">module Thermometer
+
   # WATER_BOILING_POINT would be defined here...
 
   def self.is_water_boiling?(temperature)
@@ -338,8 +343,7 @@ end
 
 <p>Test: <code>thermometer_spec.rb</code></p>
 
-<pre><code class="language-ruby">
-require './test_helper'
+<pre><code class="language-ruby">require './test_helper'
 
 require "./thermometer"
 
@@ -358,8 +362,7 @@ end
 
 <p>Console output from test running:</p>
 
-<pre><code>
-# Running:
+<pre><code># Running:
 
 .
 
@@ -401,8 +404,7 @@ Coverage report generated for RSpec to /Users/carl.wiedemann/_scratch/simplecov_
 
 <p>Making these changes, we see the following:</p>
 
-<pre><code class="language-ruby">
-require './test_helper'
+<pre><code class="language-ruby">require './test_helper'
 
 require "./thermometer"
 
@@ -438,8 +440,7 @@ end
 
 <p>…and we now see what we had a <a href="https://en.wikipedia.org/wiki/Kelvin">Kelvin</a> thermometer all along…</p>
 
-<pre><code class="language-ruby">
-module Thermometer
+<pre><code class="language-ruby">module Thermometer
   WATER_BOILING_POINT = 373.1339
 
   # ...
@@ -448,8 +449,7 @@ end
 
 <p>…while also noting that coverage has stayed at 100%.</p>
 
-<pre><code>
-# Running:
+<pre><code># Running:
 
 .....
 

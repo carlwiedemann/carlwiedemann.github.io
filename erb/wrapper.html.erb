@@ -205,7 +205,14 @@
 
       main code {
           font-family: fira-mono, monospace;
-          line-height: 1;   /* stops the monospace font from stretching line boxes */
+      }
+
+      main pre {
+          margin-block: var(--line);
+      }
+
+      main pre code.hljs {
+          padding: var(--line);
       }
 
       main p code,
@@ -214,6 +221,7 @@
       main h3 code {
           background-color: #f3f3f3;
           display: inline;
+          line-height: 1;
           width: auto;
           white-space: nowrap;
       }
@@ -289,12 +297,9 @@
       /* ---------- Rhythm debugging overlay ----------
          Usage: <body class="rhythm"> */
       .rhythm {
-          background-image:
-              /* stronger line every full text line (2 units) */
-                  linear-gradient(to bottom, transparent calc(100% - 1px), rgba(255, 0, 0, 0.35) 100%),
-                      /* faint line every half-line unit */
-                  linear-gradient(to bottom, transparent calc(100% - 1px), rgba(0, 150, 255, 0.25) 100%);
-          background-size: 100% var(--line), 100% var(--rhythm); background-position: 0 0;
+          background-image: linear-gradient(to bottom, transparent calc(100% - 1px), rgba(255, 0, 0, 0.35) 100%);
+          background-size: 100% var(--rhythm);
+          background-position: 0 0;
       }
   </style>
 </head>

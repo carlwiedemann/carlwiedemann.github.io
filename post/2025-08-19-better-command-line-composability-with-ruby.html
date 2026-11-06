@@ -202,7 +202,14 @@
 
       main code {
           font-family: fira-mono, monospace;
-          line-height: 1;   /* stops the monospace font from stretching line boxes */
+      }
+
+      main pre {
+          margin-block: var(--line);
+      }
+
+      main pre code.hljs {
+          padding: var(--line);
       }
 
       main p code,
@@ -211,6 +218,7 @@
       main h3 code {
           background-color: #f3f3f3;
           display: inline;
+          line-height: 1;
           width: auto;
           white-space: nowrap;
       }
@@ -286,12 +294,9 @@
       /* ---------- Rhythm debugging overlay ----------
          Usage: <body class="rhythm"> */
       .rhythm {
-          background-image:
-              /* stronger line every full text line (2 units) */
-                  linear-gradient(to bottom, transparent calc(100% - 1px), rgba(255, 0, 0, 0.35) 100%),
-                      /* faint line every half-line unit */
-                  linear-gradient(to bottom, transparent calc(100% - 1px), rgba(0, 150, 255, 0.25) 100%);
-          background-size: 100% var(--line), 100% var(--rhythm); background-position: 0 0;
+          background-image: linear-gradient(to bottom, transparent calc(100% - 1px), rgba(255, 0, 0, 0.35) 100%);
+          background-size: 100% var(--rhythm);
+          background-position: 0 0;
       }
   </style>
 </head>
@@ -322,8 +327,7 @@
   <p><em>Okay.</em></p>
 </blockquote>
 
-<pre><code class="language-bash">
-❯ cat FOO.txt
+<pre><code class="language-bash">❯ cat FOO.txt
 foo bar
 foo buzz
 bar bar
@@ -338,8 +342,7 @@ charlie delta
   <p><em>Great, that’s easy, I’ll just pipe <code>cat</code> to <code>cut</code>.</em></p>
 </blockquote>
 
-<pre><code class="language-bash">
-❯ cat FOO.txt | cut -d ' ' -f 1
+<pre><code class="language-bash">❯ cat FOO.txt | cut -d ' ' -f 1
 foo
 foo
 bar
@@ -354,8 +357,7 @@ charlie
   <p><em>Yep I’ll pipe <code>cut</code> to <code>uniq</code>.</em></p>
 </blockquote>
 
-<pre><code class="language-bash">
-❯ cat FOO.txt | cut -d ' ' -f 1 | uniq -c
+<pre><code class="language-bash">❯ cat FOO.txt | cut -d ' ' -f 1 | uniq -c
    2 foo
    2 bar
    1 alpha
@@ -376,15 +378,13 @@ charlie
 
 <p>We begin to open up its composable power by using its executable with literal inlined syntax via the <code>-e</code> option.</p>
 
-<pre><code class="language-bash">
-❯ echo "foo" | ruby -e 'puts "hello #{STDIN.gets}"'
+<pre><code class="language-bash">❯ echo "foo" | ruby -e 'puts "hello #{STDIN.gets}"'
 hello foo
 </code></pre>
 
 <p>We soon learn the <code>-n</code> option allows executing Ruby code for each line.</p>
 
-<pre><code class="language-bash">
-❯ echo "foo\nbar" | ruby -n -e 'puts "hello #{$_}"'
+<pre><code class="language-bash">❯ echo "foo\nbar" | ruby -n -e 'puts "hello #{$_}"'
 hello foo
 hello bar
 </code></pre>
@@ -403,8 +403,7 @@ hello bar
 
 <p>I set <code>RUBYLIB</code> to <code>~/_lib/ruby</code>, where I’ve added some custom code, namely a file <code>main.rb</code> that loads things from stdlib and <code>require</code>s anything else in <code>~/_lib/ruby</code>.</p>
 
-<pre><code class="language-ruby">
-# ~/_lib/ruby/main.rb
+<pre><code class="language-ruby"># ~/_lib/ruby/main.rb
 require 'json'
 Dir.glob(File.dirname(__FILE__) + '/*.rb').each { it == __FILE__ || (require it) }
 </code></pre>
@@ -413,8 +412,7 @@ Dir.glob(File.dirname(__FILE__) + '/*.rb').each { it == __FILE__ || (require it)
 
 <p>Because I am usually interested in <code>STDIN</code>, a sibling file <code>misc.rb</code> defines two constants, <code>II</code> as an array of strings from <code>STDIN</code> and <code>I</code> as the first item of the array (for single-line inputs).</p>
 
-<pre><code class="language-ruby">
-# ~/_lib/ruby/misc.rb
+<pre><code class="language-ruby"># ~/_lib/ruby/misc.rb
 II = STDIN.readlines.map(&amp;:chomp)
 I = II.first
 </code></pre>
@@ -423,8 +421,7 @@ I = II.first
 
 <p>Embracing the Unix Philosophy our tool is aimed at meaningful output. In my <code>~/.zshrc</code> I alias the inclusion of <code>main.rb</code> as a loaded library for <code>ruby -e</code> under the alias <code>rep</code>, meaning “ruby exec &amp; puts”</p>
 
-<pre><code class="language-bash">
-# ~/.zshrc
+<pre><code class="language-bash"># ~/.zshrc
 alias re="ruby -r main.rb -e"
 function rep {
   re "puts $1"
@@ -445,8 +442,7 @@ function rep {
 
 <p>Using awk</p>
 
-<pre><code class="language-bash">
-❯ echo "foo\nbar\nbaz" | awk '{lines[NR]=$0} END {for(i=NR;i&gt;=1;i--) print lines[i]}'
+<pre><code class="language-bash">❯ echo "foo\nbar\nbaz" | awk '{lines[NR]=$0} END {for(i=NR;i&gt;=1;i--) print lines[i]}'
 baz
 bar
 foo
@@ -454,8 +450,7 @@ foo
 
 <p>Using rep: A very simple idea now has a very simple implementation.</p>
 
-<pre><code class="language-bash">
-❯ echo "foo\nbar\nbaz" | rep 'II.reverse.jn'
+<pre><code class="language-bash">❯ echo "foo\nbar\nbaz" | rep 'II.reverse.jn'
 baz
 bar
 foo
@@ -465,8 +460,7 @@ foo
 
 <p>Using tr</p>
 
-<pre><code class="language-bash">
-❯ echo "foo\nbar\nbaz" | tr a-z A-Z
+<pre><code class="language-bash">❯ echo "foo\nbar\nbaz" | tr a-z A-Z
 FOO
 BAR
 BAZ
@@ -474,8 +468,7 @@ BAZ
 
 <p>Using rep: A more literal and descriptive command</p>
 
-<pre><code class="language-bash">
-❯ echo "foo\nbar\nbaz" | rep 'II.map(&amp;:upcase)'
+<pre><code class="language-bash">❯ echo "foo\nbar\nbaz" | rep 'II.map(&amp;:upcase)'
 FOO
 BAR
 BAZ
@@ -489,12 +482,11 @@ BAZ
 
 <p>(I won’t even try to make a “before” version because I don’t think it is easily done. Maybe you are better at this than me. 😎)</p>
 
-<pre><code class="language-bash">
-❯ cat FOO.txt | rep 'II.reduce(Hash.new { 0 }) { |m, v| m[v.split(" ")[0]] += 1; m}.group_by { it[1] }.transform_values { it.map(&amp;:first).sort_by { -it.length } }.to_json'
+<pre><code class="language-bash">❯ cat FOO.txt | rep 'II.reduce(Hash.new { 0 }) { |m, v| m[v.split(" ")[0]] += 1; m}.group_by { it[1] }.transform_values { it.map(&amp;:first).sort_by { -it.length } }.to_json'
 {"2":["foo","bar"],"1":["charlie","alpha"]}
 </code></pre>
 
-<p>Again, what I love most about this solution is that we don’t have to step <em>outside</em> of Ruby – we don’t have to juggle <code>sed</code> and <code>awk</code> and recall the nuances between various Linux &amp; macOS flavors. We just stay within Ruby, and think in Ruby.</p>
+<p>Again, what I enjoy most about this solution is that we don’t have to step <em>outside</em> of Ruby – we don’t have to juggle <code>sed</code> and <code>awk</code> and recall the nuances between various Linux &amp; macOS flavors. We just stay within Ruby, and think in Ruby.</p>
 
 <p>Also, we stay within the confines of the Unix Philosophy – text based streams with small tools. But this takes us beyond where we could go before.</p>
 
