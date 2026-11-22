@@ -3,12 +3,18 @@
     <title>Carl Wiedemann</title>
     <link>https://carlwiedemann.github.io/feed.xml</link>
     <language>en-us</language>
-    <pubDate>Tue, 19 Aug 2025 00:00:00 +0000</pubDate>
-    <lastBuildDate>Tue, 19 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <pubDate>Sun, 22 Nov 2026 00:00:00 +0000</pubDate>
+    <lastBuildDate>Sun, 22 Nov 2026 00:00:00 +0000</lastBuildDate>
     <generator>Foresite</generator>
     <atom:link href="https://carlwiedemann.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-  <title>Better command line composability with Ruby</title>
+  <title>25 Learnings From 25 Years in Software</title>
+  <link>https://carlwiedemann.github.io/post/2026-11-22-learnings-from-years-in-software.html</link>
+  <guid>https://carlwiedemann.github.io/post/2026-11-22-learnings-from-years-in-software.html</guid>
+  <pubDate>Sun, 22 Nov 2026 00:00:00 +0000</pubDate>
+</item>
+<item>
+  <title>Better Command Line Composability with Ruby</title>
   <link>https://carlwiedemann.github.io/post/2025-08-19-better-command-line-composability-with-ruby.html</link>
   <guid>https://carlwiedemann.github.io/post/2025-08-19-better-command-line-composability-with-ruby.html</guid>
   <pubDate>Tue, 19 Aug 2025 00:00:00 +0000</pubDate>

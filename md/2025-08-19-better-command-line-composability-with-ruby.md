@@ -1,4 +1,4 @@
-# Better command line composability with Ruby
+# Better Command Line Composability with Ruby
 
 2025-08-19
 
