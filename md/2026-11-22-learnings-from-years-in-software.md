@@ -249,9 +249,7 @@ If everyone is saying Yes, try to find gaps. If everyone is being difficult, try
 
 If you are working cross-functionally across multiple teams then you may need to play multiple of these roles at the same time.
 
-I have made many mistakes trying to figure this out. Don't just be frictional; people need to respect you if you are to make progress.
-
-For technical conversation, seek the things that nobody else sees. Don't blow things out of proportion; that will just degrade your social capital. 
+I have made many mistakes trying to figure this out. Don't just be frictional or blow things out of proportion. This will degrade your social capital. People need to respect you if you are to make progress. Seek the things that nobody else sees.
 
 When faced with a disagreement or a decision point, a great way to proceed is accept the terms of the opposing view then explore the outcomes. If you are skeptical of *X* then you may have an easier time granting *X* as a given, then exploring its outcomes rather than trying to refute *X* directly.
 
