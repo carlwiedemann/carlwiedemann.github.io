@@ -30,19 +30,19 @@ The less you have to think about what a tool is, the more you can think about wh
 
 ## 3. Rename it now
 
-Code is written and time passes. Now something you named a year ago now seems like it was named wrong. "Naming things is hard." We all knowingly nod.
+Code is written and time passes. Now something you named a year ago now seems like it was named wrong. "Naming things is hard". We all knowingly nod.
 
 What makes it hard? Part of the difficulty is thinking of a *Good* name. But wait: You thought you had a *Good* name and now it turns out it was a *Bad* name. Now what if your new name you thought of --- which appears *Good* now --- *also* turns out to be *Bad*? You'd have to rename it again. So perhaps part of the difficulty of naming things is actually the difficulty of *renaming* things. Maybe if renaming things was easier, we might think naming things was easier because there would be less pressure to find a *Good* name in the first place.
 
-Renaming things is hard for lots of reasons. But renaming a thing only gets harder the longer you wait to rename a thing. Effort aside, the cognitive load of a poorly-named thing sticking around slows down newcomers. "Oh yeah, we need to rename that." I hate saying this to people, don't you? Let's make it better for newcomers by being in the habit of renaming things we know need to be renamed. As best you can, the moment you notice a thing needs to be renamed, rename the thing.
+Renaming things is hard for lots of reasons. But renaming a thing only gets harder the longer you wait to rename a thing. Effort aside, the cognitive load of a poorly-named thing sticking around slows down newcomers. "Oh yeah, we need to rename that". I hate saying this to people, don't you? Let's make it better for newcomers by being in the habit of renaming things we know need to be renamed. As best you can, the moment you notice a thing needs to be renamed, rename the thing.
 
 (Idea: the first week of every quarter is *"rename week"*. Everyone gets to go do the renaming they know they should do.)
 
 ## 4. Label your arrows
 
-Most of the time when I am sent a typical "boxes & arrows" diagram aiming to describe software the boxes are labeled but the arrows are not. This is a problem. (Yes, even "UML").
+Most of the time when I am sent a typical "boxes & arrows" diagram aiming to describe software the boxes are labeled but the arrows are not. This is a problem. (Yes, even "UML".)
 
-What do unlabeled arrows mean? Only the author has the benefit of knowing for certain, but readers resort to something more vague: "Talks to", "Owns", "Knows about", "Observes", "Data flow". Unfortunately, (I suspect sometimes arrows simply mean which box was drawn first.)
+What do unlabeled arrows mean? Only the author has the benefit of knowing for certain, but readers resort to something more vague: "Talks to", "Owns", "Knows about", "Observes", "Data flow". (Unfortunately, I suspect sometimes arrows simply mean which box was drawn first.)
 
 It's easy to become overly focused on nouns rather than verbs. But it's the verbs that actually matter because data *moves* in systems. That's the whole point.
 
@@ -56,7 +56,7 @@ The real benefit comes when you find a label that doesn't make much sense --- yo
 
 Once I was building a feature that allowed users to customize a menu's options. The designer suggested mandating a user not configure an empty menu, so it would display a warning when users attempt removing the final option.
 
-"It doesn't make sense to have an empty menu." Ok, sure. But what is the harm in allowing it? If we allow it, users just have an empty menu. We could measure how many users elect to have an empty menu (because maybe the menu wasn't useful to begin with). And we respect user choice, even if that choice "doesn't make sense." (This is true respect.)
+"It doesn't make sense to have an empty menu". Ok, sure. But what is the harm in allowing it? If we allow it, users just have an empty menu. We could measure how many users elect to have an empty menu (because maybe the menu wasn't useful to begin with). And we respect user choice, even if that choice "doesn't make sense". (This is true respect.)
 
 Actively preventing this is adversarial and paternal for a consequence that plausibly creates the same outcome --- the *passive* friction of an empty menu might encourage using it, whereas the *active* friction of an error message forces them to.
 
@@ -66,7 +66,7 @@ Consider what you guard against. Does it matter? What might matter more is that 
 
 Code comments are widely critiqued as redundant & dishonest. "Self-documenting code" apparently solves this.
 
-This critique certainly rings true for much of the comments we see. But it is also circular reasoning because it simply describes *useless* comments. "The Bad thing is Bad." Ok, sure.
+This critique certainly rings true for much of the comments we see. But it is also circular reasoning because it simply describes *useless* comments. "The Bad thing is Bad". Ok, sure.
 
 Can comments be useful? I believe so. People struggle to define what "useful" means. Ironically, the struggle itself is part of what makes comments useful because they *should* require a high price of admission to your codebase.
 
@@ -97,7 +97,7 @@ Unfortunately, most people haven't read Brooks, and believe there's an oasis bey
 
 Solving one problem never leads to an unproblematic state, it (ideally) leads to more interesting problems to solve. But there will never be perfection. You have to decide *where* you want to try to isolate complexity, not *if*.
 
-You may be frustrated with this repetition. Jerry Colonna calls it "[painting the bridge](https://www.reboot.io/wp-content/uploads/2021/12/Ops-Man-2-Edited-Transcript.docx.pdf)." (It takes so long to paint the bridge that once you finish painting the bridge you have to go back to the very start and begin painting the bridge again.) But that's the point. That's the point of all of this. That's actually where leadership and craftsmanship should aim.
+You may be frustrated with this repetition. Jerry Colonna calls it "[painting the bridge](https://www.reboot.io/wp-content/uploads/2021/12/Ops-Man-2-Edited-Transcript.docx.pdf)". (It takes so long to paint the bridge that once you finish painting the bridge you have to go back to the very start and begin painting the bridge again.) But that's the point. That's the point of all of this. That's actually where leadership and craftsmanship should aim.
 
 Embrace the inevitability of complexity. Understand it as something that you cannot escape, but that you may shepherd to create lightness and brightness.
 
@@ -127,7 +127,7 @@ A great way to appreciate non-engineers is *because* they are different from you
 
 ## 11. Delivery is design
 
-The biggest mistakes made in software happen when people spend too much time building in isolation, without actually using or integrating into the adjacent systems. One rather nefarious form of isolation is isolation from the delivery mechanisms of what brings the software into becoming "live." Testing, delivery, & observation are accessorizing afterthoughts rather than pillars of the entire edifice.
+The biggest mistakes made in software happen when people spend too much time building in isolation, without actually using or integrating into the adjacent systems. One rather nefarious form of isolation is isolation from the delivery mechanisms of what brings the software into becoming "live". Testing, delivery, & observation are accessorizing afterthoughts rather than pillars of the entire edifice.
 
 Unfortunately, this is very typical, and I believe related to why <strike>bugs</strike> mistakes are typical. Nothing is real until it lives in the field, and it is the only real mechanism of feedback.
 
@@ -137,7 +137,7 @@ A better approach is aiming at delivery working & visible as soon as you possibl
 
 It's very easy to complain about whichever languages and tools that you have to use at your day job. But everything didn't just happen spontaneously. Decisions that seem arbitrary or silly came through paradigms established decades ago. These are worth knowing, for both your own sanity and your own maturity.
 
-You can get pretty far without learning many fundamentals, and just figuring things out as you go (I speak from experience). You can land a six-figure job just fine. But at some point you *will* hit a wall: Some bug you can't fix, some pattern you can't quite get right.
+You can get pretty far without learning many fundamentals, and just figuring things out as you go. (I speak from direct experience.) You can land a six-figure job just fine. But at some point you *will* hit a wall: Some bug you can't fix, some pattern you can't quite get right.
 
 Faced with your own limitations, when you take it upon yourself to dive deeper into formalized knowledge you will begin to see your gaps, and recognize problems you have created. Decisions you felt confident making were quite fragile in reality.
 
@@ -225,8 +225,8 @@ Sometimes "satisfied" means we finish it the way we thought, other times "satisf
 
 What about stakeholders? They want to be able to predict things. But a lot of times when we bring them an estimate, we have some version of the following conversation:
 
-* You: "It's going to take 18 months."
-* Stakeholder: "That's too long."
+* You: "It's going to take 18 months"
+* Stakeholder: "That's too long"
 * You: "...ok, so how long do you *need* it to take?"
 
 How long do you need it to take? How long do you want to budget in order to see something? You don't go shopping for a car or a house without a budget. So don't go shopping for features without a budget.
