@@ -49,7 +49,7 @@ It's easy to become overly focused on nouns rather than verbs. But it's the verb
 The real benefit comes when you find a label that doesn't make much sense --- you might have the wrong verb, or a missing noun. This friction inspires conversation that wouldn't have happened otherwise.
 
 <figure>
-<img alt="Remote controls" src="./img/remotes.jpg" />
+<img alt="A pile of old television remote controls" src="./img/remotes.jpg" />
 </figure>
 
 ## 5. Respect the user
@@ -114,7 +114,7 @@ The courage to visit those shadows is a skill to embrace, not avoid. The most va
 Go exploring. Understand the checkered history. Become the engineer who is not so enamored by [the shiny things](https://blog.codinghorror.com/the-magpie-developer/), but the shadowy things.
 
 <figure>
-<img alt="Paris" src="./img/paris.jpg" />
+<img alt="'Amour' written on a Paris bridge, Notre Dame in the background" src="./img/paris.jpg" />
 </figure>
 
 ## 10. It's not supposed to be easy
@@ -170,7 +170,7 @@ Sometimes the answer is important. Sometimes the answer isn't important. Sometim
 And sometimes even when you try to figure out the answer, you won't. Instead, the answer will arrive years later when you're walking your dog or making a sandwich or stepping out of the shower. There's a lot you won't know. Some of it should be because you sense the value of knowing.
 
 <figure>
-<img alt="Prague" src="./img/cranes.jpg" />
+<img alt="Cranes on the Colorado horizon" src="./img/cranes.jpg" />
 </figure>
 
 ## 15. Let it crash
@@ -236,7 +236,7 @@ That's actually the first question we should ask: What's the budget? So just ask
 This is difficult to do, and what makes it difficult is accepting it is inexact. But it's about dialogue, not precision.
 
 <figure>
-<img alt="Prague" src="./img/prague.jpg" />
+<img alt="Waiting beneath the shoefiti by the Prague Metronome, " src="./img/prague.jpg" />
 </figure>
 
 ## 20. What's not being said?
@@ -325,7 +325,7 @@ I don't think this world is going away. Just as when the search engine arrived, 
 What happens 25 years from now? I will share more then.
 
 <figure>
-<img alt="Prague" src="./img/flowers.jpg" />
+<img alt="Flowers pushing through the pavement on your street" src="./img/flowers.jpg" />
 </figure>
 
 ## 25. Relax
