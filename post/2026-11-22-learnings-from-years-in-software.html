@@ -182,6 +182,7 @@
       ul,
       ol {
           margin: 0 0 var(--line);
+          text-wrap: pretty;
       }
 
       figure {
@@ -317,321 +318,316 @@
 
 <p>2026-11-22</p>
 
-<p>In the fall of 2001, I went to college. I didn’t study computer science, but all students received 10MB of university-hosted disk, served through Apache on a public subdomain, with cgi-bin and FTP access. For <strike>late adolescent vanity</strike> fun I made my own website with Microsoft Notepad, a pirated version of Adobe Photoshop 6, and a lot of copy-paste from W3C tutorials. Little did I realize those moments of simply following my curiosity would begin turning the flywheel of what became my entire career.</p>
+<p>In the fall of 2001, I started college. I didn’t study computer science, instead what brought me to programming was that the university provided 10MB of Apache-hosted disk through public subdomain with cgi-bin and FTP access.</p>
 
-<p>A quarter century later, here are some things that I picked-up along the way, acquired mostly through trial-and-error.</p>
+<p>For <strike>late adolescent vanity</strike> fun I made my own website with Microsoft Notepad, a pirated version of Adobe Photoshop 6, and a lot of copy-paste from W3C tutorials. Little did I realize those moments of simply following my curiosity would begin turning the flywheel of what became my entire career.</p>
+
+<p>A quarter century later, here are some things that I picked-up along the way, mostly through trial-and-error.</p>
 
 <h2 id="code-is-for-humans">1. Code is for humans</h2>
 
-<p>What is code? It’s text files that describe instructions for a machine. A massively layered onion of abstraction lies between what those text files contain and what the machine ultimately does.</p>
+<p>What is code? It’s just a bunch of text files. A densely layered onion of abstraction lies between those text files and what a machine ultimately does.</p>
 
-<p>The point of abstraction is that we are <em>not</em> the machine. We are humans who use abstraction to try to instruct machines in more sophisticated ways than we could without abstraction.</p>
+<p>The point of abstraction is that we, the authors of the text, are <em>not</em> the machine. We are humans who use abstraction to try to instruct machines in more sophisticated ways than we could without abstraction.</p>
 
-<p>It’s fun to look at Greg Walsh’s <a href="https://en.wikipedia.org/wiki/Fast_inverse_square_root">fast inverse square root</a> because of its cleverness. But its novelty also relies on its <em>lack</em> of abstraction. Puzzling through it is novel, but you wouldn’t want an entire codebase to look like this code, it would exhaust you rather quickly.</p>
+<p>It’s fun to look at Greg Walsh’s <a href="https://en.wikipedia.org/wiki/Fast_inverse_square_root">fast inverse square root</a> because of its cleverness. But its novelty also relies on its <em>lack</em> of abstraction. You wouldn’t want an entire codebase to look like this, it would exhaust you rather quickly.</p>
 
-<p>Most of us will spend more time reading and editing code we did not write than code we wrote ourselves. Even in the “agentic” age, legibility of code is what matters in building a great codebase, not cleverness. The moment you find yourself thinking you’ve written something really good <em>because</em> it requires deeper insight to understand, you have likely been seduced by cleverness, in spite of the people who also have to read what you’ve written.</p>
+<p>We spend more time reading and editing code we did not write instead of code we wrote ourselves. Legibility and clarity of code is what matters in building a great codebase, not cleverness. The moment you find yourself valuing your own work <em>because</em> it requires deeper insight to understand its value, you likely have been seduced by cleverness — in spite of your collaborators who must read what you’ve written.</p>
 
-<p>So write for the person who isn’t you, but must clearly &amp; quickly understand what you did. That person doesn’t live in your head.</p>
+<p>Write code for the person who isn’t you. That person must clearly &amp; quickly understand what you’ve done. That person doesn’t live in your head.</p>
 
 <h2 id="ergonomics-matter">2. Ergonomics matter</h2>
 
-<p>The ease with which you use the computer will improve your output with the computer. What’s important is to <em>keep</em> spending time improving how you use it. When you notice repetitive toil, that should signal a place to optimize. Time will reveal new places.</p>
+<p>Computers are amazing tools. It is worth your time to continuously improvement your use of the computer. When you notice repetitive toil, that signals a place to optimize. Time reveals new places.</p>
 
-<p>Write lots of little scripts for yourself, keep your dotfiles in version control. Keyboard shortcuts are incredibly undervalued by most people (Tampermonkey and Hammerspoon are my favorite utilities) — and for your left pinky’s sake, please map caps lock to ctrl.</p>
+<p>Write many scripts for yourself. Keep your dotfiles versioned. Keyboard shortcuts are incredibly undervalued by most people (<a href="https://www.tampermonkey.net/">Tampermonkey</a> and <a href="https://www.hammerspoon.org/v1/">Hammerspoon</a> are my favorite utilities) — and for your left pinky’s sake, please <a href="./img/thank-me-later.png">map caps lock to ctrl</a>.</p>
 
-<p>The less you have to think about what the tool is, the more you can think about what the tool does.</p>
+<p>The less you have to think about what a tool is, the more you can think about what a tool does.</p>
 
 <h2 id="rename-it-now">3. Rename it now</h2>
 
-<p>Code is written. Time passes. Things change. Something you named a year ago now smells like it wasn’t named correctly. “Naming things is hard”, we all knowingly nod.</p>
+<p>Code is written and time passes. Now something you named a year ago now seems like it was named wrong. “Naming things is hard.” We all knowingly nod.</p>
 
-<p>And what makes it hard? Part of the difficulty is thinking of a good name. But wait: You thought you had a good name, right? So your new good name also may also be bad. So it appears that a separate part of the difficulty is the <em>toil of renaming things</em>. If renaming things was easier, we might think naming things was easier because there would be less pressure to get it right.</p>
+<p>What makes it hard? Part of the difficulty is thinking of a <em>Good</em> name. But wait: You thought you had a <em>Good</em> name and now it turns out it was a <em>Bad</em> name. Now what if your new name you thought of — which appears <em>Good</em> now — <em>also</em> turns out to be <em>Bad</em>? You’d have to rename it again. So perhaps part of the difficulty of naming things is actually the difficulty of <em>renaming</em> things. Maybe if renaming things was easier, we might think naming things was easier because there would be less pressure to find a <em>Good</em> name in the first place.</p>
 
-<p>Renaming things is hard for lots of reasons. But renaming a thing only gets harder the longer you wait to rename a thing.</p>
+<p>Renaming things is hard for lots of reasons. But renaming a thing only gets harder the longer you wait to rename a thing. Effort aside, the cognitive load of a poorly-named thing sticking around slows down newcomers. “Oh yeah, we need to rename that.” I hate saying this to people, don’t you? Let’s make it better for newcomers by being in the habit of renaming things we know need to be renamed. As best you can, the moment you notice a thing needs to be renamed, rename the thing.</p>
 
-<p>So as soon as you notice a thing needs to be renamed, rename it. You likely won’t regret doing so because renaming will only become more difficult in the future. And the cognitive load of a poorly-named thing slows down newcomers. “Oh yeah, we need to rename X.” I hate saying this to people, don’t you? Let’s make it nice for the newcomers by renaming the things that we know need to be renamed.</p>
-
-<p>(I have an idea that the first week of every quarter should be “rename week” where every team gets to go do the renaming they know they should do.)</p>
+<p>(Idea: the first week of every quarter is <em>“rename week”</em>. Everyone gets to go do the renaming they know they should do.)</p>
 
 <h2 id="label-your-arrows">4. Label your arrows</h2>
 
-<p>Most of the time whenever I see a “boxes &amp; arrows” diagram trying to describe a software system (even if it is claimed to be UML) the boxes are labeled but the arrows are not. This is a problem.</p>
+<p>Most of the time when I am sent a typical “boxes &amp; arrows” diagram aiming to describe software the boxes are labeled but the arrows are not. This is a problem. (Yes, even “UML”).</p>
 
-<p>What do the unlabled arrows mean? Nobody can know for certain, they’ll assume something vague like “Talks to”, “Owns”, “Knows about”, “Observes”, “Data flow”. (Unfortunately, I believe sometimes arrows simply mean which box was drawn first.)</p>
+<p>What do unlabled arrows mean? Only the author has the benefit of knowing for certain, but readers resort to something more vague: “Talks to”, “Owns”, “Knows about”, “Observes”, “Data flow”. Unfortunately, (I believe sometimes arrows simply mean which box was drawn first.)</p>
 
-<p>I suspect people forget to label arrows because they are overly focused on nouns rather than verbs. But it’s the verbs that actually matter because data <em>moves</em> in systems. That’s the whole point.</p>
+<p>It’s easy to become overly focused on nouns rather than verbs. But it’s the verbs that actually matter because data <em>moves</em> in systems. That’s the whole point.</p>
 
-<p>The real benefit of labeling arrows is when you find a label that doesn’t make much sense. You might have the wrong verb, or the verb actually reveals a missing noun. This friction inspires conversation that wouldn’t have occurred otherwise.</p>
+<p>The real benefit comes when you find a label that doesn’t make much sense — you might have the wrong verb, or a missing noun. This friction inspires conversation that wouldn’t have happened otherwise.</p>
 
 <figure>
-<img alt="Remote conrols" src="./img/remotes.jpg" style="max-width: 30rem; width:100%;" />
+<img alt="Remote controls" src="./img/remotes.jpg" />
 </figure>
 
 <h2 id="respect-the-user">5. Respect the user</h2>
 
-<p>Once I was building a feature that allowed users to customize a menu. Menu options could be added or removed. My product manager suggested we mandate a user must have at least 1 option exist in the menu, and subsequently display a warning modal if a user tries removing the single option, as doing so would result in an empty menu.</p>
+<p>Once I was building a feature that allowed users to customize a menu’s options. The designer suggested mandating a user not configure an empty menu, so it would display a warning when users attempt removing the final option.</p>
 
-<p>“It doesn’t make sense to have an empty menu,” says the PM. Ok, sure. But why prevent a user from doing this? What is the harm in allowing it? If we allow it, then the user will just have an empty menu and will probably then realize that maybe putting something in the menu would be better instead. We also get the insight of collecting metrics on how many users elect to have an empty menu — maybe the menu wasn’t useful to begin with — we can know that if we allow &amp; track empty states. And we are at least respecting user choice, even if that choice “doesn’t make sense.” This is true respect.</p>
+<p>“It doesn’t make sense to have an empty menu.” Ok, sure. But what is the harm in allowing it? If we allow it, users just have an empty menu. We could measure how many users elect to have an empty menu (because maybe the menu wasn’t useful to begin with). And we respect user choice, even if that choice “doesn’t make sense.” (This is true respect.)</p>
 
-<p>If instead we show the warning, we are just being adversarial and paternal for a consequence that actually likely informs the same outcome for the user; the passive discomfort of an empty menu vs the active discomfort of an error modal.</p>
+<p>Actively preventing this is adversarial and paternal for a consequence that plausibly creates the same outcome — the <em>passive</em> friction of an empty menu might encourage using it vs the <em>active</em> friction of an error message forces using it.</p>
 
-<p>Consider what you guard against. Does it matter? What might matter more is that your software doesn’t coerce its users, even if the users want odd things. You have the opportunity to learn from them by giving them space to act.</p>
+<p>Consider what you guard against. Does it matter? What might matter more is that your software doesn’t coerce its users, even if the users want odd things. You have the opportunity to learn from them, by giving them space to act.</p>
 
 <h2 id="say-why-not-what">6. Say why, not what</h2>
 
-<p>Code comments are widely critiqued. People say they are redundant &amp; lie about code while truly “self-documenting code” should be preferred.</p>
+<p>Code comments are widely critiqued as redundant &amp; dishonest. “Self-documenting code” apparently solves this.</p>
 
-<p>This critique certainly rings true for much of the code we see. But it is also circular reasoning because it simply describes <em>useless</em> comments. “The Bad thing is Bad.” Ok, sure.</p>
+<p>This critique certainly rings true for much of the comments we see. But it is also circular reasoning because it simply describes <em>useless</em> comments. “The Bad thing is Bad.” Ok, sure.</p>
 
-<p>Can comments be useful? I believe so. People struggle to define what useful comments are. Ironically, the struggle itself is part of what makes comments useful because they should require a high price of admission to your codebase.</p>
+<p>Can comments be useful? I believe so. People struggle to define what “useful” means. Ironically, the struggle itself is part of what makes comments useful because they <em>should</em> require a high price of admission to your codebase.</p>
 
-<p>Here’s my definition: Useful code comments provide non-redundant context. Don’t describe <em>what</em> code does (because code already tells you that), instead describe <em>why</em> things are the way they are: Why choice was made, future <code>TODO</code>s, known limitations &amp; trade-offs. They tell the story of the coding process, not the code itself, which tells its own story.</p>
+<p>Here’s my definition: Useful code comments provide <em>non-redundant context</em>. Don’t describe <em>what</em> code does (<a href="https://www.commitstrip.com/en/2016/08/25/a-very-comprehensive-and-precise-spec/">code already tells you that</a>), instead describe <em>why</em> code is the way it is: Why choice was made, future <code>TODO</code>s, known limitations &amp; trade-offs.</p>
 
-<p>Used sparingly in this way, truly useful comments are less likely to get stale because they were never clutter to begin with. They illustrate the historical knowledge that the code itself simply takes for granted.</p>
+<p>Used sparingly in this way, truly useful comments don’t stale because they were never clutter to begin with. They illustrate the historical motivations the code itself simply takes for granted.</p>
 
-<p>(In the agentic age, this can really only help, because we are less reliant on what lives in our heads and more reliant on what lives in text.)</p>
+<p>(In the agentic age, good comments are more important, because we are less reliant on what invisibly lives in our heads and more reliant on what lives in text.)</p>
 
 <h2 id="consistently-average-beats-sporadically-great">7. Consistently average beats sporadically great</h2>
 
-<p>Most of our time writing software is trying to improve things that have already been written, not writing something from scratch. When we improve things, it can be a large effort, so we approach it incrementally. This is practical and reasonable, but what is usually missing most of the time is the true commitment to <em>see it through</em>.</p>
+<p>Most of our time writing software is modifying existing code, not writing code from scratch. Some improvements are large, so we usually approach it incrementally. This is practical and reasonable, but often what we lack true commitment to <em>see it through</em>.</p>
 
-<p>How many times have you been looking at code and you see two different implementations of the same thing? And when you ask about it, someone says:</p>
+<p>How often do you see different implementations of the same thing? When you ask your peers about it you get some variation of the following:</p>
 
 <ul>
-  <li>“Oh yeah we need to finish that migration”</li>
-  <li>“Oh that’s being refactored”</li>
-  <li>“Oh yeah that isn’t quite done yet”</li>
+  <li>“Oh, yeah we never finished that migration”</li>
+  <li>“Oh, yeah that’s still being refactored”</li>
 </ul>
 
-<p>I hate saying this to people. Don’t you?</p>
+<p>With the half-finished migration/refactor, we could say <em>on average</em> code quality has improved by virtue of the better implementation, but in practice having two implementations is actually worse: Half-done work creates cognitive load to remember the nuances of both. The load degrades <em>your experience</em> in the code, and it is your experience in the code that matters, for it is what the code relies on to improve at all.</p>
 
-<p>Even though you could say on <em>average</em> the overall quality has “improved” by adding new code in the second, better system, having two systems is actually a worse situation. We should be more vigilant about <em>avoiding this situation</em> because half-done work creates cognitive load. What has not improved is <em>your experience in the system</em> and ultimately is your experience in the system that matters, for it is what the system relies on to improve at all.</p>
-
-<p>It is better to not change anything at all until you’re prepared to invest in changing all of it rather than to create two systems that exist in perpetuity.</p>
+<p>It is better not to <em>start</em> the change until you’re prepared to <em>finish</em> the change.</p>
 
 <h2 id="where-do-you-want-to-manage-complexity">8. Where do you want to manage complexity?</h2>
 
 <p>We cannot escape complexity in software. Fred Brooks <a href="https://www.cs.unc.edu/techreports/86-020.pdf">wrote best on the subject</a>.</p>
 
-<p>Unfortunately, most people haven’t read Brooks. “If only we could just get this one thing right, then we would be fine! There will be a day when all our problems are gone!”</p>
+<p>Unfortunately, most people haven’t read Brooks, and believe there’s an oasis beyond the horizon. “If only we could just get this one thing right, then we would be fine! There will be a day when all our problems are gone!”</p>
 
-<p>(Ironically, you may not want that world because you would have very little to do. The fact that you have a job at all is testament to the fact that things need work to be done. There will always be work to be done.)</p>
+<p>Solving one problem never leads to an unproblematic state, it (ideally) leads to more interesting problems to solve. But there will never be perfection. You have to decide <em>where</em> you want to try to isolate complexity, not <em>if</em>.</p>
 
-<p>Solving one problem never leads to an unproblematic state, it (ideally) leads to more interesting problems to solve. But there will never be perfection. You have to decide <em>where</em> you want to have problems, not <em>if</em>. Which layer?</p>
+<p>You may be frustrated with this repetition. Jerry Colonna calls it “<a href="https://www.reboot.io/wp-content/uploads/2021/12/Ops-Man-2-Edited-Transcript.docx.pdf">painting the bridge</a>.” (It takes so long to paint the bridge that once you finish painting the bridge you have to go back to the very start and begin painting the bridge again.) But that’s the point. That’s the point of all of this. That’s actually where leadership and craftsmanship should aim.</p>
 
-<p>I use “interesting” in the sense of “may you live in interesting times.” Interesting is not always better. Understand that when you solve one problem, another one will open up.</p>
+<p>Embrace the inevitability of complexity. Understand it as something that you cannot escape, but that you may shepherd to create lightness and brightness.</p>
 
-<p>You may feel frustrated with this. Jerry Colonna calls this “<a href="https://www.reboot.io/wp-content/uploads/2021/12/Ops-Man-2-Edited-Transcript.docx.pdf">painting the bridge</a>.” It takes so long to paint the bridge that once you finish painting the bridge you have to go back to the very start and begin painting the bridge again. But that’s the point. That’s the point of all of this. That’s actually what leadership and craftsmanship is.</p>
-
-<p>Embrace the inevitability of complexity. Understand it as something that you cannot escape, but that you may shepherd in ways that make things a bit lighter and brighter.</p>
+<p>(Ironically, you may not want that world without problems in software because you would have very little to do. The fact that you have a job at all is testament to the fact that things need work to be done. There will always be work to be done.)</p>
 
 <h2 id="visit-the-shadows">9. Visit the shadows</h2>
 
-<p>Greenfield is a myth. Everything becomes Brownfield. Everything becomes an artifact. It’s easy to be happy with freshly-written code and building a nice, clean implementation, but that is why maintaining software is difficult, because most of the time what the work requires is not easy in this way.</p>
+<p>Greenfield is actually a myth in practice. Everything becomes Brownfield. Everything eventually becomes an artifact. It’s easy to be happy with freshly-written code and a clean implementation. Most software isn’t like that, even on the most prominent software used by hundreds of millions of users.</p>
 
-<p>The unfortunate part of formal education is that it only really teaches people the Greenfield work. You’re not learning in legacy systems, but most of your time in life as an engineer will be in legacy systems. That’s just the nature of work. Something has been successful. It’s successful because it had to make trade-offs, and we will face the impact of those decisions for years to come.</p>
+<p>The unfortunate part of formalized education is it has too much Greenfield. You’re not learning in legacy systems, but most of your time in life as an engineer will be working in legacy systems. Software is usually successful through making trade-offs that it then must endure. There are many shadows.</p>
 
-<p>This is a skill to embrace, not avoid. The most valuable and impactful times of my career are those when I have refused to stay in the nice newly written area and instead visit the nasty gross legacy code.</p>
+<p>The courage to visit those shadows is a skill to embrace, not avoid. The most valuable and impactful times of my career are those when I have refused to stay comfortable and instead go looking for things in the dark places. This is where there hidden value to be mined — to discover changes we never knew we needed — simply <em>because</em> of being unattractive.</p>
 
-<p>Become the engineer who is not so enamored with shiny things, become the engineer who is more enamored by shadowy things.</p>
+<p>Go exploring. Understand the checkered history. Become the engineer who is not so enamored by shiny things, but shadowy things.</p>
 
 <figure>
-<img alt="Paris" src="./img/paris.jpg" style="max-width: 30rem; width:100%;" />
+<img alt="Paris" src="./img/paris.jpg" />
 </figure>
 
 <h2 id="its-not-supposed-to-be-easy">10. It’s not supposed to be easy</h2>
 
-<p>How many times have you heard developers complain about product managers? How many times have you heard product managers complain about developers?</p>
+<p>Engineers complain about naïve product managers and product managers complain about grouchy engineers.</p>
 
-<p>Embedded in the complaints is the belief that things could be different. But something worth appreciation is that the generative nature of work involves the expenditure of energy from opposing views. Reactants encounter each other, and product is created through the exchange of the energy embedded within.</p>
+<p>Embedded in both complaints is a belief things could be different. But we should appreciate the generative nature of work involves expenditure of energy from opposing reactant views.</p>
 
-<p>The best way to work with people is to appreciate that they are different from you <em>because</em> they are different from you. It is the difference that creates the product. The difference will bring difficulty. Through the difficulty comes the reward.</p>
+<p>A great way to appreciate non-engineers is <em>because</em> they are different from you. It is actually the difference that creates the product. Difference will bring difficulty, but through difficulty comes the reward. We need each other.</p>
 
-<p>Arrive with reverence for the difficulty, not disdain.</p>
+<h2 id="delivery-is-design">11. Delivery is design</h2>
 
-<h2 id="delivery-deserves-design">11. Delivery deserves design</h2>
+<p>The biggest mistakes made in software happen when people spend too much time building in isolation, without actually using or integrating into the adjacent systems. One rather nefarious form of isolation is isolation from the delivery mechanisms of what brings the software into becoming “live.” Testing, delivery, &amp; observation are accessorizing afterthoughts rather than pillars of the entire edifice.</p>
 
-<p>The biggest mistakes made in software happen when people spend too much time building in isolation, without actually using or integrating what they’ve built into the adjacent systems. Moreover, a more nefarious form of isolation is the isolation from the delivery mechanisms of what brings the software from a developer workstation into a live environment. These are seen as accessorizing afterthoughts rather than pillars of the entire edifice.</p>
+<p>Unfortunately, this can very typical, and I believe related to why <strike>bugs</strike> mistakes are typical. Nothing is real until it lives in the field, and it is the only real mechanism of feedback.</p>
 
-<p>Unfortunately, this is very typical, and I believe this is why <strike>bugs</strike> mistakes are typical. Even people who believe they are getting “fast feedback” may only be getting feedback isolated to a particular unit. Nothing is real until it lives in the field, and that will be the real mechanism of feedback.</p>
-
-<p>A way to achieve this is to get the entire ecosystem from development to deployment working and visible as soon as possible: CI, tests, deployment, ingress/egress, observability. Even if you have a single dummy endpoint that is just “hello world”, if it can be fully integrated this It doesn’t have to be mature, but the entire journey should be traveled. Use the journey as a form of design. “Design” is a verb.</p>
+<p>A better approach is aiming at delivery working &amp; visible as soon as you possible can: CI, tests, deployment, ingress/egress, basic observability — even if your is but a single dummy “hello world” endpoint, this isn’t too soon. It doesn’t have to be mature, but traveling the entire journey early will bring insight, and it all matures together. The journey is a form of design.</p>
 
 <h2 id="learn-c-learn-scheme-learn-data-structures-learn-algorithms">12. Learn C, learn Scheme, learn data structures, learn algorithms</h2>
 
-<p>It’s very easy complaining about the programming languages and tools that you have to use at your job. But everything you’re doing and seeing on a computer didn’t just happen accidentally. It can seem like a lot of decisions are arbitrary or silly, but paradigms established decades ago led to everything we see today, backward or confusing as they will appear.</p>
+<p>It’s very easy to complain about whichever languages and tools that you have to use at your day job. But everything didn’t just happen spontaneously. Decisions that seem arbitrary or silly came through paradigms established decades ago. These are worth knowing, for both your own sanity and your own maturity.</p>
 
-<p>You can get pretty far without learning anything of the fundamentals and just figuring things out as you go (speaking from experience). That can get you a six-figure job just fine. But at some point you will hit a wall, and upon delving deeper into formalized knowledge you will see a lot of gaps in your own work. You will see the decisions you felt so confidently making were quite fragile.</p>
+<p>You can get pretty far without learning many fundamentals, and just figuring things out as you go (I speak from experience). You can land a six-figure job just fine. But at some point you <em>will</em> hit a wall: Some bug you can’t fix, some pattern you can’t quite get right.</p>
 
-<p>This is a normal part of learning, but I suggest to everyone that spending time with some fundamentals will only help the autodidact. I am still catching-up.</p>
+<p>Faced with your own limitations, when you take it upon yourself to dive deeper into formalized knowledge you will begin to see your gaps, and recognize problems you have created. Decisions you felt confident making were quite fragile in reality.</p>
+
+<p>This can be uncomfortable, but it is how you grow. As someone who took a circuitous path along this road, I suggest to fellow autodidacts that spending time with some fundamentals will only help.</p>
 
 <h2 id="you-will-change-your-mind">13. You will change your mind</h2>
 
 <p>Part of learning is developing confidence and part of developing confidence is seeing the things you do to be correct.</p>
 
-<p>But you can paint yourself in a corner where being correct becomes actually really important to you. A form of bike-shedding is spending too much time discussing something that is actually truly ephemeral. Software is soft.</p>
+<p>But you can paint yourself in a corner where justifying yourself to be correct (in the name of developing confidence) becomes overly important. You can waste a lot of time pushing for decision through social friction, for something that may actually change — it’s called software because it’s soft.</p>
 
-<p>Accepting you actually can’t predict the future will benefit you in several ways. Firstly, you won’t overly invest in any particular implementation. Secondly, and more important benefit, is that you’ll exercise some humility that is hopefully observable to your peers. This vulnerability helps dispel the impostor syndrome that surrounds everyone.</p>
+<p>Accept you actually can’t be correct all the time. You won’t overly invest in any particular implementation that may need change. Relive yourself the burden of needing to predict the future.</p>
 
-<p>Done at the right moments, saying “I’m not sure” or “I don’t know” can actually create a healthier environment for junior peers to invest in change, seek experimentation, accept uncertainty, and exercise humility of their own. Maturity comes through a balance of confidence and curiosity.</p>
+<p>More importantly, you’ll exercise some humility observable to your peers, and your vulnerability helps dispel impostor syndrome that can keep people quiet. Done at the right moments, saying “I’m not sure” or “Let’s try it and see” can actually create a healthier environment for junior peers to invest in learning and exercise some transparent humility of their own. Maturity comes to us all through a balance of confidence and curiosity.</p>
 
 <h2 id="know-the-value-of-knowing">14. Know the value of knowing</h2>
 
-<p>In college I studied civil engineering. A requisite course was construction management, which was, uh, “taught” by a guy named Hyman Brown who spent the majority of the course sharing lore about managing construction in the 1980s.</p>
+<p>In college I studied civil engineering. A requisite course was construction management, which was, uh, “taught” by a guy named <a href="./img/my-guy.jpg">Hyman Brown</a> who spent the majority of the course sharing lore about managing construction in the 1980s.</p>
 
-<p>The only story I recall went something like this: On a construction site the most expensive piece of equipment is a crane. Contractors usually rent cranes, and pay by a day rate whether the crane is being used or not. Separately, and invariably, on construction projects, contractors find problems in the drawings. A pipe is drawn intersecting an elevator shaft. What to do? The formal process for dealing with this is sending the architect an RFI “request for information” asking to provide an updated set of drawings. This, of course, takes time, and during that time the contractor has to pay for the crane, even if it isn’t being used.</p>
+<p>The only story I recall went something like this: On a construction site the most expensive piece of equipment is a crane. Contractors usually rent cranes, and pay by a day rate whether the crane is being used or not. Separately (and invariably), contractors find problems in the construction drawings. A pipe is drawn intersecting an elevator shaft. What to do? The formal process involves sending the architect an RFI “Request For Information” asking to provide an updated drawing. This of course takes time, and during that time the work may need to pause and contractor has to pay for the crane, even if it isn’t being used.</p>
 
-<p>What are the possible ways which the pipe can be solved? Well, it can move left, or can move right. So just skip the RFI and move the pipe.</p>
+<p>But what are the possible ways the pipe can be fixed? Well, it can move left, or it can move right. So just skip the RFI and move the pipe.</p>
 
 <blockquote>
-  <p><em>“So I said ‘move the pipe to the left!’…I just saved the project thirty thousand dollars!!” — Hyman Brown</em></p>
+  <p><em>“So I said ‘move the pipe to the left!’ I just saved us $30,000!”<br />— Hyman Brown (probably)</em></p>
 </blockquote>
 
-<p>When we see problems in software, often we’re inclined to dive into the rabbit holes (being the fixers that we are), but we should ask ourselves: If we actually learned the root cause of the problem, would it change anything about how we fix the problem? Or are we just spending time we don’t need to spend?</p>
+<p>When we see problems in software, we’ve seen the value of exploring those shadowy depths to learn why a problem happened. But we should ask ourselves: Supposing we investigate and learn the root cause of the problem, would that fact actually change anything about how we fix the problem? Or are we just spending time learning without a practical outcome?</p>
 
-<p>Sometimes the answer is important. Sometimes it’s not important. Sometimes, despite being important, you can’t budget time to answer it now, you have to wait. And sometimes even when you try to figure it out, you won’t. Instead, the answer will arrive years later when you’re walking your dog or making a sandwich or stepping out of the shower. There’s a lot you won’t know, and some of it should be because you sense the value of knowing.</p>
+<p>Sometimes the answer is important. Sometimes the answer isn’t important. Sometimes, despite being important, you can’t budget time to find the answer now, you have to fix the problem you know you have.</p>
+
+<p>And sometimes even when you try to figure out the answer, you won’t. Instead, the answer will arrive years later when you’re walking your dog or making a sandwich or stepping out of the shower. There’s a lot you won’t know. Some of it should be because you sense the value of knowing.</p>
 
 <figure>
-<img alt="Prague" src="./img/cranes.jpg" style="max-width: 30rem; width:100%;" />
+<img alt="Prague" src="./img/cranes.jpg" />
 </figure>
 
 <h2 id="let-it-crash">15. Let it crash</h2>
 
 <p>Exceptions are part of software systems. Things will go wrong! Sometimes you can predict this, sometimes you can’t.</p>
 
-<p>So you want your system to be stable and when things aren’t, the temptation is to make the system more robust somehow. What is making the system robust? If you try to anticipate every single thing that will go wrong, you end up with something that is very complicated.</p>
+<p>When things aren’t stable, the temptation is to make individual procedures more robust somehow. But what does that mean in practice? If you try to anticipate every single thing that will go wrong, you end up with something that is very complicated. When a problem happens, what should each downstream component do? Is there a sensible way to continue? There may not be. What to do then?</p>
 
-<p>Ultimately in call stacks there’s earlier parts and later parts. When a problem happens, what should each later part do? Is there a sensible way to continue? There may not be. What to do then?</p>
+<p>You may think that more sophisticated error handling is the way out of this. The problem is that error handling can also have errors. You may mistakenly handle the mistakes. Then when you try to fix the mistakes that are handling the mistakes, you may make other mistakes. Now you have three mistakes. Which mistake is the real mistake? This is a very bad place to be. You’ll spend more time dealing with your own mess than anything useful.</p>
 
-<p>You may think that more sophisticated error handling is the way out of this. The problem is that error handling can also have errors. You may mistakenly handle the mistakes. Then when you try to fix the mistakes that are handling the mistakes you may make other mistakes. Now you have three mistakes. Which mistake is the real mistake? This is a very bad place to be. You’ll spend more time dealing with the ways you dealt with mistakes than just moving on.</p>
+<p>This view is why things like Kubernetes have been successful. We know systems will have problems, so when they have problems let’s have ways to respond. Let’s care less about what the problem is. Let it crash.</p>
 
-<p>This view is why things like Kubernetes have been successful. “We know systems will have problems, so when they have problems let’s have ways to respond.” Let’s care less about what the problem is.</p>
-
-<p>“Let it crash” is quite different from viewing the entire world through the lens of <code>try/catch</code> or tuple/monad returns. What works for low-level tooling doesn’t really work for high-level tooling. When you zoom-out to the bigger picture, you simply don’t know when you don’t know. Don’t try to guess. Exit. Log what’s going on. Be upfront about what’s happening.</p>
-
-<p>As a user of software, I would rather interact with the system that is honest &amp; flaky than the system that is dishonest. Be honest about what you know. Sometimes that’s just letting the bloody thing crash and logging what you can.</p>
+<p>“Let it crash” is quite different from viewing the world through the lens of more defensive idioms, e.g. <code>try/catch</code> or tuple/monad returns. (What works for low-level tooling doesn’t really work for high-level tooling.) When you zoom-out to the bigger picture, you simply don’t know when you don’t know. Don’t try to guess. Log, then exit.</p>
 
 <h2 id="approach-cannot-be-decoupled-from-scale">16. Approach cannot be decoupled from scale</h2>
 
-<p>Two phrases that I used in the past that I don’t really use anymore: “best practice” and “performant”. These describe absolute states. But claims are always relative to something. 50 µs is faster than 50 ms. Does that make it better? Why not 50ns? It’s not what the answer is, it’s why you pick these things.</p>
+<p>Two phrases that I used in the past that I use less and less: “best practice” and “performant”. These describe absolute states. But claims are always relative to something. 50µs &lt; 50ms. Does that make it better? Why not 50ns? It’s not what the “right” answer <em>is</em>, it’s <em>why</em> you pick the answer for your situation.</p>
 
-<p>I’ve seen engineers concern themselves more with scale that does not currently exist and being blind to the problems that do exist. Do you need the most sophisticated decoupled perfect architecture to solve a problem? That can be so daunting you might not start. Does that mean that you’ve made the right choice for now? Maybe, maybe not. Worry less about this, but recognize when you need to change.</p>
+<p>I’ve seen engineers concern themselves more with scale that does not currently exist and being blind to the problems that do exist. Do you need the most sophisticated/decoupled/modular architecture to solve a problem? Are you even solving the problem you have? Maybe you aren’t even starting on your problem because you have mentally over-engineered the solution.</p>
 
-<p>It’s not about being right now, it’s about recognizing when you have outgrown your implementation. Shed the skin. Try something else.</p>
+<p>Does that mean that you’ve made the “best” choice for now? Maybe, maybe not. Worry less about this, just try to recognize when you have outgrown your implementation. Shed the skin, but only when it is time.</p>
 
 <h2 id="be-prepared-to-delete-it">17. Be prepared to delete it</h2>
 
 <p>Programming is a craft. Part of being a craftsperson is knowing that the thing you made came from you. It exists as an artifact in the world. If someone else made it, it might look differently.</p>
 
-<p>Your ego will be very tempted to attach to what you make. That can be very motivating, but equally often, you get in the way.</p>
+<p>Your ego will be very tempted to attach to what you make. That can be very motivating, but equally often, <strong>“You”</strong> gets in the way.</p>
 
-<p>Zoom out. What are you really trying to do? You’re really trying to solve a problem. Sometimes solving the problem involves taking the thing you made and throw it in the rubbish bin. Maybe it was just a bad idea. Try something else.</p>
+<p>Zoom-out. What are you really trying to do? You’re really trying to solve a problem. Sometimes solving the problem involves taking the thing you made and throw it out. Maybe it was just a bad idea. Try something else.</p>
 
-<p>The person who can separate their own sense of self from the things that come out of their mind has true resilience and power, and can adapt to actually be useful. The purpose of the craft is to be useful, so follows the purpose of the craftsperson.</p>
+<p>The craftsperson who can separate their own sense of self from the output of their mind has true resilience and power, and can adapt to actually be useful. The purpose of the craft is to be useful — thus follows the purpose of the craftsperson.</p>
 
 <h2 id="step-away">18. Step away</h2>
 
-<p>You are going to get stuck. What to do? The answer lies in the question, because it was <em>doing</em> that got you stuck. Why would you keep <em>doing</em>? It just got you stuck. Maybe you should stop doing. “But I’m stuck!” Yes. So <em>do</em> something different. Or <em>don’t do</em>. Find a <a href="https://www.youtube.com/watch?v=f84n5oFoZBc">hammock</a>. The answer will come.</p>
+<p>You are going to get stuck. What to do? The answer lies in the question, because it was <em>doing</em> that got you stuck. Why would you keep <em>doing</em>? It just got you stuck! Maybe you should stop doing. “But I’m stuck!” Yes. So <em>do</em> something different. Or just <em>don’t do</em> for a while. Find a <a href="https://www.youtube.com/watch?v=f84n5oFoZBc">hammock</a>. The answer will come.</p>
 
 <h2 id="it-might-just-take-time">19. It might just take time</h2>
 
-<p>Story points. Planning poker. Fibbonachi. Burndowns. “Pigs &amp; Chickens”. Velocity. All of these are just ways of trying to understand ourselves. Ultimately these processes exist to have some structure to our conversations.</p>
+<p>Story points. Planning poker. Fibbonachi. Burndowns. “Pigs &amp; Chickens”. Velocity. All of these are just ways of trying to understand ourselves. Ultimately these processes aim for structured conversation.</p>
 
-<p>I’ve been on many sides of this. I’ve worked for myself freelance just doing what I want. I’ve worked in scrum teams. I worked in Kanban teams. I’ve done strict pair programming XP, story mapping, inceptions. These days (quite oddly) I am back to just doing what I want?</p>
+<p>I’ve been on many sides of this. I’ve worked for myself freelance just doing what I want. I’ve worked in scrum teams. I worked in Kanban teams. I’ve done strict pairing/mobbing XP, story mapping, inceptions. These days (quite oddly) I am back to just doing what I want?</p>
 
 <p>Here’s what I think actually works:</p>
 
 <ul>
-  <li>Estimate whether it’s going to be done in hours, or days, or weeks, or months, or years</li>
+  <li>Estimate whether it’s going to be done in <strong>hours</strong>, or <strong>days</strong>, or <strong>weeks</strong>, or <strong>months</strong>, or <strong>years</strong></li>
   <li>Work on the most important thing, don’t context switch</li>
-  <li>Keep working on it until you are satisfied with its position (this may not mean “done”)</li>
+  <li>Keep working on the thing until you are satisfied with its position (this may not mean “done”)</li>
   <li>Move on to the next thing</li>
   <li>Repeat</li>
 </ul>
 
-<p>Sometimes “satisfied” means we finish it the way you thought you would, but other times “satisfied” means it’s taking too long and we’re just gonna cut  losses or drop it &amp; to go do something else. We have to use our gut and our experience.</p>
+<p>Sometimes “satisfied” means we finish it the way we thought, other times “satisfied” means it’s taking too long so we’ll leave as-is &amp; to go do something else. We have to use our gut and our experience.</p>
 
-<p>What about stakeholders? They want to be able to predict things. But a lot of times when we bring them an estimate, we have this conversation</p>
+<p>What about stakeholders? They want to be able to predict things. But a lot of times when we bring them an estimate, we have some version of the following converstaion:</p>
 
 <ul>
-  <li>Me: it’s gonna take 18 months.</li>
-  <li>Stakeholder: That’s too long.</li>
-  <li>Me: …Ok how long do you need it to take?</li>
+  <li>You: “It’s going to take 18 months.”</li>
+  <li>Stakeholder: “That’s too long.”</li>
+  <li>You: “…ok, so how long do you <em>need</em> it to take?”</li>
 </ul>
 
 <p>How long do you need it to take? How long do you want to budget in order to see something? You don’t go shopping for a car or a house without a budget. So don’t go shopping for features without a budget.</p>
 
-<p>That’s actually the first question we should ask: What’s the budget? So just ask that question and then decide what you can reasonably build in <em>that</em> period of time. It may be a totally ham-handed version of what it will eventually become. But then you can decide if it’s worth the time to keep going. That’s real agile.</p>
+<p>That’s actually the first question we should ask: What’s the budget? So just ask that question and then decide <em>what</em> you can reasonably build in <em>that</em> period of time. It may be crude. But then you can decide if it’s worth the time to keep going. That’s real agile.</p>
 
-<p>This is hard to do, and the hardest part about it is accepting it is inexact.</p>
+<p>This is difficult to do, and what makes it difficult is accepting it is inexact. But it’s about dialogue, not precision.</p>
 
 <figure>
-<img alt="Prague" src="./img/prague.jpg" style="max-width: 30rem; width:100%;" />
+<img alt="Prague" src="./img/prague.jpg" />
 </figure>
 
 <h2 id="whats-not-being-said">20. What’s not being said?</h2>
 
-<p>I’ve worked with two equally irritating types of engineers: those who tend to say yes, and those who tend to say no. The former are well-intentioned but lack vision, the latter are passionate but lack empathy. Teams of engineers can drift towards these behaviors (and others) as a default mode.</p>
+<p>I’ve worked with two equally irritating types of engineers: those who tend to say Yes, and those who tend to say No. The former are well-intentioned but lack vision; the latter are passionate but lack empathy. Teams of engineers can drift towards either these behaviors (and others) as a default mode.</p>
 
-<p>A much better place to occupy is the place that isn’t being filled. That isn’t a static place. It depends on the dynamics of the group.</p>
+<p>As an individual, a much better place to occupy is the place that isn’t being filled. That isn’t a static place. It depends on the dynamics of the group.</p>
 
-<p>If everyone is saying yes, then I try to find gaps. If everyone is being difficult, I try to find common ground and build bridges. If everyone is too talkative, I defer to action. If too quiet, I prompt rhetorical questions. If working cross-functionally across multiple teams then I may need to play multiple of these roles at the same time.</p>
+<p>If everyone is saying Yes, try to find gaps. If everyone is being difficult, try to find common ground and build bridges. If everyone is too talkative, defer to action. If too quiet, ask rhetorical questions.</p>
 
-<p>I have made mistakes. We shouldn’t just be a gadfly, people need to respect us if we are to make progress.</p>
+<p>If you are working cross-functionally across multiple teams then you may need to play multiple of these roles at the same time.</p>
 
-<p>For technical conversation, we should seek gaps that nobody else sees. Don’t blow things out of proportion, that will just degrade our social capital. But a great way to do this is to walk down the road a bit. If we are skeptical of <em>X</em> then we may have an easier time by granting it as a given condition and then exploring holes in  downstream outcomes of <em>X</em> rather than trying to refute <em>X</em> directly.</p>
+<p>I have made many mistakes trying to figure this out. Don’t just be frictional, people need to respect you if you are to make progress.</p>
+
+<p>For technical conversation, seek the things that nobody else sees. Don’t blow things out of proportion, that will just degrade your social capital.</p>
+
+<p>When faced with a disagreement or a decision point, a great way to proceed is accept the terms of the opposing view then explore the outcomes. If you are skeptical of <em>X</em> then you may have an easier time granting <em>X</em> as a given, then exploring its outcomes rather than trying to refute <em>X</em> directly.</p>
 
 <h2 id="tautologies-are-inevitable">21. Tautologies are inevitable</h2>
 
-<p>Software teams organize through different rituals. Which one is right for you? This is actually a cultural issue. There’s no sort of platonic ideal of software process that we are all kind of aiming toward.</p>
+<p>Software teams organize through different rituals. Which one is right for you? This is actually a cultural issue. There’s no sort of platonic ideal of software process that we are all aiming toward, despite the tales of successful processes.</p>
 
-<p>“But Spotify!” Stories of successful processes always end with the tacit promise that if you switch to use that process you’ll see the same success. Many of these things are simply self-referential and circular: You happen to have success and so you believe whatever steps you took toward success are the steps that lead to success in general. But your success is local to you.</p>
+<p>“But Spotify!” The tales of successful processes always end with the tacit promise that if you switch to use that process you’ll see the same success. Many of these things are simply self-referential and circular: Someone who happens to have success and believes whatever steps taken toward success are the steps that lead to success in general. But that success is local to them. It only works if the culture and minds forged come along for the ride. It’s all a package.</p>
 
-<p>If you’re going to make a larger claim about what works for everybody, you’re probably wrong. People like comfy universalities. At my current job, the culture is basically this: Hire ambitious people, hold them to a high standard, let them organize however they want.</p>
+<p>If we’re going to make a larger claim about what works for everybody, we’re probably wrong. People like comfy universalities. Core values can be helpful guides when we are lacking empirical pointers, but sometimes when trying to understand ourselves, we simply point back at the value that is pointing at us (or perhaps beyond us).</p>
 
 <h2 id="quit-complaining-about-tech-debt">22. Quit complaining about tech debt</h2>
 
-<p>Earlier in my career, I would be unequivocally peeved when I saw tech debt. “Why did anyone allow this??” I resented people for being so foolish and careless to introduce it to the codebase.</p>
+<p>Earlier in my career, I was angry when I saw tech debt. “Why did anyone allow this??” I resented people for being so careless to allow it in the codebase.</p>
 
-<p>Ironically, the luxury I enjoyed was seldom being granted the opportunity to fix it — I could simply complain. Given the opportunity to fix it, I would face the responsibility of truly paying it down without introducing new tech debt. To believe that — <em>if it was all up to me</em> — I would do everything right was an extremely naïve and immature understanding of how software is actually built.</p>
+<p>Ironically, a luxury I enjoyed was seldom being granted opportunity to address it — I could simply complain. Given that opportunity to fix it, I’d face the responsibility of not introducing new tech debt. To believe that <em>if it was all up to me</em> I would do everything right was an extremely naïve and immature understanding of how software is actually built.</p>
 
-<p>We are ultimately going to make mistakes. We don’t even realize the mistakes we’re making right now: There will be decisions that we’ll feel on the fence about and ultimately have to puzzle through, and we’ll make a decision, and feel good about it. But in hindsight, we realize that that decision was wrong. This is inevitable. This is just going to happen.</p>
+<p>We are ultimately going to make mistakes – we don’t even realize mistakes we’re making right now: decisions that we’ll make are later revealed as incorrect. This is inevitable.</p>
 
-<p>The grouchy developer is a well-trod stereotype, and one you should avoid. It is easy to be grouchy! Most code is bad!</p>
+<p>If you are grouchy because of mistakes, then you are divorced from reality. The grouchy engineer is a well-trod stereotype, and one you should avoid. You will alienate people. Of course, it is easy to be grouchy! Most code is bad! But that’s why you’re here.</p>
 
-<p>Instead remember you want to be useful. The person who always complains without changing anyone’s mind isn’t useful. Being useful means actually contending with this reality: The constraints surrounding what you’re building are often opaque. You’re going to have to make trade-offs — and make trade-offs between trade-offs. Which fires do you extinguish? Which do you let burn? You will not be perfect. You cannot be perfect. Perfection is the lowest standard, because it is impossible.</p>
+<p>Instead remember you want to be useful. The engineer who complains without changing mind’s isn’t useful. Being useful means actually contending opaque constraints. You’re must make trade-offs — and make trade-offs <em>between</em> trade-offs. Which fires do you extinguish? Which do you let burn? You <em>will not</em> be perfect. You <em>cannot</em> be perfect. Perfection is the lowest standard because it is impossible.</p>
 
-<p>Tech debt is a tool just like financial debt is a tool. Your mortgage debt allows you to do something few people could otherwise. Tech debt is the same. It allows us to gain things. But as we must be reverent of our credit card balance and our mortgage payment, tech debt requires management. So manage it. Don’t complain about it. Use it. Quit believing that you’re some sort of special person who can avoid it altogether.</p>
+<p>Tech debt is a tool just like financial debt is a tool. Your mortgage debt allows you to do something few people could otherwise. Tech debt is the same. It allows us to gain things. But as we must be reverent of financial debt, tech debt requires the same. So be open to using it, manage it, and discuss it openly. But: Use it. Don’t complain about it.</p>
 
 <h2 id="incentives-will-win-always">23. Incentives will win, always</h2>
 
-<p>Whatever system we end up working on will have gaps. Despite the terms Brooks uses, many “accidental” gaps don’t really happen on accident: Many people quietly understand the cause of problems is that fixing the problem is not incentivized by the working environment — that anybody with authority does not value the fix over the harm.</p>
+<p>Whatever system we end up working on will have problems. But the cause of many problems it not pure technicality or budget constraint, but that  fixing the problem is not incentivized by the working environment — that anybody with authority does not value its fix over its harm.</p>
 
-<p>The lens of pure incentive and interval drive things much more than any sort of good implementation or anything else you can argue till you’re blue in the face about certain technical choices. Many engineers make the mistaken belief that explaining problems in pure technical terms is enough to change minds, simply because the line of explanation is sound from a technical perspective.</p>
+<p>The lens of pure incentive and interval drive things much more than any sort of good implementation or anything else. Many engineers make the mistaken belief that explaining problems in pure technical terms is enough to change minds, simply because the line of explanation is sound from a technical perspective. When non-technical people don’t agree, this can be a source of frustration and resentment. But what they are actually doing is responding to incentives. Their incentives are fundamentally misaligned with yours.</p>
 
-<p>When non-technical people don’t agree with you, you may believe they don’t respect you or they are stupid. Because they continue to live with the problem.</p>
+<p>It can be a bitter pill to swallow, but as the craftsperson you are likely going to have to be employed by people who are not craftspeople, and proceed in a delicate alliance.</p>
 
-<p>What they are actually doing is responding to incentives and existing within incentives. Their incentives are fundamentally misaligned with yours.</p>
+<p>The craftsperson is usually assessed against something different than the quality of the craft, but rather how the craft comes to benefit the owners of the company. This will constrain the choices, and possibly discourage spending the requisite time to make the technical change that is <em>The Ideal</em> solution. Incentives aren’t always aimed at <em>The Ideal</em>. Incentives are larger than code.</p>
 
-<p>It can be a bitter pill to swallow, but as the craftsperson you are likely going to have to be employed by people who are not craftspeople. We proceed in a delicate alliance.</p>
+<p>This can seem like a depressing world, but I think accepting the difference and divergence actually creates more empathy and less frustration. Software happens to be a vehicle for the company. You have been hired not because of what the software is but what the software does: To make one dollar turn into more dollars.</p>
 
-<p>The craftsperson is usually assessed against something different than the quality of the craft, but rather how the craft comes to benefit the owners of the company. This will constrain the choices that you make, and possibly prevent you from actually spending the requisite time traversing basins of risk, regression, or low output to make the technical change that is The Ideal. The reason that you’re stuck building something a certain way isn’t because it is not The Ideal, it’s because the incentives aren’t always aimed at The Ideal. Incentives are larger than you and your own ideas.</p>
+<p>Very few places in the world with the purpose of simply making software for software’s sake. Most of us are navigating the alliance between the craft as an <em>End</em> and the craft as a <em>Means</em>.</p>
 
-<p>This can seem like a depressing world, but I think accepting the difference and divergence actually creates more empathy and less frustration. Software happens to be a vehicle. The company is trying to do something different than what you’re trying to do.  You have been hired not because of what the software is but what the software does to make one dollar turn into more dollars.</p>
+<p>Zoom-out. Realize that as much as you value craft, it is also a means to provide you &amp; your family. The enjoyment of craft <em>can</em> exist within your job, and I was fortunate enough to able to enjoy this for a long time. But things can change. Sometimes a job is a job. Your job can get pretty annoying and pretty frustrating. You may feel like you’re always just putting lipstick on a pig or shaving the yak. But accept that by taking the job, you have agreed to live in the world of incentives that interest the owners of the company. (And hopefully this choice has been lucrative — it is software, after all. There are a lot worse things to do.)</p>
 
-<p>Very few places in the world with the purpose of simply making software for software’s sake. Most of us are navigating the alliance between the craft and what the craft gives us.</p>
-
-<p>Don’t forget to zoom-out and realize that the craft is also a means to provide you &amp; your family’s own well-being. The enjoyment of craft <em>can</em> exist within your job, and I was able to enjoy this for a long time, but oftentimes it is not. Sometimes a job is just a job. Your job may be pretty annoying. It may be pretty frustrating. You may feel like you’re always just putting lipstick on a pig or shaving the yak. But accept that by taking the job, you have agreed to live in the world of incentives that interest the owners of the company. (And hopefully this choice has been lucrative — it is software, after all).</p>
-
-<p>Next time you are preoccupied with your job as you sit down with your family to eat: Stop. Look around. Remember that the reason you do what you do. Your world is bigger than the craft.</p>
+<p>Next time you are preoccupied with the annoyances and frustrations — perhaps just as you’ve ended your workday to sit down at the dinner table: Stop. Look around. See that the life you have the opportunity to experience. Your world is bigger than the craft.</p>
 
 <h2 id="everything-changes-nothing-changes">24. Everything changes, nothing changes</h2>
 
-<p>What it means to be a sovereign engineer in the last year has radically changed more so than I’ve ever seen in the last 25 years. I’ve gone from being someone typing out the code to now being someone who supervises the set of robots trying to do the same thing, sometimes succeeding, sometimes failing. Sometimes both at the same time.</p>
+<p>What it means to be a software engineer in the last year has radically changed more so than I’ve ever seen in the last 25 years. I’ve gone from being someone typing out the code to now being someone who supervises robots trying to do the same thing, sometimes succeeding, sometimes failing. Sometimes both at the same time.</p>
 
-<p>I think it’s a very difficult time to be a software engineer. If you’ve been doing it as long as I have, the fundamental thing that you enjoy doing in your day, job has probably gone away.</p>
+<p>If you love the craft, I think it’s a very difficult time to be a software engineer. The fundamental thing that you enjoy doing in your day job has largely gone away, or at least changed drastically.</p>
 
-<p>If you are at the start of your career, the skills that you need to develop in order to actually be able to assess and understand whether the robots are going in the right direction or not are may be elusive. Can you learn from the robots? The problem is that the robots can get pretty far without making a mistake, and make it sound pretty good and build something fairly plausible and convincing. That’s a very different experience than just getting damn stuck yourself, and I must say there’s something nice actually in retrospect about getting damn stuck because it forced you to really think through things in a way that you haven’t had to before. I’m concerned that the real force of necessity which drives personal growth becomes diminished for generations to come.</p>
+<p>If you are at the start of your career, the skills that you need to develop in order to actually be able to assess and understand whether the robots are going in the right direction or not are may be elusive. Can you learn from the robots? The problem is that the robots can sound pretty convincing build something fairly plausible <em>from the outside</em>. That’s a very different experience than being <em>on the inside</em> just getting damn stuck yourself. I must say there’s something nice actually in retrospect about getting damn stuck because it forced you to really think through things in a way that you haven’t had to before.</p>
+
+<p>I’m concerned that the real force of necessity which drives personal growth becomes diminished for generations to come.</p>
 
 <p>Despite all these things so many things actually don’t change at all. Many of the fears people have about the nature of the work fundamentally disappearing are completely overblown.</p>
 
@@ -646,14 +642,16 @@
 
 <p>And true builders still need particular tools. If you have used power tools, you know that sometimes you actually do need the screwdriver. You actually do need a precision in in a way that the power tool does not afford you.</p>
 
-<p>Coding was never really your job. Your job is to be a critical thinker. It’s actually the thinking manifested the choices and forces that exist in the artifact. That is what you craft is, AI or not. Code shaped by someone thinking critically looks very different than when not.</p>
+<p>Coding was never really your job. Your job is to be a critical thinker. It’s actually the thinking manifested the choices and forces that exist in the artifact. That is what you craft is, robots or not. Code shaped by someone thinking critically looks very different than when not.</p>
 
-<p>All that said, there is some tedium in software I don’t like that I am happy to hand-off to the LLM. I don’t really want to figure out why when I removed a certain C header file that the damn thing won’t compile anymore because of some sort of implicit dependency that people have missed for years and years. I hate that crap. Let the LLM do that. Let me think about something else. Thank you, LLM.</p>
+<p>All that said, there is some tedium in software I don’t like that I am happy to hand-off to the LLM. I don’t really want to figure out why when I removed a certain C header file that the damn thing won’t compile anymore because of some sort of implicit dependency that people have missed for years and years. I hate that crap. Let the LLM do that. Let me think about something else. Thank you, LLM!</p>
 
-<p>I don’t think this world is going away. Just as when the search engine arrived, these are like the new search engine. You can work without a search engine, but will limit your experience. What happens 25 years from now? I hope to share more then.</p>
+<p>I don’t think this world is going away. Just as when the search engine arrived, these robots the new search engine. You can work without a search engine, but will limit your experience.</p>
+
+<p>What happens 25 years from now? I will share more then.</p>
 
 <figure>
-<img alt="Prague" src="./img/flowers.jpg" style="max-width: 30rem; width:100%;" />
+<img alt="Prague" src="./img/flowers.jpg" />
 </figure>
 
 <h2 id="relax">25. Relax</h2>
@@ -662,7 +660,7 @@
 
 <p>But I have good news: Real impostors don’t get impostor syndrome. Real impostors know they are impostors rather than fear they are impostors.</p>
 
-<p>So relax. If you have impostor syndrome, it means you aren’t an impostor.</p>
+<p>So relax, because if you have impostor syndrome, it means you aren’t an impostor.</p>
 
 </main>
 <footer>
