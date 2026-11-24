@@ -6,7 +6,7 @@ In the fall of 2001, I started college. I didn't study computer science. What br
 
 For <strike>late adolescent vanity</strike> fun I made my own website with Microsoft Notepad, a pirated version of Adobe Photoshop 6, and a lot of copy-paste from W3C tutorials. Little did I realize those moments of simply following my curiosity would begin turning the flywheel of what became my entire career.
 
-A quarter century later, here are some things that I picked-up along the way, mostly through trial-and-error.
+A quarter-century later, here are some things that I picked-up along the way, mostly through trial-and-error.
 
 ## 1. Code is for humans
 
@@ -32,7 +32,7 @@ The less you have to think about what a tool is, the more you can think about wh
 
 Code is written and time passes. Now something you named a year ago now seems like it was named wrong. "Naming things is hard". We all knowingly nod.
 
-What makes it hard? Part of the difficulty is thinking of a *Good* name. But wait: You thought you had a *Good* name and now it turns out it was a *Bad* name. Now what if your new name you thought of --- which appears *Good* now --- *also* turns out to be *Bad*? You'd have to rename it again. So perhaps part of the difficulty of naming things is actually the difficulty of *renaming* things. Maybe if renaming things was easier, we might think naming things was easier because there would be less pressure to find a *Good* name in the first place.
+What makes it hard? Part of the difficulty is thinking of a *Good* name. But wait: You thought you had a *Good* name, now it turns out it was a *Bad* name. Now what if your new name you thought of --- which appears *Good* now --- *also* turns out to be *Bad*? You'd have to rename it again. So perhaps part of the difficulty of naming things is actually the difficulty of *renaming* things. Maybe if renaming things was easier, we might think naming things was easier because there would be less pressure to find a *Good* name in the first place.
 
 Renaming things is hard for lots of reasons. But renaming a thing only gets harder the longer you wait to rename a thing. Effort aside, the cognitive load of a poorly-named thing sticking around slows down newcomers. "Oh yeah, we need to rename that". I hate saying this to people, don't you? Let's make it better for newcomers by being in the habit of renaming things we know need to be renamed. As best you can, the moment you notice a thing needs to be renamed, rename the thing.
 
@@ -80,7 +80,7 @@ Used sparingly in this way, truly useful comments don't stale because they were 
 
 Most of our time writing software is modifying existing code, not writing code from scratch. Some improvements are large, so we usually approach it incrementally. This is practical and reasonable, but often what we lack true commitment to *seeing it through*.
 
-How often do you see different implementations of the same thing? When you ask your peers about it you get some variation of the following:
+How often do you see different implementations of the same thing? When you ask your peers about it, you get some variation of the following:
 
 * "Oh, yeah we never finished that migration"
 * "Oh, yeah that's still being refactored"
@@ -155,13 +155,13 @@ More importantly, you'll model some humility visible to your peers, and your vul
 
 ## 14. Know the value of knowing
 
-In college I studied civil engineering. A requisite course was construction management, which was, uh, "taught" by a guy named [Hyman Brown](./img/my-guy.jpg) who spent the majority of the course sharing lore about managing construction in the 1980s.
+I studied civil engineering in college. A requisite course was construction management, which was, uh, "taught" by a guy named [Hyman Brown](./img/my-guy.jpg) who spent the majority of the course sharing lore about managing construction in the 1980s.
 
 The only story I recall went something like this: On a construction site the most expensive piece of equipment is a crane. Contractors usually rent cranes, and pay by a day rate whether the crane is being used or not. Separately (and invariably), contractors find problems in the construction drawings. A pipe is drawn intersecting an elevator shaft. What to do? The formal process involves sending the architect an RFI "Request For Information" asking to provide an updated drawing. This of course takes time, and during that time the work may need to pause and contractor has to pay for the crane, even if it isn't being used.
 
 But what are the possible ways the pipe can be fixed? Well, it can move left, or it can move right. So just skip the RFI and move the pipe.
 
-> *"So I said ‘move the pipe to the left!' I just saved us $30,000!"<br>--- Hyman Brown (probably)*
+> *"So I said 'move the pipe to the left!' I just saved us $30,000!"<br>--- Hyman Brown (probably)*
 
 When we see problems in software, we've seen the value of exploring those shadowy depths to learn why a problem happened. But we should ask ourselves: If we investigate and learn the root cause of the problem, would it actually change anything about how we fix the problem? Or are we just spending time learning without a practical outcome?
 
@@ -265,13 +265,13 @@ If we're going to make a larger claim about what works for everybody, we're prob
 
 Earlier in my career, I was angry when I saw tech debt. "Why did anyone allow this??" I resented people for being so careless to allow it in the codebase.
 
-Ironically, I was seldom given the chance to address it --- I could simply complain. Given that opportunity to address it, I'd face the responsibility of not introducing new tech debt. To believe that *if it was all up to me* I would do everything right was an extremely naïve and immature understanding of how software is actually built.
+Ironically, I was seldom given an opportunity to address it --- I could simply complain. Given that opportunity to address it, I'd face the responsibility of *not* introducing new tech debt. To believe that *if it was all up to me*, I would do everything right was an extremely naïve and immature understanding of how software is actually built.
 
 We are ultimately going to make mistakes --- we don't even realize mistakes we're making right now: decisions that we make are later revealed as incorrect. This is inevitable.
 
 If you are grouchy because of mistakes, then you are divorced from reality. The grouchy engineer is a well-trod stereotype, and one you should avoid. You will alienate people. Of course, it is easy to be grouchy! Most code is bad! But that's why you're here.
 
-Instead remember you want to be useful. The engineer who complains without changing minds isn't useful. Being useful means actually contending with opaque constraints. You must make trade-offs --- and make trade-offs *between* trade-offs. Which fires do you extinguish? Which do you let burn? You *will not* be perfect. You *cannot* be perfect. Perfection is the lowest standard because it is impossible.
+Instead, remember you want to be useful. The engineer who complains without changing minds isn't useful. Being useful means actually contending with opaque constraints. You must make trade-offs --- and make trade-offs *between* trade-offs. Which fires do you extinguish? Which do you let burn? You *will not* be perfect. You *cannot* be perfect. Perfection is the lowest standard because it is impossible.
 
 Tech debt is a tool just like financial debt is a tool. Your mortgage debt allows you to do something few people could otherwise. Tech debt is the same. It allows us to gain things. But as we must be reverent of financial debt, tech debt requires the same. So be open to using it, manage it, and discuss it openly. But: Use it. Don't complain about it.
 
@@ -299,7 +299,7 @@ What it means to be a software engineer in the last year has radically changed m
 
 If you love the craft, I think it's a very difficult time to be a software engineer. The fundamental thing that you enjoy doing in your day job has largely gone away, or at least changed drastically.
 
-If you are at the start of your career, the skills that you need to develop in order to actually be able to assess and understand whether the robots are going in the right direction or not may be elusive. Can you learn from the robots? The problem is that the robots can sound pretty convincing and build something fairly plausible *from the outside*. That's a very different experience from being *on the inside* just getting damn stuck yourself. I must say there's something nice actually in retrospect about getting damn stuck because it forced you to really think through things in a way that you haven't had to before.
+If you are at the start of your career, the skills you need to develop to actually assess and understand whether the robots are going in the right direction or not may be elusive. Can you learn from the robots? The problem is that the robots can sound pretty convincing and build something fairly plausible *from the outside*. That's a very different experience from being *on the inside* just getting damn stuck yourself. I must say there's something nice actually in retrospect about getting damn stuck because it forced you to really think through things in a way that you haven't had to before.
 
 I'm concerned that the real force of necessity which drives personal growth becomes diminished for generations to come.
 
@@ -308,15 +308,15 @@ Despite all these things so many things actually don't change at all. Many of th
 * *"We won't need junior engineers anymore because AI agents are like junior engineers!"*
 * *"We won't need senior engineers anymore because now junior engineers can be like senior engineers since they have AI agents!"*
 
-Neither of these are playing-out. Instead I predict everything just kind of "shifts right" on the output curve. Juniors become a bit more productive, seniors become likely even more productive.
+Neither of these are playing-out. Instead, I predict everything just kind of "shifts right" on the output curve. Juniors become a bit more productive, seniors become likely even more productive.
 
-It's kind of like giving everybody electricity. Electricity gave you means that we could start building power tools and it was a lot easier to screw together the framing for a house. But the invention of the power tool did not result in a glut of unemployed architects who designed houses. And despite having electricity, we still have poverty and strife in the world. We just have different tools.
+It's kind of like giving everybody electricity. Having electricity meant that we could create power tools, and it was a lot easier to screw together the framing for a house. But the invention of the power tool did not result in a glut of unemployed architects who designed houses. And despite having electricity, we still have poverty and strife in the world. We just have different tools.
 
 And true builders still need particular tools. If you have used power tools, you know that sometimes you actually do need the screwdriver. You actually do need a precision in a way that the power tool does not afford you.
 
 Coding was never really your job. Your job is to be a critical thinker. It's actually the thinking, manifested in the choices and forces that exist in the artifact. That is what your craft is, robots or not. Code shaped by someone thinking critically looks very different than when not.
 
-All that said, there is some tedium in software I don't like that I am happy to hand-off to the LLM. I don't really want to figure out why when I removed a certain C header file that the damn thing won't compile anymore because of some sort of implicit dependency that people have missed for years and years. I hate that crap. Let the LLM do that. Let me think about something else. Thank you, LLM!
+All that said, there is some tedium in software I don't like that I am happy to hand that off to the LLM. I don't really want to figure out why when I removed a certain C header file that the damn thing won't compile anymore because of some sort of implicit dependency that people have missed for years and years. Doing that is a huge pain. Let the LLM do that. Let me think about something else. Thank you, LLM!
 
 I don't think this world is going away. Just as when the search engine arrived, these robots are the new search engine. You can work without a search engine, but you will limit your experience.
 
