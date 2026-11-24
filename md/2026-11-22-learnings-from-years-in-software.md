@@ -314,7 +314,7 @@ It's kind of like giving everybody electricity. Electricity gave you means that 
 
 And true builders still need particular tools. If you have used power tools, you know that sometimes you actually do need the screwdriver. You actually do need a precision in a way that the power tool does not afford you.
 
-Coding was never really your job. Your job is to be a critical thinker. It's actually the thinking, manifested in the choices and forces that exist in the artifact. That is what you craft is, robots or not. Code shaped by someone thinking critically looks very different than when not.
+Coding was never really your job. Your job is to be a critical thinker. It's actually the thinking, manifested in the choices and forces that exist in the artifact. That is what your craft is, robots or not. Code shaped by someone thinking critically looks very different than when not.
 
 All that said, there is some tedium in software I don't like that I am happy to hand-off to the LLM. I don't really want to figure out why when I removed a certain C header file that the damn thing won't compile anymore because of some sort of implicit dependency that people have missed for years and years. I hate that crap. Let the LLM do that. Let me think about something else. Thank you, LLM!
 
