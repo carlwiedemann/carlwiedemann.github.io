@@ -24,7 +24,7 @@ Write code for the person who isn't you. That person must clearly & quickly unde
 
 Computers are amazing tools. It is worth your time to continuously improve your use of the computer. When you notice repetitive toil, that signals a place to optimize. Time reveals new places.
 
-Write many scripts for yourself. Keep your dotfiles versioned. Keyboard shortcuts are incredibly undervalued by most people ([Tampermonkey](https://www.tampermonkey.net/) and [Hammerspoon](https://www.hammerspoon.org/v1/) are my favorite utilities) --- and for your left pinky's sake, please [map caps lock to ctrl](./img/thank-me-later.png).
+Write many scripts for yourself. Keep your dotfiles versioned. Keyboard shortcuts are incredibly undervalued by most people ([Tampermonkey](https://www.tampermonkey.net/) and [Hammerspoon](https://www.hammerspoon.org/v1/) are my favorite utilities) --- and for your left pinky's sake, please [map caps lock to ctrl](/img/thank-me-later.png).
 
 The less you have to think about what a tool is, the more you can think about what a tool does.
 
@@ -155,7 +155,7 @@ More importantly, you'll model some humility visible to your peers, and your vul
 
 ## 14. Know the value of knowing
 
-I studied civil engineering in college. A requisite course was construction management, which was, uh, "taught" by a guy named [Hyman Brown](./img/my-guy.jpg) who spent the majority of the course sharing lore about managing construction in the 1980s.
+I studied civil engineering in college. A requisite course was construction management, which was, uh, "taught" by a guy named [Hyman Brown](/img/my-guy.jpg) who spent the majority of the course sharing lore about managing construction in the 1980s.
 
 The only story I recall went something like this: On a construction site the most expensive piece of equipment is a crane. Contractors usually rent cranes, and pay by a day rate whether the crane is being used or not. Separately (and invariably), contractors find problems in the construction drawings. A pipe is drawn intersecting an elevator shaft. What to do? The formal process involves sending the architect an RFI "Request For Information" asking to provide an updated drawing. This of course takes time, and during that time the work may need to pause and contractor has to pay for the crane, even if it isn't being used.
 
