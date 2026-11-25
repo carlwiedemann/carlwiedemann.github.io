@@ -149,7 +149,7 @@ Part of learning is developing confidence and part of developing confidence is s
 
 But you can paint yourself into a corner where justifying yourself to be correct (in the name of developing confidence) becomes overly important. You can waste a lot of time pushing for decision through social friction, for something that may actually change --- it's called software because it's soft.
 
-Accept you actually can't be correct all the time. You won't overly invest in any particular implementation that may need change. Relive yourself of the burden of needing to predict the future.
+Accept you actually can't be correct all the time. You won't overly invest in any particular implementation that may need change. Relieve yourself of the burden of needing to predict the future.
 
 More importantly, you'll model some humility visible to your peers, and your vulnerability helps dispel impostor syndrome that can keep people quiet. Done at the right moments, saying "I'm not sure" or "Let's try it and see" can actually create a healthier environment for junior peers to invest in learning and exercise some transparent humility of their own. Maturity comes to us all through a balance of confidence and curiosity.
 
