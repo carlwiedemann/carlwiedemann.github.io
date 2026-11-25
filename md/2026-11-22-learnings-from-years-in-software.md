@@ -72,7 +72,7 @@ Can comments be useful? I believe so. People struggle to define what "useful" me
 
 Here's my definition: Useful code comments provide *non-redundant context*. Don't describe *what* code does ([code already tells you that](https://www.commitstrip.com/en/2016/08/25/a-very-comprehensive-and-precise-spec/)), instead describe *why* code is the way it is: Why choice was made, future `TODO`s, known limitations & trade-offs.
 
-Used sparingly in this way, truly useful comments don't stale because they were never clutter to begin with. They illustrate the historical motivations the code itself simply takes for granted.
+Used sparingly in this way, truly useful comments don't get stale because they were never clutter to begin with. They illustrate the historical motivations the code itself simply takes for granted.
 
 (In the agentic age, good comments are more important, because we are less reliant on what invisibly lives in our heads and more reliant on what lives in text.)
 
