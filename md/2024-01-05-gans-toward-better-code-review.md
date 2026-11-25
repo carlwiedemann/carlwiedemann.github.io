@@ -64,7 +64,7 @@ And as mentioned, the _very task_ of code review itself primes both author and r
 Can we fault him? I don't think we can.
 
 <figure>
-<img alt="How it be" src="./img/pragmatics.jpeg" style="max-width: 30rem; width:100%;"/>
+<img alt="How it be" src="/img/pragmatics.jpeg" style="max-width: 30rem; width:100%;"/>
 <figcaption>The show must go on.</figcaption>
 </figure>
 

@@ -49,7 +49,7 @@ It's easy to become overly focused on nouns rather than verbs. But it's the verb
 The real benefit comes when you find a label that doesn't make much sense --- you might have the wrong verb, or a missing noun. This friction inspires conversation that wouldn't have happened otherwise.
 
 <figure>
-<img alt="A pile of old television remote controls" src="./img/remotes.jpg" />
+<img alt="A pile of old television remote controls" src="/img/remotes.jpg" />
 </figure>
 
 ## 5. Respect the user
@@ -114,7 +114,7 @@ The courage to visit those shadows is a skill to embrace, not avoid. The most va
 Go exploring. Understand the checkered history. Become the engineer who is not so enamored by [the shiny things](https://blog.codinghorror.com/the-magpie-developer/), but the shadowy things.
 
 <figure>
-<img alt="'Amour' written on a Paris bridge, Notre Dame in the background" src="./img/paris.jpg" />
+<img alt="'Amour' written on a Paris bridge, Notre Dame in the background" src="/img/paris.jpg" />
 </figure>
 
 ## 10. It's not supposed to be easy
@@ -170,7 +170,7 @@ Sometimes the answer is important. Sometimes the answer isn't important. Sometim
 And sometimes even when you try to figure out the answer, you won't. Instead, the answer will arrive years later when you're walking your dog or making a sandwich or stepping out of the shower. There's a lot you won't know. Some of it should be because you sense the value of knowing.
 
 <figure>
-<img alt="Cranes on the Colorado horizon" src="./img/cranes.jpg" />
+<img alt="Cranes on the Colorado horizon" src="/img/cranes.jpg" />
 </figure>
 
 ## 15. Let it crash
@@ -236,7 +236,7 @@ That's actually the first question we should ask: What's the budget? So just ask
 This is difficult to do, and what makes it difficult is accepting it is inexact. But it's about dialogue, not precision.
 
 <figure>
-<img alt="Waiting beneath the shoefiti by the Prague Metronome, " src="./img/prague.jpg" />
+<img alt="Waiting beneath the shoefiti by the Prague Metronome, " src="/img/prague.jpg" />
 </figure>
 
 ## 20. What's not being said?
@@ -279,7 +279,7 @@ Tech debt is a tool just like financial debt is a tool. Your mortgage debt allow
 
 Whatever system we end up working on will have problems. But the cause of many problems is not pure technicality or budget constraint, but that fixing the problem is not incentivized by the working environment --- that anybody with authority does not value its fix over its harm.
 
-The lens of pure incentive and interest drives things much more than any sort of good implementation or anything else. Many engineers make the mistaken belief that explaining problems in pure technical terms is enough to change minds, simply because the line of explanation is sound from a technical perspective. When non-technical people don't agree, this can be a source of frustration and resentment. But what they are actually doing is responding to incentives. Their incentives are fundamentally misaligned with yours.
+The lens of pure incentive and interest drives things much more than any sort of good implementation or anything else. Many engineers have a mistaken belief that explaining problems in purely technical terms will be enough to change minds, simply because the explanation technically sound. When non-technical people don't agree, this can be a source of frustration and resentment. But what they are actually doing is responding to incentives. Their incentives are fundamentally misaligned with yours.
 
 It can be a bitter pill to swallow, but as the craftsperson you are likely going to have to be employed by people who are not craftspeople, and proceed in a delicate alliance.
 
@@ -289,15 +289,15 @@ This can seem like a depressing world, but I think accepting the difference and 
 
 Very few places in the world exist for the purpose of simply making software for software's sake. Most of us are navigating the alliance between the craft as an *End* and the craft as a *Means*.
 
-Zoom-out. Realize that as much as you value craft, it is also a means to provide you & your family. The enjoyment of craft *can* exist within your job, and I was fortunate enough to be able to enjoy this for a long time. But things can change. Sometimes a job is a job. Your job can get pretty annoying and pretty frustrating. You may feel like you're always just putting lipstick on a pig or shaving the yak. But accept that by taking the job, you have agreed to live in the world of incentives that interest the owners of the company. (And hopefully this choice has been lucrative --- it is software, after all. There are a lot worse things to do.)
+Zoom-out. Realize that as much as you value craft, it is also a means to provide you & your family. The enjoyment of craft *can* exist within your job, and I was fortunate enough to be able to enjoy this for a long time. But things can change. Sometimes a job is just a job. Your job can get pretty annoying and pretty frustrating. You may feel like you're always just putting lipstick on the pig or shaving the yak. But accept that by taking the job, you have agreed to live in the world of incentives that interest the owners of the company. (And hopefully this choice has been lucrative --- it is software, after all --- there are a lot worse things to do.)
 
 Next time you are preoccupied with the annoyances and frustrations --- perhaps just as you've ended your workday to sit down at the dinner table: Stop. Look around. See the life you have the opportunity to experience. Your world is bigger than the craft.
 
 ## 24. Everything changes, nothing changes
 
-What it means to be a software engineer in the last year has radically changed more so than I've ever seen in the last 25 years. I've gone from being someone typing out the code to someone who supervises robots trying to do the same thing, sometimes succeeding, sometimes failing. Sometimes both at the same time.
+What it means to be a software engineer in the last year has radically changed more so than I've ever seen in the last 25 years. I've gone from being someone typing out the code to someone who supervises robots trying to do the same thing, sometimes succeeding, sometimes failing --- sometimes both succeeding and failing at the same time.
 
-If you love the craft, I think it's a very difficult time to be a software engineer. The fundamental thing that you enjoy doing in your day job has largely gone away, or at least changed drastically.
+If you love the craft, it is a very difficult time to be a software engineer. The fundamental thing that you enjoy doing in your day job has largely gone away, or at least changed drastically.
 
 If you are at the start of your career, the skills you need to develop to actually assess and understand whether the robots are going in the right direction or not may be elusive. Can you learn from the robots? The problem is that the robots can sound pretty convincing and build something fairly plausible *from the outside*. That's a very different experience from being *on the inside* just getting damn stuck yourself. I must say there's something nice actually in retrospect about getting damn stuck because it forced you to really think through things in a way that you haven't had to before.
 
@@ -312,24 +312,24 @@ Neither of these are playing-out. Instead, I predict everything just kind of "sh
 
 It's kind of like giving everybody electricity. Having electricity meant that we could create power tools, and it was a lot easier to screw together the framing for a house. But the invention of the power tool did not result in a glut of unemployed architects who designed houses. And despite having electricity, we still have poverty and strife in the world. We just have different tools.
 
-And true builders still need particular tools. If you have used power tools, you know that sometimes you actually do need the screwdriver. You actually do need a precision in a way that the power tool does not afford you.
+And true builders still need particular tools. If you have used power tools, you know that sometimes you actually do need the screwdriver. You actually do need precision in a way the power tool does not afford you.
 
-Coding was never really your job. Your job is to be a critical thinker. It's actually the thinking, manifested in the choices and forces that exist in the artifact. That is what your craft is, robots or not. Code shaped by someone thinking critically looks very different than when not.
+Coding was never really your job. Your job is to be a critical thinker. It's actually the thinking, manifested in the choices and forces that exist within the artifact. That is what your craft is, robots or not. Code shaped by someone thinking critically looks very different than when not.
 
-All that said, there is some tedium in software I don't like that I am happy to hand that off to the LLM. I don't really want to figure out why when I removed a certain C header file that the damn thing won't compile anymore because of some sort of implicit dependency that people have missed for years and years. Doing that is a huge pain. Let the LLM do that. Let me think about something else. Thank you, LLM!
+All that said, there is tedium in building software, which I am happy to hand that off to the LLM. I don't really want to fuss through why removing a certain header file now the damn thing won't compile anymore because of some sort of implicit dependency that people have missed for years and years. That is pure tedium. Let the LLM do that. Let me think about something else. Thank you, LLM!
 
-I don't think this world is going away. Just as when the search engine arrived, these robots are the new search engine. You can work without a search engine, but you will limit your experience.
+I don't think this world is going away. Just as when the search engine arrived, these robots are the new search engines. You can work without a search engine, but you will limit your experience.
 
-What happens 25 years from now? I will share more then.
+What happens 25 years from now? I hope to share more then.
 
 <figure>
-<img alt="Flowers pushing through the pavement on your street" src="./img/flowers.jpg" />
+<img alt="Flowers pushing through the pavement on your street" src="/img/flowers.jpg" />
 </figure>
 
 ## 25. Relax
 
 You will never stop having impostor syndrome. I've been doing this for over two decades and I still feel it.
 
-But I have good news: Real impostors don't get impostor syndrome. Real impostors know they are impostors rather than fear they are impostors.
+But I have good news: Real impostors don't get impostor syndrome. Real impostors *know* they are impostors, rather than *fear* they are impostors.
 
 So relax, because if you have impostor syndrome, it means you aren't an impostor.
