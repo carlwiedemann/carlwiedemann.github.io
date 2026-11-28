@@ -301,9 +301,9 @@ If you love the craft, it is a very difficult time to be a software engineer. Th
 
 If you are at the start of your career, the skills you need to develop to actually assess and understand whether the robots are going in the right direction or not may be elusive. Can you learn from the robots? The problem is that the robots can sound pretty convincing and build something fairly plausible *from the outside*. That's a very different experience from being *on the inside* just getting damn stuck yourself. I must say there's something nice actually in retrospect about getting damn stuck because it forced you to really think through things in a way that you haven't had to before.
 
-I'm concerned that the real force of necessity which drives personal growth becomes diminished for generations to come.
+<span class="highlight">I'm concerned that the real force of necessity that drives personal growth now atrophies for generations to come.</span>
 
-Despite all these things so many things actually don't change at all. Many of the fears people have about the nature of the work fundamentally disappearing are completely overblown.
+Despite these troubles, so many things actually don't change at all. Many of the predictions about the nature of the demand are completely overblown.
 
 * *"We won't need junior engineers anymore because AI agents are like junior engineers!"*
 * *"We won't need senior engineers anymore because now junior engineers can be like senior engineers since they have AI agents!"*
@@ -316,7 +316,7 @@ And true builders still need particular tools. If you have used power tools, you
 
 Coding was never really your job. Your job is to be a critical thinker. It's actually the thinking, manifested in the choices and forces that exist within the artifact. That is what your craft is, robots or not. Code shaped by someone thinking critically looks very different than when not.
 
-All that said, there is tedium in building software, which I am happy to hand that off to the LLM. I don't really want to fuss through why removing a certain header file now the damn thing won't compile anymore because of some sort of implicit dependency that people have missed for years and years. That is pure tedium. Let the LLM do that. Let me think about something else. Thank you, LLM!
+All that said, there is some tedium in building software, which I am happy to hand off to the LLM. I don't really want to fuss through why removing a certain header file means the damn thing won't compile because of some sort of implicit dependency that people missed for years and years. That is pure tedium. Let the LLM do that. Let me think about something else. Thank you, LLM!
 
 I don't think this world is going away. Just as when the search engine arrived, these robots are the new search engines. You can work without a search engine, but you will limit your experience.
 
